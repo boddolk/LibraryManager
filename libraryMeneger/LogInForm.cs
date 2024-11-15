@@ -17,13 +17,13 @@ namespace libraryMeneger
             InitializeComponent();     
            
         }
-             //AdminForm adminForm = new AdminForm();//створення адмінської форми
+             AdminForm adminForm = new AdminForm();//створення адмінської форми
                 
         private void LogInButton_Click(object sender, EventArgs e)
         {
             if(AdminRButton.Checked) //обробник редіобатона, поки так, поки нема бази
             {
-                //adminForm.Show();
+                adminForm.Show();
                 this.Visible = false;
             }
 
