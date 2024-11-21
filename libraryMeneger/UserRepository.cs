@@ -4,19 +4,19 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SQLite;
 using System.IO;
-using Microsoft.Data.Sqlite;
 
 namespace libraryMeneger.Data.UserRepository
 {
     public class UserRepository : IUserRepository
     {
         private string dbPath;
-        private SqliteConnection connection;
+        private SQLiteConnection connection;
         public UserRepository(string DBFileName)
         {
             dbPath = Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), DBFileName);
-            connection = new SqliteConnection($"Data Source={dbPath};Connect Timeout=600");
+            connection = new SQLiteConnection($"Data Source={dbPath};Connect Timeout=600");
         }
         
         public override bool DoesSuchUserExist(string loginToCheck)
@@ -24,16 +24,16 @@ namespace libraryMeneger.Data.UserRepository
             try
             {
                 connection.Open();       
-            
-            string query = "SELECT EXISTS(SELECT 1 FROM UsersAndBooks WHERE Login = @Value)";
-
-            using ( var command = new SqliteCommand(query, connection))
-            {
-                command.Parameters.AddWithValue("@Value", loginToCheck);
-                var result = (long)command.ExecuteScalar();               
+                string query = "SELECT EXISTS(SELECT 1 FROM Users WHERE Login=@VALUE)";
+                using ( var command = new SQLiteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@VALUE", loginToCheck);
+                    //Я зазвичай так роблю! Но якщо працюж - то пофігу!
+                    //command.Parameters.Add( new SQLiteParameter("VALUE", loginToCheck)); 
+                    var result = (long)command.ExecuteScalar();               
+                    //var result = (long)command.ExecuteNonQuery();               
                     return result == 1;
-              
-            }
+                }
             }
             finally
             {
@@ -47,9 +47,9 @@ namespace libraryMeneger.Data.UserRepository
             {
                 connection.Open();
 
-                string query = "SELECT IsAdmin FROM UsersAndBooks WHERE Login = @Value";
+                string query = "SELECT IsAdmin FROM Users WHERE Login = @Value";
 
-                using (var command = new SqliteCommand(query, connection))
+                using (var command = new SQLiteCommand(query, connection))
                 {
 
                     command.Parameters.AddWithValue("@Value", loginToCheck);
@@ -77,8 +77,8 @@ namespace libraryMeneger.Data.UserRepository
             {
                 connection.Open();
 
-                string query = "SELECT COUNT(1) FROM UsersAndBooks WHERE Login = @Login AND Password = @Password";
-                using (var command = new SqliteCommand(query, connection))
+                string query = "SELECT COUNT(1) FROM Users WHERE Login = @Login AND Password = @Password";
+                using (var command = new SQLiteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Login", loginToCheck);
                     command.Parameters.AddWithValue("@Password", Password);
