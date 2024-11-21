@@ -1,91 +1,43 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Data.Sqlite;
 using System.IO;
-using System.Drawing;
+using System.Data.SQLite;
 
-
-namespace Data
+namespace libraryMeneger.Data
 {
     public static class DataAccess
     {
-        public static void InitializeDatabase()
+        public static string PPath = "";
+        public static void TestDatabaseConnection()
         {
-           
-            string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-            string dbPath = Path.Combine(folderPath, "BooksAndUsers.db");            
-            if (!File.Exists(dbPath))
+            PPath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            
+            string dbPath = Path.Combine(PPath, "UsersAndBooks.db");          
+            try
             {
-                File.Create(dbPath).Dispose();
-            }            
-            using (var db = new SqliteConnection($"Filename={dbPath}"))
-            {
-                db.Open();
+                using (var connection = new SQLiteConnection($"Data Source={dbPath};Connect Timeout=600"))
+                {
+                    connection.Open();
+                    
+                    string query = "SELECT name FROM sqlite_master WHERE type='table';";
 
-                
-                string createUsersTable = @"
-                    CREATE TABLE IF NOT EXISTS Users (
-                        Login NVARCHAR(2048) PRIMARY KEY,
-                        Name NVARCHAR(2048),
-                        Surname NVARCHAR(2048),
-                        Password NVARCHAR(2048),
-                        Email NVARCHAR(2048),
-                        PhoneNumber NVARCHAR(2048),
-                        IsAdmin BOOL
-                    );";
+                    using (var command = new SQLiteCommand(query, connection))
+                    using (var reader = command.ExecuteReader())
+                    {
+                        Console.WriteLine("Таблиці в базі даних:");
+                        while (reader.Read())
+                        {
+                            Console.WriteLine(reader.GetString(0)); 
+                        }
+                    }
 
-                string createBooksTable = @"
-                    CREATE TABLE IF NOT EXISTS Books (
-                        Article INTEGER PRIMARY KEY,
-                        Title NVARCHAR(2048),
-                        Author NVARCHAR(2048),
-                        Year INTEGER
-                    );";
-
-                string createUserBooksHistoryTable = @"
-                    CREATE TABLE IF NOT EXISTS UserBooksHistory (
-                        Login NVARCHAR(2048) NOT NULL,
-                        Article INTEGER NOT NULL,
-                        StartDate DATE,
-                        EndDate DATE,
-                        PRIMARY KEY (Login, Article),
-                        FOREIGN KEY (Login) REFERENCES Users(Login),
-                        FOREIGN KEY (Article) REFERENCES Books(Article)
-                    );";
-
-                string createBookStatusTable = @"
-                    CREATE TABLE IF NOT EXISTS BookStatus (
-                        Login NVARCHAR(2048) NOT NULL,
-                        Article INTEGER NOT NULL,
-                        StartDate DATE,
-                        EndDate DATE,
-                        ReserveStatus BOOL,
-                        IssueStatus BOOL,
-                        PRIMARY KEY (Login, Article),
-                        FOREIGN KEY (Login) REFERENCES Users(Login),
-                        FOREIGN KEY (Article) REFERENCES Books(Article)
-                    );";
-
-               
-                ExecuteSql(db, createUsersTable);
-                ExecuteSql(db, createBooksTable);
-                ExecuteSql(db, createUserBooksHistoryTable);
-                ExecuteSql(db, createBookStatusTable);
-
-                
+                    Console.WriteLine("Підключення до бази успішне!");
+                }
             }
-        }
-
-        private static void ExecuteSql(SqliteConnection db, string query)
-        {
-            using (var command = new SqliteCommand(query, db))
+            catch (Exception ex)
             {
-                command.ExecuteNonQuery();
+                Console.WriteLine("Помилка підключення до бази:");
+                Console.WriteLine(ex.Message);
             }
         }
     }
 }
-
