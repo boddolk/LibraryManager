@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using libraryMeneger.Data.UserRepository;
 
 namespace libraryMeneger
 {
@@ -30,9 +31,35 @@ namespace libraryMeneger
         private void LogInButton_Click(object sender, EventArgs e)
         {
 
+
+
+            UserRepository repository = new UserRepository("UsersAndBooks");
+
+            bool correct = false;
             // ЗАМІСТЬ ЗНАЧЕНЬ ТРУ — РЗУЛЬТАТ МЕТОДІВ //сМонохромка
-            bool correct = true; 
-            bool isAdmin = true;
+            if (repository.DoesSuchUserExist(LogInTextBox.Text))
+            {
+                if(repository.IsPasswordCorrect(LogInTextBox.Text, PasswordTextBox.Text))
+                {
+                    correct = true;
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
+
+
+            }
+            else
+            {
+                MessageBox.Show("Incorrect login", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+
+
+
+            bool isAdmin = repository.IsGivenUserAdmin(LogInTextBox.Text);
 
 
 
