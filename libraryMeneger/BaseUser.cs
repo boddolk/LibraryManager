@@ -10,6 +10,7 @@ namespace libraryMeneger.user
 {
     public abstract class BaseUser
     {
+        private string login;
         private string name;
         private string surname;
         private string password;
@@ -17,14 +18,34 @@ namespace libraryMeneger.user
         private string phoneNumber;
         private bool isAdmin = false;
 
-        public BaseUser(string myName, string mySurname, string myPassword, string myEmail, string myPhoneNumber)
+
+        public BaseUser()
         {
+            login = "User";
+            Name = "noName";
+            Surname = "noSurname";
+            Password = "noPassword";
+            Email = "mnoEmail";
+            PhoneNumber = "noPhoneNumber";
+
+        }
+
+        public BaseUser(string myLogin, string myName, string mySurname, string myPassword, string myEmail, string myPhoneNumber)
+        {
+            login = myLogin;
             Name = myName;
             Surname = mySurname;
             Password = myPassword;
             Email = myEmail;
             PhoneNumber = myPhoneNumber;
         }
+
+        public string Login
+        { 
+            get { return login; } 
+            set { login = value; }
+        }
+
 
         public string Name
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using libraryMeneger.user;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,16 +24,41 @@ namespace libraryMeneger
            
 
         }
-             AdminForm adminForm = new AdminForm();//створення адмінської форми
+
+
                 
         private void LogInButton_Click(object sender, EventArgs e)
         {
-            if(AdminRButton.Checked) //обробник редіобатона, поки так, поки нема бази
-            {
-                adminForm.Show();
-                this.Visible = false;
-            }
 
+            // ЗАМІСТЬ ЗНАЧЕНЬ ТРУ — РЗУЛЬТАТ МЕТОДІВ //сМонохромка
+            bool correct = true; 
+            bool isAdmin = true;
+
+
+
+
+
+            if(isAdmin) 
+            {
+                if (correct)
+                {          
+                    AdminForm adminForm = new AdminForm();//створення адмінської форми
+                    adminForm.Show();
+                    this.Visible = false;
+                }
+            }
+            else
+            {
+                if (correct)
+                {
+                    //ЗАТИЧКА, ПОКИ НЕМА ЗВІДКИ ДАНІ СТЯГНУТИ
+                    RegularUser user = new RegularUser();
+                    UserForm userForm = new UserForm(user);
+                    userForm.Show();
+                    this.Visible = false;
+                }
+
+            }
 
             
 
@@ -40,6 +66,9 @@ namespace libraryMeneger
 
         private void SingUpButton_Click(object sender, EventArgs e)
         {
+            SingUp form = new SingUp();
+            form.Show();
+            this.Hide();
 
         }
     }
