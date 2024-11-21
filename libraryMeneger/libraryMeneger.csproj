@@ -107,6 +107,7 @@
     <Compile Include="EditUserInfo.Designer.cs">
       <DependentUpon>EditUserInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="IUserRepository.cs" />
     <Compile Include="LogInForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +123,7 @@
     <Compile Include="UserForm.Designer.cs">
       <DependentUpon>UserForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserRepository.cs" />
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
