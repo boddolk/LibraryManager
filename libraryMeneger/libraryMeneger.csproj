@@ -79,6 +79,8 @@
     </Compile>
     <Compile Include="BaseUser.cs" />
     <Compile Include="AdminUser.cs" />
+    <Compile Include="BookStatManager.cs" />
+    <Compile Include="GenBook.cs" />
     <Compile Include="DataAccess.cs" />
     <Compile Include="EditUserInfo.cs">
       <SubType>Form</SubType>
