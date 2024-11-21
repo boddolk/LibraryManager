@@ -6,11 +6,17 @@ using System.Threading.Tasks;
 
 namespace libraryMeneger.user
 {
-    internal class RegularUser:BaseUser
+    public class RegularUser:BaseUser
 
     {
-        public RegularUser(string myName, string mySurname, string myPassword, string myEmail, string myPhoneNumber)
-            : base(myName, mySurname, myPassword, myEmail, myPhoneNumber)
+        public RegularUser()
+            :base()
+        {
+
+        }
+
+        public RegularUser(string myLogin, string myName, string mySurname, string myPassword, string myEmail, string myPhoneNumber)
+            : base(myLogin, myName, mySurname, myPassword, myEmail, myPhoneNumber)
         {
             IsAdmin = false;
         }

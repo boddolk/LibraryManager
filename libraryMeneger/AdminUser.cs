@@ -9,8 +9,8 @@ namespace libraryMeneger.user
 {
     public class AdminUser : BaseUser
     {
-        public AdminUser(string myName, string mySurname, string myPassword, string myEmail, string myPhoneNumber)
-            : base(myName, mySurname, myPassword, myEmail, myPhoneNumber)
+        public AdminUser(string myLogin, string myName, string mySurname, string myPassword, string myEmail, string myPhoneNumber)
+            : base( myLogin, myName, mySurname, myPassword, myEmail, myPhoneNumber)
         {
             IsAdmin = true;
         }
