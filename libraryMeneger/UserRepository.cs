@@ -28,10 +28,9 @@ namespace libraryMeneger.Data.UserRepository
                 using ( var command = new SQLiteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@VALUE", loginToCheck);
-                    //Я зазвичай так роблю! Но якщо працюж - то пофігу!
-                    //command.Parameters.Add( new SQLiteParameter("VALUE", loginToCheck)); 
+                    
                     var result = (long)command.ExecuteScalar();               
-                    //var result = (long)command.ExecuteNonQuery();               
+                             
                     return result == 1;
                 }
             }
@@ -85,6 +84,151 @@ namespace libraryMeneger.Data.UserRepository
 
                     var result = (long)command.ExecuteScalar();
                     return result == 1;
+                }
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        public override string getEmail(string loginToCheck)
+        {
+            try
+            {
+                connection.Open();
+
+                string query = "SELECT Email FROM Users WHERE Login = @Value";
+
+                using (var command = new SQLiteCommand(query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@Value", loginToCheck);
+
+                    var result = command.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return Convert.ToString(result);
+                    }
+                    else
+                    {
+                        return "";
+                    }
+                }
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        public override string getName(string loginToCheck)
+        {
+            try
+            {
+                connection.Open();
+
+                string query = "SELECT Name FROM Users WHERE Login = @Value";
+
+                using (var command = new SQLiteCommand(query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@Value", loginToCheck);
+
+                    var result = command.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return Convert.ToString(result);
+                    }
+                    else
+                    {
+                        return "";
+                    }
+                }
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        public override string getSurname(string loginToCheck)
+        {
+            try
+            {
+                connection.Open();
+
+                string query = "SELECT Surname FROM Users WHERE Login = @Value";
+
+                using (var command = new SQLiteCommand(query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@Value", loginToCheck);
+
+                    var result = command.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return Convert.ToString(result);
+                    }
+                    else
+                    {
+                        return "";
+                    }
+                }
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        public override string getPhoneNumber(string loginToCheck)
+        {
+            try
+            {
+                connection.Open();
+
+                string query = "SELECT Number FROM Users WHERE Login = @Value";
+
+                using (var command = new SQLiteCommand(query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@Value", loginToCheck);
+
+                    var result = command.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return Convert.ToString(result);
+                    }
+                    else
+                    {
+                        return "";
+                    }
+                }
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        public override string getPassword(string loginToCheck)
+        {
+            try
+            {
+                connection.Open();
+
+                string query = "SELECT Password FROM Users WHERE Login = @Value";
+
+                using (var command = new SQLiteCommand(query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@Value", loginToCheck);
+
+                    var result = command.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return Convert.ToString(result);
+                    }
+                    else
+                    {
+                        return "";
+                    }
                 }
             }
             finally
