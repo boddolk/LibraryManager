@@ -205,6 +205,8 @@
             this.Controls.Add(this.GiveOutButton);
             this.Name = "AdminForm";
             this.Text = "AdminForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminForm_FormClosing);
+            this.Load += new System.EventHandler(this.AdminForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.YearNumer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

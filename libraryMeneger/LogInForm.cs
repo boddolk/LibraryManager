@@ -68,8 +68,17 @@ namespace libraryMeneger
             if(isAdmin) 
             {
                 if (correct)
-                {          
-                    AdminForm adminForm = new AdminForm();//створення адмінської форми
+                {
+                    string myLogin = LogInTextBox.Text;
+                    string myName = repository.getName(LogInTextBox.Text);
+                    string mySurname = repository.getSurname(LogInTextBox.Text);
+                    string myPassword = repository.getPassword(LogInTextBox.Text);
+                    string myEmail = repository.getEmail(LogInTextBox.Text);
+                    string myPhoneNumber = repository.getPhoneNumber(LogInTextBox.Text);
+
+                    AdminUser user = new AdminUser(myLogin, myName, mySurname, myPassword, myEmail, myPhoneNumber);
+
+                    AdminForm adminForm = new AdminForm(user);
                     adminForm.Show();
                     this.Visible = false;
                 }
@@ -78,8 +87,14 @@ namespace libraryMeneger
             {
                 if (correct)
                 {
-                    //ЗАТИЧКА, ПОКИ НЕМА ЗВІДКИ ДАНІ СТЯГНУТИ
-                    RegularUser user = new RegularUser();
+                    string myLogin = LogInTextBox.Text;
+                    string myName = repository.getName(LogInTextBox.Text);
+                    string mySurname = repository.getSurname(LogInTextBox.Text);
+                    string myPassword = repository.getPassword(LogInTextBox.Text);
+                    string myEmail = repository.getEmail(LogInTextBox.Text);
+                    string myPhoneNumber = repository.getPhoneNumber(LogInTextBox.Text);
+
+                    RegularUser user = new RegularUser(myLogin, myName, mySurname, myPassword, myEmail, myPhoneNumber);
                     UserForm userForm = new UserForm(user);
                     userForm.Show();
                     this.Visible = false;
