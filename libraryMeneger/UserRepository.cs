@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
 using System.IO;
+using libraryMeneger.user;
 
 namespace libraryMeneger.Data.UserRepository
 {
@@ -230,6 +231,68 @@ namespace libraryMeneger.Data.UserRepository
                         return "";
                     }
                 }
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        public override bool updateUser(RegularUser updatedOne)
+        {
+           
+            try
+            {
+                connection.Open();
+
+             
+                string query = "UPDATE Users SET Name = @NAME, Surname = @SURNAME , Email = @EMAIL , Number =@NUMBER WHERE Login = @LOGIN";
+
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@NAME", updatedOne.Name);
+                    command.Parameters.AddWithValue("@SURNAME", updatedOne.Surname);
+                    command.Parameters.AddWithValue("@EMAIL",updatedOne.Email);
+                    command.Parameters.AddWithValue("@LOGIN", updatedOne.Login);
+                    command.Parameters.AddWithValue("@NUMBER", updatedOne.PhoneNumber);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+                    Console.WriteLine($"{rowsAffected} rows updated.");
+                    return rowsAffected > 0;
+                }
+
+            }               
+
+            finally
+            {
+                connection.Close();
+            }
+        }
+        public override bool insertNewUser(RegularUser newOne)
+        {
+            try
+            {
+                connection.Open();
+
+
+                string query = "INSERT INTO Users (Login, Name, Surname, Email, Number, IsAdmin) VALUES ( @LoginV, @NameV, @SurnameV, @EmailV, @NumberV, @IsAdminV)";
+
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@NameV", newOne.Name);
+                    command.Parameters.AddWithValue("@SurnameV", newOne.Surname);
+                    command.Parameters.AddWithValue("@NumberV", newOne.PhoneNumber);
+                    command.Parameters.AddWithValue("@LoginV", newOne.Login);
+                    command.Parameters.AddWithValue("@EmailV", newOne.Email);
+                    command.Parameters.AddWithValue("@IsAdmin", newOne.IsAdmin);
+
+                    int rowsAffected = command.ExecuteNonQuery();                    
+                    return rowsAffected > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error inserting user: {ex.Message}");
+                return false;
             }
             finally
             {

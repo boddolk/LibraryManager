@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using libraryMeneger.user;
 
 namespace libraryMeneger.Data.UserRepository
 {
@@ -20,6 +21,7 @@ namespace libraryMeneger.Data.UserRepository
         public abstract string getPhoneNumber(string loginToCheck);
         public abstract string getEmail(string loginToCheck);
         public abstract string getPassword(string loginToCheck);
-        //треба методи для перезапису юзера (розібрати по полях все окрім логіна і пароля і замінити) (с) Монохромка
+        public abstract bool updateUser(RegularUser updatedOne);
+        public abstract bool insertNewUser(RegularUser newOne);
 }
 }
