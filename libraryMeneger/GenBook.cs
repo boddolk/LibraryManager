@@ -13,7 +13,13 @@ namespace libraryMeneger.book
         private string title;
         private string author;
         private int year;
-
+        public GenBook()
+        {
+            this.article = 0;
+            this.title = "Nothing";
+            this.author = "No Author";
+            this.year = 0;
+        }
         public GenBook(int article, string title, string author, int year) 
         {
             this.article = article;
