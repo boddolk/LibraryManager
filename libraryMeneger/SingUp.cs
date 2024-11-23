@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using libraryMeneger.Data.UserRepository;
 using libraryMeneger.user;
+ 
 
 
 namespace libraryMeneger
@@ -59,13 +61,17 @@ namespace libraryMeneger
             }
             else
             {
+                UserRepository repository = new UserRepository("UsersAndBooks.db"); ;
                 RegularUser newUser = new RegularUser(login, name, surname, password, mail, "noNumber");
 
-                // записуємо цього користувача у базу даних
-
-                UserForm form = new UserForm(newUser);
-                form.Show();
-                this.Close();
+                bool coorect = repository.insertNewUser(newUser);
+                if (coorect) 
+                {
+                    UserForm form = new UserForm(newUser);
+                    form.Show();
+                    this.Close();
+                }
+              
             }
 
 

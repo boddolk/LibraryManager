@@ -1,4 +1,5 @@
-﻿using libraryMeneger.user;
+﻿using libraryMeneger.Data.UserRepository;
+using libraryMeneger.user;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,18 +37,28 @@ namespace libraryMeneger
 
             if (result == DialogResult.Yes)
             {
+
                 currentUser.Name = NameTextBox.Text;
                 currentUser.Surname = SurnameTextBox.Text;
                 currentUser.PhoneNumber = PhoneTextBox.Text;
                 currentUser.Email = MailTextBox.Text;
 
+                UserRepository repository = new UserRepository("UsersAndBooks.db");
+
                 UserForm form = new UserForm(currentUser);
+                bool correct = repository.updateUser(currentUser);
 
-                //ТУТ ЗБЕРЕГТИ В БАЗУ
+                if (correct)
+                {
+                    form.Show();
+                    this.Close();
+                    Console.WriteLine("Коректно відредагувало");
 
-                form.Show();
-                this.Close();
-
+                }
+                else
+                {
+                    Console.WriteLine("Не відредагувало користувача");
+                }
             }
             if (result == DialogResult.No) 
             {

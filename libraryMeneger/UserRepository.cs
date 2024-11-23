@@ -274,16 +274,17 @@ namespace libraryMeneger.Data.UserRepository
                 connection.Open();
 
 
-                string query = "INSERT INTO Users (Login, Name, Surname, Email, Number, IsAdmin) VALUES ( @LoginV, @NameV, @SurnameV, @EmailV, @NumberV, @IsAdminV)";
+                string query = "INSERT INTO Users (Login, Name, Surname, Password, Email, Number, IsAdmin) VALUES ( @LoginV, @NameV, @SurnameV, @PasswordV, @EmailV, @NumberV, @IsAdminV)";
 
                 using (var command = new SQLiteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@NameV", newOne.Name);
                     command.Parameters.AddWithValue("@SurnameV", newOne.Surname);
                     command.Parameters.AddWithValue("@NumberV", newOne.PhoneNumber);
+                    command.Parameters.AddWithValue("@PasswordV", newOne.Password);
                     command.Parameters.AddWithValue("@LoginV", newOne.Login);
                     command.Parameters.AddWithValue("@EmailV", newOne.Email);
-                    command.Parameters.AddWithValue("@IsAdmin", newOne.IsAdmin);
+                    command.Parameters.AddWithValue("@IsAdminV", newOne.IsAdmin);
 
                     int rowsAffected = command.ExecuteNonQuery();                    
                     return rowsAffected > 0;
