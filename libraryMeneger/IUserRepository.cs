@@ -20,5 +20,6 @@ namespace libraryMeneger.Data.UserRepository
         public abstract string getPhoneNumber(string loginToCheck);
         public abstract string getEmail(string loginToCheck);
         public abstract string getPassword(string loginToCheck);
+        //треба методи для перезапису юзера (розібрати по полях все окрім логіна і пароля і замінити) (с) Монохромка
 }
 }

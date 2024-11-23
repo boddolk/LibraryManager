@@ -175,6 +175,7 @@
             this.EditProfilButton.TabIndex = 13;
             this.EditProfilButton.Text = "Edit profile";
             this.EditProfilButton.UseVisualStyleBackColor = true;
+            this.EditProfilButton.Click += new System.EventHandler(this.EditProfilButton_Click);
             // 
             // UserForm
             // 
@@ -198,6 +199,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "UserForm";
             this.Text = "UserForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserForm_FormClosing);
             this.Load += new System.EventHandler(this.UserForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

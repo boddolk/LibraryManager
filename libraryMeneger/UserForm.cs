@@ -39,5 +39,15 @@ namespace libraryMeneger
 
 
         }
+
+        private void UserForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void EditProfilButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
