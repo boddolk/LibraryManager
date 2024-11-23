@@ -1,4 +1,5 @@
-﻿using System;
+﻿using libraryMeneger.user;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,51 @@ namespace libraryMeneger
 {
     public partial class EditUserInfo : Form
     {
-        public EditUserInfo()
+        private RegularUser currentUser;
+
+        public EditUserInfo(RegularUser user)
         {
             InitializeComponent();
+            currentUser = user;
+
+            NameTextBox.Text = user.Name;
+            SurnameTextBox.Text = user.Surname;
+            PhoneTextBox.Text = user.PhoneNumber;
+            MailTextBox.Text = user.Email;
+        }
+
+        private void SubmitButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+        "Are you sure to submit?",
+        "Confirmation",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                currentUser.Name = NameTextBox.Text;
+                currentUser.Surname = SurnameTextBox.Text;
+                currentUser.PhoneNumber = PhoneTextBox.Text;
+                currentUser.Email = MailTextBox.Text;
+
+                UserForm form = new UserForm(currentUser);
+
+                //ТУТ ЗБЕРЕГТИ В БАЗУ
+
+                form.Show();
+                this.Close();
+
+            }
+            if (result == DialogResult.No) 
+            {
+                UserForm form = new UserForm(currentUser);
+                form.Show();
+                this.Close();
+
+            }
+
+
         }
     }
 }

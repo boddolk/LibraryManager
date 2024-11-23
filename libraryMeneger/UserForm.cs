@@ -19,6 +19,7 @@ namespace libraryMeneger
         {
             InitializeComponent(); 
             this.currentUser = user;
+            
 
             UsernameLabel.Text = user.Login;
             UsernameLabel.ForeColor = Color.Black;
@@ -36,18 +37,21 @@ namespace libraryMeneger
         private void UserForm_Load(object sender, EventArgs e)
         {
 
-
-
-        }
-
-        private void UserForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
         }
 
         private void EditProfilButton_Click(object sender, EventArgs e)
         {
-
+            EditUserInfo editUserInfo = new EditUserInfo(currentUser);
+            editUserInfo.Show();
+            this.Close();
         }
+
+        private void UserForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //Application.Exit();
+        }
+
+        
     }
 }
+
