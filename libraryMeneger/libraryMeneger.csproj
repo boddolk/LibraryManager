@@ -98,6 +98,18 @@
     </Compile>
     <Compile Include="BaseUser.cs" />
     <Compile Include="AdminUser.cs" />
+    <Compile Include="BookAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookAddForm.Designer.cs">
+      <DependentUpon>BookAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookEditForm.Designer.cs">
+      <DependentUpon>BookEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BooksRepository.cs" />
     <Compile Include="BookStatManager.cs" />
     <Compile Include="GenBook.cs" />
@@ -134,6 +146,12 @@
     <Compile Include="UserRepository.cs" />
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookAddForm.resx">
+      <DependentUpon>BookAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookEditForm.resx">
+      <DependentUpon>BookEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditUserInfo.resx">
       <DependentUpon>EditUserInfo.cs</DependentUpon>
