@@ -10,29 +10,32 @@ using System.Windows.Forms;
 using libraryMeneger.book;
 using libraryMeneger.Data.BookRepository;
 using libraryMeneger.Data.UserRepository;
+using libraryMeneger.Data.StatusRepository;
 using libraryMeneger.user;
+using System.Drawing.Imaging;
 
 namespace libraryMeneger
 {
     public partial class AdminForm : Form
     {
         AdminUser currentUser;
-        BooksRepository repository = new BooksRepository("UsersAndBooks.db");
+        BooksRepository repository = new BooksRepository();
+        StatusRepository statRepository = new StatusRepository();
+
         public AdminForm(AdminUser user)
         {
             
             InitializeComponent();
             this.Text = "Admin - " + user.Login;
 
-            BooksRepository repository = new BooksRepository("UsersAndBooks.db");
             List<GenBook> allBooks = repository.getAllBooks();
 
             if (allBooks.Count > 0)
             {
                 this.BookComboBox.Items.Insert(0, "Select the book:");
-                for (int i = 1; i < allBooks.Count; i++)
+                for (int i = 0; i < allBooks.Count; i++)
                 {
-                    this.BookComboBox.Items.Insert(i, allBooks[i].BookToString());
+                    this.BookComboBox.Items.Insert(i + 1, allBooks[i].BookToString());
                 }
             }
             else
@@ -74,41 +77,37 @@ namespace libraryMeneger
         {
             if (this.BookComboBox.SelectedIndex != 0)
             {
-                if (true/*перевірити, чи книга поточно не резервована/видана*/)
+                int article = int.Parse(this.currentArticleLabel.Text);
+                if (!statRepository.IsPresentInTable(article))
                 {
-                    if (true/*перепитати, чи дійшно хоче*/)
+                    DialogResult result = MessageBox.Show("Are you sure that you want to delete book with this article: " + article.ToString() + "?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
                     {
-                        int article = int.Parse(this.currentArticleLabel.Text);
-                        BooksRepository repository = new BooksRepository("UsersAndBooks.db");
                         if (repository.deleteBook(article))
                         {
-                            // успішно видалено
-                        }
-                        else 
-                        {
-                            // все погано // але чи доцільний елс
+                            this.BookComboBox.Items.RemoveAt(this.BookComboBox.SelectedIndex);
+                            this.BookComboBox.SelectedIndex = 0;
+                            MessageBox.Show("Book successfully added!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 }
                 else
                 {
-                    // WARNING!!!
-
+                    MessageBox.Show("The book is booked or issued!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else 
             {
-                // WARNING!!!
-
+                MessageBox.Show("Choose book!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void BookComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int article = int.Parse(new string(this.BookComboBox.SelectedItem.ToString().TakeWhile(char.IsDigit).ToArray()));
             if (this.BookComboBox.SelectedIndex != 0)
             {
-                BooksRepository repository = new BooksRepository("UsersAndBooks.db");
+                int article = int.Parse(new string(this.BookComboBox.SelectedItem.ToString().TakeWhile(char.IsDigit).ToArray()));
                 GenBook currentBook = repository.getBook(article);
                 this.currentArticleLabel.Text = currentBook.Article.ToString();
                 this.currentTitleLabel.Text = currentBook.Title.ToString();

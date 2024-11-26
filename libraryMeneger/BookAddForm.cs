@@ -16,6 +16,7 @@ namespace libraryMeneger
     public partial class BookAddForm : Form
     {
         AdminUser adminUser;
+        BooksRepository repository = new BooksRepository();
         public BookAddForm(AdminUser user)
         {
             InitializeComponent();
@@ -45,7 +46,8 @@ namespace libraryMeneger
 
                 GenBook book = new GenBook(article, title, autor, year);
 
-                BooksRepository repository = new BooksRepository("UsersAndBooks.db");
+                repository.insertBook(book);
+                // дописати перевірку
                 AdminForm form = new AdminForm(adminUser);
                 form.Show();
                 this.Close();
