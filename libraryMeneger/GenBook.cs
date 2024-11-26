@@ -54,7 +54,7 @@ namespace libraryMeneger.book
 
         public string BookToString()
         {
-            string item = this.article.ToString() + " | Title: " + this.title + "; Author: " + "; Year: " + this.year.ToString();
+            string item = this.article.ToString() + " | Title: " + this.title + "; Author: " + this.author + "; Year: " + this.year.ToString();
             return item;
         }
     }
