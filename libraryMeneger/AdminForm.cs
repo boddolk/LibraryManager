@@ -24,22 +24,23 @@ namespace libraryMeneger
             InitializeComponent();
             this.Text = "Admin - " + user.Login;
 
-
             BooksRepository repository = new BooksRepository("UsersAndBooks.db");
             List<GenBook> allBooks = repository.getAllBooks();
 
             if (allBooks.Count > 0)
             {
-                for (int i = 0; i < allBooks.Count; i++)
+                this.BookComboBox.Items.Insert(0, "Select the book:");
+                for (int i = 1; i < allBooks.Count; i++)
                 {
-                    this.BookComboBox.Items.Insert(i, allBooks[i].BookToString()); // шляпа
+                    this.BookComboBox.Items.Insert(i, allBooks[i].BookToString());
                 }
             }
-            else 
+            else
             {
                 this.BookComboBox.Items.Add("The library has no books!");
+                // Підкорегувати видимість полів
             }
-            
+            this.BookComboBox.SelectedIndex = 0;
         }
 
         private void AddButton_Click(object sender, EventArgs e)
@@ -71,20 +72,59 @@ namespace libraryMeneger
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
+            if (this.BookComboBox.SelectedIndex != 0)
+            {
+                if (true/*перевірити, чи книга поточно не резервована/видана*/)
+                {
+                    if (true/*перепитати, чи дійшно хоче*/)
+                    {
+                        int article = int.Parse(this.currentArticleLabel.Text);
+                        BooksRepository repository = new BooksRepository("UsersAndBooks.db");
+                        if (repository.deleteBook(article))
+                        {
+                            // успішно видалено
+                        }
+                        else 
+                        {
+                            // все погано // але чи доцільний елс
+                        }
+                    }
+                }
+                else
+                {
+                    // WARNING!!!
 
+                }
+            }
+            else 
+            {
+                // WARNING!!!
+
+            }
         }
 
         private void BookComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             int article = int.Parse(new string(this.BookComboBox.SelectedItem.ToString().TakeWhile(char.IsDigit).ToArray()));
-            
-            BooksRepository repository = new BooksRepository("UsersAndBooks.db");
-            GenBook currentBook = repository.getBook(article);
-            this.currentArticleLabel.Text = currentBook.Article.ToString();
-            this.currentTitleLabel.Text = currentBook.Title.ToString();
-            this.currentAuthorLabel.Text = currentBook.Author.ToString();
-            this.currentYearLabel.Text = currentBook.Year.ToString();
-            this.currentStatusLabel.Text = "ZATICHKA _ UVAGA";
+            if (this.BookComboBox.SelectedIndex != 0)
+            {
+                BooksRepository repository = new BooksRepository("UsersAndBooks.db");
+                GenBook currentBook = repository.getBook(article);
+                this.currentArticleLabel.Text = currentBook.Article.ToString();
+                this.currentTitleLabel.Text = currentBook.Title.ToString();
+                this.currentAuthorLabel.Text = currentBook.Author.ToString();
+                this.currentYearLabel.Text = currentBook.Year.ToString();
+                this.currentStatusLabel.Text = "ZATICHKA _ UVAGA";
+            }
+            else 
+            {
+                // Колір та видимість
+                this.currentArticleLabel.Text = "Empty article";
+                this.currentTitleLabel.Text = "Empty title";
+                this.currentAuthorLabel.Text = "Empty author";
+                this.currentYearLabel.Text = "Empty year";
+                this.currentStatusLabel.Text = "Empty status";
+            }
         }
     }
 }
