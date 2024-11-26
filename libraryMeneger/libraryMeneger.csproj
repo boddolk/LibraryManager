@@ -113,6 +113,7 @@
     </Compile>
     <Compile Include="BooksRepository.cs" />
     <Compile Include="BookStatManager.cs" />
+    <Compile Include="BorrowHistoryRepository.cs" />
     <Compile Include="GenBook.cs" />
     <Compile Include="DataAccess.cs" />
     <Compile Include="EditUserInfo.cs">
@@ -122,6 +123,7 @@
       <DependentUpon>EditUserInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="IBooksRepository.cs" />
+    <Compile Include="IBorrowHistoryRepository.cs" />
     <Compile Include="IStatusRepository.cs" />
     <Compile Include="IUserRepository.cs" />
     <Compile Include="LogInForm.cs">
