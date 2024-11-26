@@ -133,6 +133,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegularUser.cs" />
+    <Compile Include="ReturnBookForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReturnBookForm.Designer.cs">
+      <DependentUpon>ReturnBookForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SingUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,12 @@
       <DependentUpon>SingUp.cs</DependentUpon>
     </Compile>
     <Compile Include="StatusRepository.cs" />
+    <Compile Include="ToIssueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToIssueForm.Designer.cs">
+      <DependentUpon>ToIssueForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,8 +184,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <EmbeddedResource Include="ReturnBookForm.resx">
+      <DependentUpon>ReturnBookForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SingUp.resx">
       <DependentUpon>SingUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToIssueForm.resx">
+      <DependentUpon>ToIssueForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>
