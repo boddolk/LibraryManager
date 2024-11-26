@@ -61,7 +61,7 @@ namespace libraryMeneger
             }
             else
             {
-                UserRepository repository = new UserRepository("UsersAndBooks.db"); ;
+                UserRepository repository = new UserRepository(); ;
                 RegularUser newUser = new RegularUser(login, name, surname, password, mail, "noNumber");
 
                 bool coorect = repository.insertNewUser(newUser);

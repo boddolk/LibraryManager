@@ -33,7 +33,7 @@ namespace libraryMeneger
 
 
 
-            UserRepository repository = new UserRepository("UsersAndBooks.db");
+            UserRepository repository = new UserRepository();
 
             bool correct = false;
             // ЗАМІСТЬ ЗНАЧЕНЬ ТРУ — РЗУЛЬТАТ МЕТОДІВ //сМонохромка

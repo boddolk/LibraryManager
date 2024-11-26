@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Data.SQLite;
+using System.Configuration;
+using System.Xml;
 
 namespace libraryMeneger.Data
 {
@@ -9,9 +11,11 @@ namespace libraryMeneger.Data
         public static string PPath = "";
         public static void TestDatabaseConnection()
         {
+            string DBFileName = ConfigurationManager.AppSettings["DBFileName"];
+
             PPath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
             
-            string dbPath = Path.Combine(PPath, "UsersAndBooks.db");          
+            string dbPath = Path.Combine(PPath, DBFileName);          
             try
             {
                 using (var connection = new SQLiteConnection($"Data Source={dbPath};Connect Timeout=600"))
