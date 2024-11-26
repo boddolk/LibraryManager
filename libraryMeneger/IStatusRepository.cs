@@ -1,4 +1,4 @@
-﻿using System;
+﻿  using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.IO;
@@ -17,5 +17,7 @@ namespace libraryMeneger.Data.StatusRepository
         public abstract bool  IsPresentInTable(int article);
         public abstract bool IsReserved(int article);
         public abstract bool IsIssued(int article);
+        public abstract bool addBookWithItsStatus( string userID, BookStatManager manager);
+        public abstract bool removeBookWithItsStatus(int article);
     }
 }
