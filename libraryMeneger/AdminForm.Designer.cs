@@ -81,6 +81,7 @@
             this.EditButton.TabIndex = 3;
             this.EditButton.Text = "Edit Book";
             this.EditButton.UseVisualStyleBackColor = true;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // DeleteButton
             // 
@@ -90,6 +91,7 @@
             this.DeleteButton.TabIndex = 4;
             this.DeleteButton.Text = "Delete Book";
             this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // NameLabel
             // 
