@@ -61,17 +61,30 @@ namespace libraryMeneger
 
         private void EditButton_Click(object sender, EventArgs e)
         {
-            //замінити
-            int arcticle = Convert.ToInt32(ArticleTextBox.Text);
-            BookEditForm form = new BookEditForm(repository.getBook(arcticle), currentUser);
-            form.Show();
-            this.Close();
+            ////замінити
+            //int arcticle = Convert.ToInt32(ArticleTextBox.Text);
+            //BookEditForm form = new BookEditForm(repository.getBook(arcticle), currentUser);
+            //form.Show();
+            //this.Close();
 
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BookComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int article = int.Parse(new string(this.BookComboBox.SelectedItem.ToString().TakeWhile(char.IsDigit).ToArray()));
+            
+            BooksRepository repository = new BooksRepository("UsersAndBooks.db");
+            GenBook currentBook = repository.getBook(article);
+            this.currentArticleLabel.Text = currentBook.Article.ToString();
+            this.currentTitleLabel.Text = currentBook.Title.ToString();
+            this.currentAuthorLabel.Text = currentBook.Author.ToString();
+            this.currentYearLabel.Text = currentBook.Year.ToString();
+            this.currentStatusLabel.Text = "ZATICHKA _ UVAGA";
         }
     }
 }
