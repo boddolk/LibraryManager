@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using System.Data.SQLite;
 using System.IO;
 using libraryMeneger.user;
+using System.Configuration;
+
 
 namespace libraryMeneger.Data.UserRepository
 {
@@ -14,8 +16,11 @@ namespace libraryMeneger.Data.UserRepository
     {
         private string dbPath;
         private SQLiteConnection connection;
-        public UserRepository(string DBFileName)
+        public UserRepository()
         {
+            string DBFileName = ConfigurationManager.AppSettings["DBFileName"];
+            
+
             dbPath = Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), DBFileName);
             connection = new SQLiteConnection($"Data Source={dbPath};Connect Timeout=600");
         }

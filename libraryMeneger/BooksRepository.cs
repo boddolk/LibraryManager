@@ -6,17 +6,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
 using System.IO;
-using libraryMeneger.book;
-using libraryMeneger.user;
 
+
+using System.Configuration;
+using libraryMeneger.book;
 namespace libraryMeneger.Data.BookRepository
 {
     public class BooksRepository: IBooksRepository
     {
         private string dbPath;
         private SQLiteConnection connection;
-        public BooksRepository(string DBFileName)           
+        public BooksRepository()           
         {
+            string DBFileName = ConfigurationManager.AppSettings["DBFileName"];
             dbPath = Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), DBFileName);
             connection = new SQLiteConnection($"Data Source={dbPath};Connect Timeout=600");
         }

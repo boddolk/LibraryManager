@@ -59,6 +59,7 @@
       <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite, Version=1.0.119.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net46\System.Data.SQLite.dll</HintPath>
@@ -109,6 +110,7 @@
       <DependentUpon>EditUserInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="IBooksRepository.cs" />
+    <Compile Include="IStatusRepository.cs" />
     <Compile Include="IUserRepository.cs" />
     <Compile Include="LogInForm.cs">
       <SubType>Form</SubType>
@@ -125,6 +127,7 @@
     <Compile Include="SingUp.Designer.cs">
       <DependentUpon>SingUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="StatusRepository.cs" />
     <Compile Include="UserForm.cs">
       <SubType>Form</SubType>
     </Compile>

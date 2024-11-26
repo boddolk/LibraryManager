@@ -43,7 +43,7 @@ namespace libraryMeneger
                 currentUser.PhoneNumber = PhoneTextBox.Text;
                 currentUser.Email = MailTextBox.Text;
 
-                UserRepository repository = new UserRepository("UsersAndBooks.db");
+                UserRepository repository = new UserRepository();
 
                 UserForm form = new UserForm(currentUser);
                 bool correct = repository.updateUser(currentUser);
