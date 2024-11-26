@@ -26,7 +26,8 @@ namespace libraryMeneger
         {
             
             InitializeComponent();
-            this.Text = "Admin - " + user.Login;
+            currentUser = user;
+            this.Text = "Admin - " + currentUser.Login;
 
             List<GenBook> allBooks = repository.getAllBooks();
 
@@ -50,6 +51,7 @@ namespace libraryMeneger
         {
            BookAddForm bookAddForm = new BookAddForm(currentUser);
             bookAddForm.Show();
+            this.Close();
 
         }
 
@@ -60,16 +62,14 @@ namespace libraryMeneger
 
         private void AdminForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
         }
 
         private void EditButton_Click(object sender, EventArgs e)
         {
-            ////замінити
-            //int arcticle = Convert.ToInt32(ArticleTextBox.Text);
-            //BookEditForm form = new BookEditForm(repository.getBook(arcticle), currentUser);
-            //form.Show();
-            //this.Close();
+            int arcticle = Convert.ToInt32(currentArticleLabel.Text);
+            BookEditForm form = new BookEditForm(repository.getBook(arcticle), currentUser);
+            form.Show();
+            this.Close();
 
         }
 

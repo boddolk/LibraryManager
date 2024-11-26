@@ -37,36 +37,51 @@ namespace libraryMeneger
 
             if (result == DialogResult.Yes)
             {
+                if (NameTextBox.Text.Length > 0 && 
+                    SurnameTextBox.Text.Length > 0 &&
+                    PhoneTextBox.Text.Length >0 &&
+                    MailTextBox.Text.Length > 0)
+                {
+
 
                 currentUser.Name = NameTextBox.Text;
                 currentUser.Surname = SurnameTextBox.Text;
                 currentUser.PhoneNumber = PhoneTextBox.Text;
                 currentUser.Email = MailTextBox.Text;
 
+
+
                 UserRepository repository = new UserRepository();
 
                 UserForm form = new UserForm(currentUser);
                 bool correct = repository.updateUser(currentUser);
 
-                if (correct)
+                    if (correct)
+                    {
+                        form.Show();
+                        this.Close();
+                        Console.WriteLine("Коректно відредагувало");
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("Не відредагувало");
+                    }
+                }
+                if (result == DialogResult.No)
                 {
+                    UserForm form = new UserForm(currentUser);
                     form.Show();
                     this.Close();
-                    Console.WriteLine("Коректно відредагувало");
 
                 }
-                else
+
+            }
+            else
                 {
-                    Console.WriteLine("Не відредагувало користувача");
-                }
-            }
-            if (result == DialogResult.No) 
-            {
-                UserForm form = new UserForm(currentUser);
-                form.Show();
-                this.Close();
+                    MessageBox.Show("There are empty fields. Editing is not possible.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-            }
+                }
 
 
         }
