@@ -51,5 +51,11 @@ namespace libraryMeneger.book
             get { return year; }
             set { year = value; }
         }
+
+        public string BookToString()
+        {
+            string item = this.article.ToString() + " | Title: " + this.title + "; Author: " + "; Year: " + this.year.ToString();
+            return item;
+        }
     }
 }
