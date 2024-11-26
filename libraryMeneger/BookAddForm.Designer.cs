@@ -43,6 +43,11 @@
             // YearNumer
             // 
             this.YearNumer.Location = new System.Drawing.Point(105, 118);
+            this.YearNumer.Maximum = new decimal(new int[] {
+            2025,
+            0,
+            0,
+            0});
             this.YearNumer.Name = "YearNumer";
             this.YearNumer.Size = new System.Drawing.Size(321, 22);
             this.YearNumer.TabIndex = 22;

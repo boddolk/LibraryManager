@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.StatusComboBox = new System.Windows.Forms.ComboBox();
             this.YearNumer = new System.Windows.Forms.NumericUpDown();
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.AuthorTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.StatusLabel = new System.Windows.Forms.Label();
             this.AuthorLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
             this.EditButton = new System.Windows.Forms.Button();
@@ -42,17 +40,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.YearNumer)).BeginInit();
             this.SuspendLayout();
             // 
-            // StatusComboBox
-            // 
-            this.StatusComboBox.FormattingEnabled = true;
-            this.StatusComboBox.Location = new System.Drawing.Point(105, 141);
-            this.StatusComboBox.Name = "StatusComboBox";
-            this.StatusComboBox.Size = new System.Drawing.Size(322, 24);
-            this.StatusComboBox.TabIndex = 25;
-            // 
             // YearNumer
             // 
             this.YearNumer.Location = new System.Drawing.Point(105, 110);
+            this.YearNumer.Maximum = new decimal(new int[] {
+            2025,
+            0,
+            0,
+            0});
             this.YearNumer.Name = "YearNumer";
             this.YearNumer.Size = new System.Drawing.Size(322, 22);
             this.YearNumer.TabIndex = 24;
@@ -80,15 +75,6 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "Year:";
             // 
-            // StatusLabel
-            // 
-            this.StatusLabel.AutoSize = true;
-            this.StatusLabel.Location = new System.Drawing.Point(13, 144);
-            this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(47, 16);
-            this.StatusLabel.TabIndex = 19;
-            this.StatusLabel.Text = "Status:";
-            // 
             // AuthorLabel
             // 
             this.AuthorLabel.AutoSize = true;
@@ -109,7 +95,7 @@
             // 
             // EditButton
             // 
-            this.EditButton.Location = new System.Drawing.Point(16, 183);
+            this.EditButton.Location = new System.Drawing.Point(16, 152);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(411, 40);
             this.EditButton.TabIndex = 26;
@@ -139,15 +125,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(435, 235);
+            this.ClientSize = new System.Drawing.Size(435, 211);
             this.Controls.Add(this.currentArticle);
             this.Controls.Add(this.EditButton);
-            this.Controls.Add(this.StatusComboBox);
             this.Controls.Add(this.YearNumer);
             this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.AuthorTextBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.StatusLabel);
             this.Controls.Add(this.ArticleLabel);
             this.Controls.Add(this.AuthorLabel);
             this.Controls.Add(this.NameLabel);
@@ -160,13 +144,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox StatusComboBox;
         private System.Windows.Forms.NumericUpDown YearNumer;
         private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.TextBox AuthorTextBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label StatusLabel;
         private System.Windows.Forms.Label AuthorLabel;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Button EditButton;

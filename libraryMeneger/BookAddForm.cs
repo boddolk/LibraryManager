@@ -31,35 +31,47 @@ namespace libraryMeneger
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(
-            "Are you sure to submit?",
-            "Confirmation",
-            MessageBoxButtons.YesNo,
-            MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
+            if (ArticleTextBox.Text.Length > 0 &&
+                NameTextBox.Text.Length > 0 &&
+                AuthorTextBox.Text.Length > 0 &&
+                YearNumer.Text.Length > 0)
             {
-                int article = Convert.ToInt32(ArticleTextBox.Text);
-                string title = NameTextBox.Text;
-                string autor = ArticleTextBox.Text;
-                int year = Convert.ToInt32(YearNumer.Text);
 
-                GenBook book = new GenBook(article, title, autor, year);
+                    DialogResult result = MessageBox.Show(
+                "Are you sure to submit?",
+                "Confirmation",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
 
-                repository.insertBook(book);
-                // дописати перевірку
-                AdminForm form = new AdminForm(adminUser);
-                form.Show();
-                this.Close();
+                if (result == DialogResult.Yes)
+                {
+
+                    int article = Convert.ToInt32(ArticleTextBox.Text);
+                    string title = NameTextBox.Text;
+                    string autor = AuthorTextBox.Text;
+                    int year = Convert.ToInt32(YearNumer.Text);
+
+                    GenBook book = new GenBook(article, title, autor, year);
+
+                    repository.insertBook(book);
+                    // дописати перевірку
+                    AdminForm form = new AdminForm(adminUser);
+                    form.Show();
+                    this.Close();
+                }
+
+                if (result == DialogResult.No)
+                {
+                    AdminForm form = new AdminForm(adminUser);
+                    form.Show();
+                    this.Close();
+                }
             }
-
-            if (result == DialogResult.No) 
+            else
             {
-                AdminForm form = new AdminForm(adminUser);
-                form.Show();
-                this.Close(); 
-            }
+                MessageBox.Show("Go fun yourself", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
+            }
         }
     }
 }
