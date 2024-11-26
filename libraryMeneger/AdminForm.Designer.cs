@@ -39,7 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.currentArticleLabel = new System.Windows.Forms.Label();
-            this.currenttitleLabel = new System.Windows.Forms.Label();
+            this.currentTitleLabel = new System.Windows.Forms.Label();
             this.currentAuthorLabel = new System.Windows.Forms.Label();
             this.currentYearLabel = new System.Windows.Forms.Label();
             this.currentStatusLabel = new System.Windows.Forms.Label();
@@ -149,14 +149,14 @@
             this.currentArticleLabel.TabIndex = 17;
             this.currentArticleLabel.Text = "Empty article";
             // 
-            // currenttitleLabel
+            // currentTitleLabel
             // 
-            this.currenttitleLabel.AutoSize = true;
-            this.currenttitleLabel.Location = new System.Drawing.Point(154, 122);
-            this.currenttitleLabel.Name = "currenttitleLabel";
-            this.currenttitleLabel.Size = new System.Drawing.Size(68, 16);
-            this.currenttitleLabel.TabIndex = 18;
-            this.currenttitleLabel.Text = "Empty title";
+            this.currentTitleLabel.AutoSize = true;
+            this.currentTitleLabel.Location = new System.Drawing.Point(154, 122);
+            this.currentTitleLabel.Name = "currentTitleLabel";
+            this.currentTitleLabel.Size = new System.Drawing.Size(68, 16);
+            this.currentTitleLabel.TabIndex = 18;
+            this.currentTitleLabel.Text = "Empty title";
             // 
             // currentAuthorLabel
             // 
@@ -212,7 +212,7 @@
             this.Controls.Add(this.currentStatusLabel);
             this.Controls.Add(this.currentYearLabel);
             this.Controls.Add(this.currentAuthorLabel);
-            this.Controls.Add(this.currenttitleLabel);
+            this.Controls.Add(this.currentTitleLabel);
             this.Controls.Add(this.currentArticleLabel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
@@ -247,7 +247,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label currentArticleLabel;
-        private System.Windows.Forms.Label currenttitleLabel;
+        private System.Windows.Forms.Label currentTitleLabel;
         private System.Windows.Forms.Label currentAuthorLabel;
         private System.Windows.Forms.Label currentYearLabel;
         private System.Windows.Forms.Label currentStatusLabel;

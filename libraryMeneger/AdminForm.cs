@@ -81,7 +81,7 @@ namespace libraryMeneger
             BooksRepository repository = new BooksRepository("UsersAndBooks.db");
             GenBook currentBook = repository.getBook(article);
             this.currentArticleLabel.Text = currentBook.Article.ToString();
-            this.currenttitleLabel.Text = currentBook.Title.ToString();
+            this.currentTitleLabel.Text = currentBook.Title.ToString();
             this.currentAuthorLabel.Text = currentBook.Author.ToString();
             this.currentYearLabel.Text = currentBook.Year.ToString();
             this.currentStatusLabel.Text = "ZATICHKA _ UVAGA";
