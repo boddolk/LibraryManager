@@ -15,5 +15,7 @@ namespace libraryMeneger.Data.BorrowHistory
     {
         protected IBorrowHistoryRepository() { }
         public abstract bool addHistory(string login, int article, DateTime borrowDate, DateTime returnDate);
+        public abstract List<Tuple<string, DateTime, DateTime>> getUserHistory(string login);
+
     }
 }

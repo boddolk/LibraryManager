@@ -53,5 +53,45 @@ namespace libraryMeneger.Data.BorrowHistory
                 connection.Close();
             }
         }
+        public override List<Tuple<string, DateTime, DateTime>> getUserHistory(string login)
+        {
+            List<Tuple<string, DateTime, DateTime>> history = null;
+            try
+            {
+                connection.Open();
+
+                string query = "SELECT BookID, BorrowDate, ReturnDate FROM Borrow_History WHERE UserID = @Value";
+
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+
+                            var item = Tuple.Create(
+                                reader["BookID"].ToString(),
+                                Convert.ToDateTime(reader["BorrowDate"]), 
+                                Convert.ToDateTime(reader["ReturnDate"]));
+                            history.Add(item);
+                        }
+                        if (history.Count>0)
+                        {
+                            return history;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Error during retriving list of books from data base");
+                            return null;
+                        }
+                    }
+                }
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
 }
