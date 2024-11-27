@@ -1,4 +1,7 @@
-﻿using libraryMeneger.user;
+﻿using libraryMeneger.book;
+using libraryMeneger.Data.BookRepository;
+using libraryMeneger.Data.StatusRepository;
+using libraryMeneger.user;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +17,8 @@ namespace libraryMeneger
     public partial class ReservePlus : Form
     {
         RegularUser currentUser;
+        BooksRepository repository = new BooksRepository();
+        StatusRepository statusRepository = new StatusRepository();
 
         public ReservePlus(RegularUser user)
         {
@@ -21,22 +26,49 @@ namespace libraryMeneger
             InitializeComponent();
             CurrentDateTimePicker.Value = DateTime.Today;
             EndDateTimePicker.Value = CurrentDateTimePicker.Value.AddDays(3);
+            List<GenBook> allBooks = repository.getAvailableBooksForBooking();
+            if (allBooks.Count > 0)
+            {
+               BookComboBox.Items.Insert(0, "Select the book:");
+                for (int i = 0; i < allBooks.Count; i++) 
+                {
+                    BookComboBox.Items.Insert(i+1, allBooks[i].BookToString());
+                }
+            }
+            else
+            {
+                BookComboBox.SelectedIndex = 0;
+            }
+
         }
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
+            int article;
             //стягувати з комбо бокса книжку
+            if (BookComboBox.SelectedIndex != 0)
+            {
+                article = int.Parse(new string(this.BookComboBox.SelectedItem.ToString().TakeWhile(char.IsDigit).ToArray()));
+                    
+                    //стягувати дати
+                DateTime current = CurrentDateTimePicker.Value;
+                DateTime end = EndDateTimePicker.Value;
+            
+                    //формувати менеджер
+                BookStatManager manager =new BookStatManager(article, current, end, true, false);
 
-            //стягувати дати
+                    //піхаєм в базу
+                statusRepository.addBookWithItsStatus(currentUser.Login, manager);
 
-            //формувати менеджер
+                    //вихід
+                UserForm form = new UserForm(currentUser);
+                form.Show();
+                this.Close();
 
-            //вихід
+            }
 
-            UserForm form = new UserForm(currentUser);
-            form.Show();
-            this.Close();
-
+           
+           
 
         }
     }

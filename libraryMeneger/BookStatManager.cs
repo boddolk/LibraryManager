@@ -8,25 +8,25 @@ namespace libraryMeneger.book
 {
     public class BookStatManager
     {
-        private GenBook curBook;
+        int article;
         private DateTime startDate;
         private DateTime endDate;
         private bool reserveStatus;
         private bool issueStatus;
 
-        public BookStatManager(int article, string title, string author, int year, DateTime startDate, DateTime endDate, bool reserveStatus, bool issueStatus)
+        public BookStatManager(int myarticle, DateTime startDate, DateTime endDate, bool reserveStatus, bool issueStatus)
         {
-            curBook = new GenBook(article, title, author, year);
+            this.article = myarticle;
             this.startDate = startDate;
             this.endDate = endDate;
             this.reserveStatus = reserveStatus;
             this.issueStatus = issueStatus;
         }
 
-        public GenBook CurrentBook
+        public int Article
         {
-            get { return curBook; }
-            set { curBook = value; }
+            get { return article; }
+            set { article = value; }
         }
 
         public DateTime StartDate

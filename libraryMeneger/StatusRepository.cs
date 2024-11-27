@@ -107,7 +107,7 @@ namespace libraryMeneger.Data.StatusRepository
                 using (var command = new SQLiteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@UserIDV", userID);
-                    command.Parameters.AddWithValue("@BookIDV", manager.CurrentBook);                   
+                    command.Parameters.AddWithValue("@BookIDV", manager.Article);                   
                     command.Parameters.AddWithValue("@StartDateV", manager.StartDate);
                     command.Parameters.AddWithValue("@EndDateV", manager.EndDate);
                     command.Parameters.AddWithValue("@ReserveStatusV", manager.ReserveStatus);
