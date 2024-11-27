@@ -166,6 +166,7 @@
             this.ReservedButton.TabIndex = 12;
             this.ReservedButton.Text = "Reserved a book";
             this.ReservedButton.UseVisualStyleBackColor = true;
+            this.ReservedButton.Click += new System.EventHandler(this.ReservedButton_Click);
             // 
             // EditProfilButton
             // 
