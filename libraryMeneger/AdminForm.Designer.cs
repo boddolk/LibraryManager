@@ -55,6 +55,7 @@
             this.GiveOutButton.TabIndex = 0;
             this.GiveOutButton.Text = "To issue";
             this.GiveOutButton.UseVisualStyleBackColor = true;
+            this.GiveOutButton.Click += new System.EventHandler(this.GiveOutButton_Click);
             // 
             // BookComboBox
             // 
