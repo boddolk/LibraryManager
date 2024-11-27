@@ -182,11 +182,97 @@ namespace libraryMeneger.Data.StatusRepository
         }
         public override List<BookStatManager> getIssuedBookInfo()
         {
-           
+           List<BookStatManager> bookStatManagers = new List<BookStatManager>();
+          
+            try
+            {
+                connection.Open();
+
+                string query = "SELECT BookID, StartDate, EndDate, ReserveStatus, IssueStatus FROM  Book_status_table WHERE IssueStatus = 1";
+
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            BookStatManager manager = new BookStatManager
+                            {
+                                Article = Convert.ToInt32(reader["BookID"]),
+                                StartDate = Convert.ToDateTime(reader["StartDate"]),
+                                EndDate= Convert.ToDateTime(reader["EndDate"]),
+                                ReserveStatus = Convert.ToBoolean(reader["ReserveStatus"]),
+                                IssueStatus = Convert.ToBoolean(reader["IssueStatus"])
+
+                            };
+
+                            bookStatManagers.Add(manager);
+
+                        }
+                        if (bookStatManagers.Count > 0)
+                        {
+                            return bookStatManagers;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Error during retriving list of books from data base");
+                            return null;
+                        }
+                    }
+                }
+            }
+
+            finally
+            {
+                connection.Close();
+            }
         }
         public override List<BookStatManager> getReservedBookInfo()
         {
+            List<BookStatManager> bookStatManagers = new List<BookStatManager>();
 
+            try
+            {
+                connection.Open();
+
+                string query = "SELECT BookID, StartDate, EndDate, ReserveStatus, IssueStatus FROM  Book_status_table WHERE ReserveStatus = 1";
+
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            BookStatManager manager = new BookStatManager
+                            {
+                                Article = Convert.ToInt32(reader["BookID"]),
+                                StartDate = Convert.ToDateTime(reader["StartDate"]),
+                                EndDate = Convert.ToDateTime(reader["EndDate"]),
+                                ReserveStatus = Convert.ToBoolean(reader["ReserveStatus"]),
+                                IssueStatus = Convert.ToBoolean(reader["IssueStatus"])
+
+                            };
+
+                            bookStatManagers.Add(manager);
+
+                        }
+                        if (bookStatManagers.Count > 0)
+                        {
+                            return bookStatManagers;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Error during retriving list of books from data base");
+                            return null;
+                        }
+                    }
+                }
+            }
+
+            finally
+            {
+                connection.Close();
+            }
         }
     }
     
