@@ -185,5 +185,48 @@ namespace libraryMeneger.Data.BookRepository
                 connection.Close();
             }
         }
+        public override List<GenBook> getAvailableBooksForBooking()
+        {
+            List<GenBook> books = new List<GenBook>();
+            try
+            {
+                connection.Open();
+
+                string query = "SELECT * FROM Books WHERE Article NOT IN (SELECT BookID FROM Book_status_table)";
+
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            GenBook book = new GenBook
+                            {
+                                Article = Convert.ToInt32(reader["Article"]),
+                                Title = reader["Title"].ToString(),
+                                Author = reader["Author"].ToString(),
+                                Year = Convert.ToInt32(reader["Year"].ToString())
+                            };
+                            books.Add(book);
+
+                        }
+                        if (books.Count > 0)
+                        {
+                            return books;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Error during retriving list of books from data base");
+                            return null;
+                        }
+                    }
+                }
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
 }
