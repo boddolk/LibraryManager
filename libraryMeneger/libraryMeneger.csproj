@@ -140,6 +140,7 @@
     </Compile>
     <Compile Include="ReservePlus.Designer.cs">
       <DependentUpon>ReservePlus.cs</DependentUpon>
+	</Compile>
     <Compile Include="ReturnBookForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +194,7 @@
     <None Include="packages.config" />
     <EmbeddedResource Include="ReservePlus.resx">
       <DependentUpon>ReservePlus.cs</DependentUpon>
+	</EmbeddedResource>
     <EmbeddedResource Include="ReturnBookForm.resx">
       <DependentUpon>ReturnBookForm.cs</DependentUpon>
     </EmbeddedResource>

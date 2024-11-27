@@ -14,6 +14,7 @@ namespace libraryMeneger
     public partial class ReservePlus : Form
     {
         RegularUser currentUser;
+
         public ReservePlus(RegularUser user)
         {
             currentUser = user;
