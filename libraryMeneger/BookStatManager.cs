@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace libraryMeneger.book
 {
+    
     public class BookStatManager
     {
         int article;
@@ -13,7 +14,10 @@ namespace libraryMeneger.book
         private DateTime endDate;
         private bool reserveStatus;
         private bool issueStatus;
+        public  BookStatManager()
+         {
 
+         }
         public BookStatManager(int myarticle, DateTime startDate, DateTime endDate, bool reserveStatus, bool issueStatus)
         {
             this.article = myarticle;
