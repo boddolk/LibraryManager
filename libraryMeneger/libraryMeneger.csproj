@@ -113,6 +113,7 @@
     </Compile>
     <Compile Include="BooksRepository.cs" />
     <Compile Include="BookStatManager.cs" />
+    <Compile Include="BorrowHistoryRepository.cs" />
     <Compile Include="GenBook.cs" />
     <Compile Include="DataAccess.cs" />
     <Compile Include="EditUserInfo.cs">
@@ -122,6 +123,7 @@
       <DependentUpon>EditUserInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="IBooksRepository.cs" />
+    <Compile Include="IBorrowHistoryRepository.cs" />
     <Compile Include="IStatusRepository.cs" />
     <Compile Include="IUserRepository.cs" />
     <Compile Include="LogInForm.cs">
@@ -138,6 +140,11 @@
     </Compile>
     <Compile Include="ReservePlus.Designer.cs">
       <DependentUpon>ReservePlus.cs</DependentUpon>
+    <Compile Include="ReturnBookForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReturnBookForm.Designer.cs">
+      <DependentUpon>ReturnBookForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SingUp.cs">
       <SubType>Form</SubType>
@@ -146,6 +153,12 @@
       <DependentUpon>SingUp.cs</DependentUpon>
     </Compile>
     <Compile Include="StatusRepository.cs" />
+    <Compile Include="ToIssueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToIssueForm.Designer.cs">
+      <DependentUpon>ToIssueForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,9 +193,14 @@
     <None Include="packages.config" />
     <EmbeddedResource Include="ReservePlus.resx">
       <DependentUpon>ReservePlus.cs</DependentUpon>
+    <EmbeddedResource Include="ReturnBookForm.resx">
+      <DependentUpon>ReturnBookForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SingUp.resx">
       <DependentUpon>SingUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToIssueForm.resx">
+      <DependentUpon>ToIssueForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>
