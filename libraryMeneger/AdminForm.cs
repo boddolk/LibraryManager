@@ -131,5 +131,12 @@ namespace libraryMeneger
             form.Show();
             this.Close();
         }
+
+        private void returnButton_Click(object sender, EventArgs e)
+        {
+            ReturnBookForm form = new ReturnBookForm(currentUser);
+            form.Show();
+            this.Close();
+        }
     }
 }

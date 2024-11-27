@@ -37,7 +37,7 @@
             this.AuthorLabel = new System.Windows.Forms.Label();
             this.ArticleLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.returnButton = new System.Windows.Forms.Button();
             this.currentArticleLabel = new System.Windows.Forms.Label();
             this.currentTitleLabel = new System.Windows.Forms.Label();
             this.currentAuthorLabel = new System.Windows.Forms.Label();
@@ -132,14 +132,15 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Year:";
             // 
-            // button1
+            // returnButton
             // 
-            this.button1.Location = new System.Drawing.Point(362, 301);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 38);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Returne book";
-            this.button1.UseVisualStyleBackColor = true;
+            this.returnButton.Location = new System.Drawing.Point(362, 301);
+            this.returnButton.Name = "returnButton";
+            this.returnButton.Size = new System.Drawing.Size(128, 38);
+            this.returnButton.TabIndex = 16;
+            this.returnButton.Text = "Return book";
+            this.returnButton.UseVisualStyleBackColor = true;
+            this.returnButton.Click += new System.EventHandler(this.returnButton_Click);
             // 
             // currentArticleLabel
             // 
@@ -215,7 +216,7 @@
             this.Controls.Add(this.currentAuthorLabel);
             this.Controls.Add(this.currentTitleLabel);
             this.Controls.Add(this.currentArticleLabel);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.returnButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.StatusLabel);
             this.Controls.Add(this.ArticleLabel);
@@ -246,7 +247,7 @@
         private System.Windows.Forms.Label AuthorLabel;
         private System.Windows.Forms.Label ArticleLabel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button returnButton;
         private System.Windows.Forms.Label currentArticleLabel;
         private System.Windows.Forms.Label currentTitleLabel;
         private System.Windows.Forms.Label currentAuthorLabel;
