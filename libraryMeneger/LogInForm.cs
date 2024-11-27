@@ -22,8 +22,9 @@ namespace libraryMeneger
         public LogInForm()
         {
             InitializeComponent();
-           
 
+            this.LogInTextBox.Text = "user1_admin";
+            this.PasswordTextBox.Text = "12345678";
         }
 
 

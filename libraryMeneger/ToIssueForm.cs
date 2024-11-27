@@ -22,19 +22,21 @@ namespace libraryMeneger
 
         public ToIssueForm(AdminUser user)
         {
-
             InitializeComponent();
             adminUser = user;
-                                     // ПЕРЕРОБИТИ для резервованих книг
-            List<GenBook> reservedBooks = repository.getAllBooks();
 
-            if (reservedBooks.Count > 0)
+            string Title;
+            string UserLogin;
+            List<BookStatManager> reservedBooks = statRepository.getReservedBookInfo();
+
+            if (reservedBooks != null)
             {
-                // 
                 this.reserveComboBox.Items.Insert(0, "Select the reserve:");
                 for (int i = 0; i < reservedBooks.Count; i++)
                 {
-                    this.reserveComboBox.Items.Insert(i + 1, reservedBooks[i].BookToString());
+                    Title = repository.getBook(reservedBooks[i].Article).Title;
+                    UserLogin = statRepository.getUserIDByArticle(reservedBooks[i].Article);
+                    this.reserveComboBox.Items.Insert(i + 1, reservedBooks[i].GetToStringStatus(Title, UserLogin));
                 }
             }
             else
@@ -46,10 +48,12 @@ namespace libraryMeneger
             DateTime currentDate = DateTime.Now.Date;
 
             this.currentDateLabel.Text = currentDate.ToString("dd.MM.yyyy");
-            //this.endDateTimePicker.Value = currentDate.AddDays(1);
 
-            this.endDateTimePicker.MinDate = currentDate;
+            this.endDateTimePicker.MinDate = currentDate.AddDays(1);
             this.endDateTimePicker.MaxDate = currentDate.AddYears(1);
+
+            this.endDateTimePicker.CustomFormat = "dd.MM.yyyy";
+            this.endDateTimePicker.Format = DateTimePickerFormat.Custom;
         }
 
         private void confirmButton_Click(object sender, EventArgs e)
@@ -58,6 +62,17 @@ namespace libraryMeneger
             {
                 int article = int.Parse(new string(this.reserveComboBox.SelectedItem.ToString().TakeWhile(char.IsDigit).ToArray()));
 
+                DialogResult result = MessageBox.Show("Are you sure that you want to issue book with this article: " + article.ToString() + "?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    if (true/*переведення статусу( резервований - - > виданий )*/)
+                    {
+                        this.reserveComboBox.Items.RemoveAt(this.reserveComboBox.SelectedIndex);
+                        this.reserveComboBox.SelectedIndex = 0;
+                        MessageBox.Show("Book successfully issued for user: < " + statRepository.getUserIDByArticle(article) + " >!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
             }
             else
             {
