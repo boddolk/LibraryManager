@@ -19,6 +19,8 @@ namespace libraryMeneger.Data.StatusRepository
         public abstract bool IsIssued(int article);
         public abstract bool addBookWithItsStatus( string userID, BookStatManager manager);
         public abstract bool removeBookWithItsStatus(int article);
-       
+        public abstract string getUserIDByArticle(int article);
+        public abstract List<BookStatManager> getReservedBookInfo();
+        public abstract List<BookStatManager> getIssuedBookInfo();
     }
 }

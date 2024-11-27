@@ -107,7 +107,7 @@ namespace libraryMeneger.Data.StatusRepository
                 using (var command = new SQLiteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@UserIDV", userID);
-                    command.Parameters.AddWithValue("@BookIDV", manager.CurrentBook);                   
+                    command.Parameters.AddWithValue("@BookIDV", manager.CurrentBook.Article);                   
                     command.Parameters.AddWithValue("@StartDateV", manager.StartDate);
                     command.Parameters.AddWithValue("@EndDateV", manager.EndDate);
                     command.Parameters.AddWithValue("@ReserveStatusV", manager.ReserveStatus);
@@ -150,6 +150,43 @@ namespace libraryMeneger.Data.StatusRepository
             {
                 connection.Close();
             }
+        }
+        public override string getUserIDByArticle(int article)
+        {
+            try
+            {
+                connection.Open();
+
+                string query = "SELECT UserID FROM Book_status_table WHERE BookID = @Value";
+
+                using (var command = new SQLiteCommand(query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@Value", article);
+
+                    var result = command.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return Convert.ToString(result);
+                    }
+                    else
+                    {
+                        return "";
+                    }
+                }
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        public override List<BookStatManager> getIssuedBookInfo()
+        {
+           
+        }
+        public override List<BookStatManager> getReservedBookInfo()
+        {
+
         }
     }
     
