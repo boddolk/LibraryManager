@@ -13,7 +13,7 @@ namespace libraryMeneger.Data.BorrowHistory
 {
     public abstract class IBorrowHistoryRepository
     {
-        public IBorrowHistoryRepository() { }
-
+        protected IBorrowHistoryRepository() { }
+        public abstract bool addHistory(string login, int article, DateTime borrowDate, DateTime returnDate);
     }
 }

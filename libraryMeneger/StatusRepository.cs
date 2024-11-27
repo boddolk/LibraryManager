@@ -274,6 +274,29 @@ namespace libraryMeneger.Data.StatusRepository
                 connection.Close();
             }
         }
+        public override bool changeToIssued(int article)
+        {
+            try
+            {
+                connection.Open();
+
+                string query = "UPDATE Book_status_table SET ReserveStatus = 0, IssueStatus = 1  WHERE Article = @ArticleV";
+
+                using (var command = new SQLiteCommand(query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@ArticleV", article);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+                    Console.WriteLine($"{rowsAffected} row(s) deleted.");
+                    return rowsAffected > 0;
+                }
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
     
     }
