@@ -274,18 +274,20 @@ namespace libraryMeneger.Data.StatusRepository
                 connection.Close();
             }
         }
-        public override bool changeToIssued(int article)
+        public override bool changeToIssued(int article, DateTime startDate, DateTime endDate)
         {
             try
             {
                 connection.Open();
 
-                string query = "UPDATE Book_status_table SET ReserveStatus = 0, IssueStatus = 1  WHERE UserID = @ArticleV";
+                string query = "UPDATE Book_status_table SET StartDate =@StartDateV, EndDate=@EndDateV, ReserveStatus = 0, IssueStatus = 1 WHERE UserID = @ArticleV";
 
                 using (var command = new SQLiteCommand(query, connection))
                 {
 
                     command.Parameters.AddWithValue("@ArticleV", article);
+                    command.Parameters.AddWithValue("@StartDateV", startDate);
+                    command.Parameters.AddWithValue("@EndDateV", endDate);
 
                     int rowsAffected = command.ExecuteNonQuery();
                     Console.WriteLine($"{rowsAffected} row(s) deleted.");
