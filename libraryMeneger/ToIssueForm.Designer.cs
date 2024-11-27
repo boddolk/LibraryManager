@@ -35,8 +35,9 @@
             this.currentDateLabel = new System.Windows.Forms.Label();
             this.endDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.confirmButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.endLabel = new System.Windows.Forms.Label();
+            this.startLabel = new System.Windows.Forms.Label();
+            this.exitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // reserveComboBox
@@ -96,38 +97,50 @@
             // 
             // confirmButton
             // 
-            this.confirmButton.Location = new System.Drawing.Point(480, 168);
+            this.confirmButton.Location = new System.Drawing.Point(365, 168);
             this.confirmButton.Name = "confirmButton";
             this.confirmButton.Size = new System.Drawing.Size(111, 36);
             this.confirmButton.TabIndex = 6;
             this.confirmButton.Text = "Confirm";
             this.confirmButton.UseVisualStyleBackColor = true;
+            this.confirmButton.Click += new System.EventHandler(this.confirmButton_Click);
             // 
-            // label1
+            // endLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 186);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 16);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "End date:";
+            this.endLabel.AutoSize = true;
+            this.endLabel.Location = new System.Drawing.Point(35, 186);
+            this.endLabel.Name = "endLabel";
+            this.endLabel.Size = new System.Drawing.Size(64, 16);
+            this.endLabel.TabIndex = 7;
+            this.endLabel.Text = "End date:";
             // 
-            // label2
+            // startLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(34, 142);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 16);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Start date:";
+            this.startLabel.AutoSize = true;
+            this.startLabel.Location = new System.Drawing.Point(34, 142);
+            this.startLabel.Name = "startLabel";
+            this.startLabel.Size = new System.Drawing.Size(67, 16);
+            this.startLabel.TabIndex = 8;
+            this.startLabel.Text = "Start date:";
+            // 
+            // exitButton
+            // 
+            this.exitButton.Location = new System.Drawing.Point(480, 168);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(111, 36);
+            this.exitButton.TabIndex = 9;
+            this.exitButton.Text = "Exit";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // ToIssueForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(627, 232);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.startLabel);
+            this.Controls.Add(this.endLabel);
             this.Controls.Add(this.confirmButton);
             this.Controls.Add(this.endDateTimePicker);
             this.Controls.Add(this.currentDateLabel);
@@ -151,7 +164,8 @@
         private System.Windows.Forms.Label currentDateLabel;
         private System.Windows.Forms.DateTimePicker endDateTimePicker;
         private System.Windows.Forms.Button confirmButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label endLabel;
+        private System.Windows.Forms.Label startLabel;
+        private System.Windows.Forms.Button exitButton;
     }
 }

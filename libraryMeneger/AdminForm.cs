@@ -24,7 +24,6 @@ namespace libraryMeneger
 
         public AdminForm(AdminUser user)
         {
-            
             InitializeComponent();
             currentUser = user;
             this.Text = "Admin - " + currentUser.Login;
@@ -124,6 +123,13 @@ namespace libraryMeneger
                 this.currentYearLabel.Text = "Empty year";
                 this.currentStatusLabel.Text = "Empty status";
             }
+        }
+
+        private void GiveOutButton_Click(object sender, EventArgs e)
+        {
+            ToIssueForm form = new ToIssueForm(currentUser);
+            form.Show();
+            this.Close();
         }
     }
 }
