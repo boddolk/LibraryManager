@@ -25,7 +25,13 @@ namespace libraryMeneger
             currentUser = user;
             InitializeComponent();
             CurrentDateTimePicker.Value = DateTime.Today;
+            CurrentDateTimePicker.CustomFormat = "dd.MM.yyyy";
+            CurrentDateTimePicker.Format = DateTimePickerFormat.Custom;
+
             EndDateTimePicker.Value = CurrentDateTimePicker.Value.AddDays(3);
+            EndDateTimePicker.CustomFormat = "dd.MM.yyyy";
+            EndDateTimePicker.Format = DateTimePickerFormat.Custom;
+
             List<GenBook> allBooks = repository.getAvailableBooksForBooking();
             if (allBooks.Count > 0)
             {
