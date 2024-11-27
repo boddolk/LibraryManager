@@ -51,7 +51,12 @@ namespace libraryMeneger
             //Application.Exit();
         }
 
-        
+        private void ReservedButton_Click(object sender, EventArgs e)
+        {
+            ReservePlus form = new ReservePlus(currentUser);
+            form.Show();
+            this.Close();
+        }
     }
 }
 
