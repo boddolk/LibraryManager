@@ -17,6 +17,6 @@ namespace libraryMeneger.Data.BookRepository
         public abstract bool insertBook(GenBook newBook);
         public abstract bool deleteBook(int article);
         public abstract List<GenBook> getAllBooks();
-
+        public abstract List<GenBook> getAvailableBooksForBooking();
     }
 }
