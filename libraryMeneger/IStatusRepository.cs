@@ -22,6 +22,6 @@ namespace libraryMeneger.Data.StatusRepository
         public abstract string getUserIDByArticle(int article);
         public abstract List<BookStatManager> getReservedBookInfo();
         public abstract List<BookStatManager> getIssuedBookInfo();
-        public abstract bool changeToIssued(int article);
+        public abstract bool changeToIssued(int article, DateTime startDate, DateTime endDate);
     }
 }

@@ -59,16 +59,16 @@ namespace libraryMeneger.Data.BorrowHistory
             try
             {
                 connection.Open();
-
                 string query = "SELECT BookID, BorrowDate, ReturnDate FROM Borrow_History WHERE UserID = @Value";
-
+               
                 using (var command = new SQLiteCommand(query, connection))
-                {
+                { 
+                    command.Parameters.AddWithValue("@Value", login);
                     using (var reader = command.ExecuteReader())
                     {
+                      
                         while (reader.Read())
                         {
-
                             var item = Tuple.Create(
                                 reader["BookID"].ToString(),
                                 Convert.ToDateTime(reader["BorrowDate"]), 
