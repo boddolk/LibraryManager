@@ -23,5 +23,6 @@ namespace libraryMeneger.Data.StatusRepository
         public abstract List<BookStatManager> getReservedBookInfo();
         public abstract List<BookStatManager> getIssuedBookInfo();
         public abstract bool changeToIssued(int article, DateTime startDate, DateTime endDate);
+        public abstract BookStatManager GetBookStatManager(int article);
     }
 }

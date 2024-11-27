@@ -299,6 +299,48 @@ namespace libraryMeneger.Data.StatusRepository
                 connection.Close();
             }
         }
+        public override BookStatManager GetBookStatManager(int article)
+        {
+            try
+            {
+                connection.Open();
+
+                string query = "SELECT BookID, StartDate, EndDate, ReserveStatus, IssueStatus FROM  Book_status_table WHERE BookID = @Value";
+
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Value", article);
+                    using (var reader = command.ExecuteReader())
+                    {                        
+                            BookStatManager manager = new BookStatManager
+                            {
+                                Article = Convert.ToInt32(reader["BookID"]),
+                                StartDate = Convert.ToDateTime(reader["StartDate"]),
+                                EndDate = Convert.ToDateTime(reader["EndDate"]),
+                                ReserveStatus = Convert.ToBoolean(reader["ReserveStatus"]),
+                                IssueStatus = Convert.ToBoolean(reader["IssueStatus"])
+
+                            };                 
+
+                        
+                        if (manager!=null)
+                        {
+                            return manager;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Error during retriving data");
+                            return null;
+                        }
+                    }
+                }
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
     
     }
