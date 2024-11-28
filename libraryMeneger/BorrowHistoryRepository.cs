@@ -75,7 +75,7 @@ namespace libraryMeneger.Data.BorrowHistory
                                 Convert.ToDateTime(reader["ReturnDate"]));
                             history.Add(item);
                         }
-                        if (history.Count>0)
+                        if (history != null) // АГРИЛОСЯ НА ПЕРЕВІРКУ, ЗАМІНИВ НА NULL!!!
                         {
                             return history;
                         }
