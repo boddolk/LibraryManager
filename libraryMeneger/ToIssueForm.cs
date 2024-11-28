@@ -31,12 +31,12 @@ namespace libraryMeneger
 
             if (reservedBooks != null)
             {
-                this.reserveComboBox.Items.Insert(0, "Select the reserve:");
-                for (int i = 0; i < reservedBooks.Count; i++)
+                this.reserveComboBox.Items.Add("Select the reserve:");
+                foreach (BookStatManager reservedBook in reservedBooks)
                 {
-                    Title = repository.getBook(reservedBooks[i].Article).Title;
-                    UserLogin = statRepository.getUserIDByArticle(reservedBooks[i].Article);
-                    this.reserveComboBox.Items.Insert(i + 1, reservedBooks[i].GetToStringStatus(Title, UserLogin));
+                    Title = repository.getBook(reservedBook.Article).Title;
+                    UserLogin = statRepository.getUserIDByArticle(reservedBook.Article);
+                    this.reserveComboBox.Items.Add(reservedBook.GetToStringStatus(Title, UserLogin));
                 }
             }
             else
@@ -56,17 +56,66 @@ namespace libraryMeneger
             this.endDateTimePicker.Format = DateTimePickerFormat.Custom;
         }
 
+        private void filterButton_Click(object sender, EventArgs e)
+        {
+            string Title;
+            string UserLogin = this.filterTextBox.Text;
+            if (UserLogin.Length != 0) // Якщо логін не пустий то перейте до видобування резервованих за юзером
+            {
+                List<BookStatManager> resBooksForUser = statRepository.getStatManagersByUser(UserLogin);
+                
+                this.reserveComboBox.Items.Clear();
+                if (resBooksForUser != null)
+                {
+                    this.reserveComboBox.Items.Add("Select the reserve:");
+                    foreach (BookStatManager resUserBook in resBooksForUser)
+                    {
+                        if (resUserBook.ReserveStatus == true)
+                        {
+                            Title = repository.getBook(resUserBook.Article).Title; // ПЕРЕРОБИТИ ПІД НОВИЙ МЕТОД ДЛЯ КНИГИ(ПОВЕРТАТИ НЕ КНИГУ, А САМЕ ТАЙТЛ)
+                            UserLogin = statRepository.getUserIDByArticle(resUserBook.Article);
+                            this.reserveComboBox.Items.Add(resUserBook.GetToStringStatus(Title, UserLogin));
+                        }
+                    }
+                }
+                else
+                {
+                    this.reserveComboBox.Items.Add("The library has no reserved books!");
+                }
+            }
+            else
+            {
+                List<BookStatManager> reservedBooks = statRepository.getReservedBookInfo();
+
+                if (reservedBooks != null)
+                {
+                    this.reserveComboBox.Items.Add("Select the reserve:");
+                    foreach (BookStatManager reservedBook in reservedBooks)
+                    {
+                        Title = repository.getBook(reservedBook.Article).Title; ///////////////////////////////////////////////////////////
+                        UserLogin = statRepository.getUserIDByArticle(reservedBook.Article);
+                        this.reserveComboBox.Items.Add(reservedBook.GetToStringStatus(Title, UserLogin));
+                    }
+                }
+                else
+                {
+                    this.reserveComboBox.Items.Add("The library has no reserved books!");
+                }
+            }
+            this.reserveComboBox.SelectedIndex = 0;
+        }
         private void confirmButton_Click(object sender, EventArgs e)
         {
             if (this.reserveComboBox.SelectedIndex != 0)
             {
                 int article = int.Parse(new string(this.reserveComboBox.SelectedItem.ToString().TakeWhile(char.IsDigit).ToArray()));
+                DateTime startRentDate = DateTime.Now.Date;
+                DateTime endRentTime = this.endDateTimePicker.Value;
 
                 DialogResult result = MessageBox.Show("Are you sure that you want to issue book with this article: " + article.ToString() + "?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
                 if (result == DialogResult.Yes)
                 {
-                    if (true/*переведення статусу( резервований - - > виданий )*/)
+                    if (statRepository.changeToIssued(article, startRentDate, endRentTime))
                     {
                         this.reserveComboBox.Items.RemoveAt(this.reserveComboBox.SelectedIndex);
                         this.reserveComboBox.SelectedIndex = 0;
