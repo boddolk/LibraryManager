@@ -19,10 +19,8 @@ namespace libraryMeneger
     public partial class HistoryForm : Form
     {
         RegularUser CurrentUser;
-        BooksRepository BooksRepository;
-        BorrowHistoryRepository historyRepository;
-
-
+        BooksRepository BooksRepository = new BooksRepository();
+        BorrowHistoryRepository historyRepository = new BorrowHistoryRepository();
 
         public HistoryForm(RegularUser user)
         {
@@ -30,18 +28,25 @@ namespace libraryMeneger
             CurrentUser = user;
 
             int Article;
-          
-            List<Tuple<int, DateTime, DateTime>> managers = historyRepository.getUserHistory(CurrentUser.Login);
+            List<Tuple<int, DateTime, DateTime>> History = historyRepository.getUserHistory(CurrentUser.Login);
 
-            foreach (Tuple<int, DateTime, DateTime> manager in managers)
+            if (History != null)
             {
-                Article = manager.Item1;
-                string historyPath = Article.ToString()
-                    + " | Title: " + BooksRepository.getBookTitle(Article) 
-                    + "; Author: " + BooksRepository.getBook(Article).Author 
-                    + "; Start date: " + manager.Item2.ToString("dd.MM.yyyy") 
-                    + "; End date: " + manager.Item3.ToString("dd.MM.yyyy");
-                HistoryBox.Items.Add(historyPath);
+                foreach (Tuple<int, DateTime, DateTime> manager in History)
+                {
+                    Article = manager.Item1;
+                    string historyPath = Article.ToString()
+                        + " | Title: " + BooksRepository.getBookTitle(Article)
+                        + "; Author: " + BooksRepository.getBook(Article).Author
+                        + "; Start date: " + manager.Item2.ToString("dd.MM.yyyy")
+                        + "; End date: " + manager.Item3.ToString("dd.MM.yyyy");
+                    HistoryBox.Items.Add(historyPath);
+                }
+            }
+            else
+            {
+                HistoryBox.Items.Add("Your books history is empty:(");
+                HistoryBox.Items.Add("Reserve books and hurry up to read!!!");
             }
         }
 
@@ -50,11 +55,6 @@ namespace libraryMeneger
             UserForm form = new UserForm(CurrentUser);
             form.Show();
             this.Close();
-        }
-
-        private void HistoryForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -25,7 +25,6 @@ namespace libraryMeneger
         {
             InitializeComponent(); 
             this.currentUser = user;
-            
 
             UsernameLabel.Text = user.Login;
             UsernameLabel.ForeColor = Color.Black;
@@ -41,16 +40,20 @@ namespace libraryMeneger
             string Title;
             List<BookStatManager> managers = repository.getStatManagersByUser(currentUser.Login);
 
-            foreach (BookStatManager manager in managers)
+            if (managers != null)
             {
-                Title = booksRepository.getBookTitle(manager.Article);
-                BookListBox.Items.Add(manager.GetToStringForHistory(Title));
+                foreach (BookStatManager manager in managers)
+                {
+                    Title = booksRepository.getBookTitle(manager.Article);
+                    BookListBox.Items.Add(manager.GetToStringForHistory(Title));
+                }
             }
-        }
-
-        private void UserForm_Load(object sender, EventArgs e)
-        {
-
+            else
+            {
+                BookListBox.Items.Add("You currently have no reserved");
+                BookListBox.Items.Add("or borrowed books:(");
+                BookListBox.Items.Add("Click reserve and choose:(");
+            }
         }
 
         private void EditProfilButton_Click(object sender, EventArgs e)
@@ -58,11 +61,6 @@ namespace libraryMeneger
             EditUserInfo editUserInfo = new EditUserInfo(currentUser);
             editUserInfo.Show();
             this.Close();
-        }
-
-        private void UserForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //Application.Exit();
         }
 
         private void ReservedButton_Click(object sender, EventArgs e)
@@ -77,6 +75,11 @@ namespace libraryMeneger
             HistoryForm form = new HistoryForm(currentUser);
             form.Show();
             this.Close();
+        }
+
+        private void UserForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //Application.Exit();
         }
     }
 }
