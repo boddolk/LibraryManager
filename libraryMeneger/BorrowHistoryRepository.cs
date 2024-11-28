@@ -53,9 +53,9 @@ namespace libraryMeneger.Data.BorrowHistory
                 connection.Close();
             }
         }
-        public override List<Tuple<string, DateTime, DateTime>> getUserHistory(string login)
+        public override List<Tuple<int, DateTime, DateTime>> getUserHistory(string login)
         {
-            List<Tuple<string, DateTime, DateTime>> history = null;
+            List<Tuple<int, DateTime, DateTime>> history = null;
             try
             {
                 connection.Open();
@@ -70,7 +70,7 @@ namespace libraryMeneger.Data.BorrowHistory
                         while (reader.Read())
                         {
                             var item = Tuple.Create(
-                                reader["BookID"].ToString(),
+                                Convert.ToInt32(reader["BookID"]),
                                 Convert.ToDateTime(reader["BorrowDate"]), 
                                 Convert.ToDateTime(reader["ReturnDate"]));
                             history.Add(item);
