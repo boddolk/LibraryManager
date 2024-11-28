@@ -25,7 +25,6 @@ namespace libraryMeneger
         public ReturnBookForm(AdminUser user)
         {
             InitializeComponent();
-
             adminUser = user;
 
             string Title;
@@ -34,12 +33,12 @@ namespace libraryMeneger
 
             if (issuedBooks != null)
             {
-                this.issuedComboBox.Items.Insert(0, "Select the issued:");
-                for (int i = 0; i < issuedBooks.Count; i++)
+                this.issuedComboBox.Items.Add("Select the issued:");
+                foreach (BookStatManager issuedBook in issuedBooks)
                 {
-                    Title = repository.getBook(issuedBooks[i].Article).Title;
-                    UserLogin = statRepository.getUserIDByArticle(issuedBooks[i].Article);
-                    this.issuedComboBox.Items.Insert(i + 1, issuedBooks[i].GetToStringStatus(Title, UserLogin));
+                    Title = repository.getBookTitle(issuedBook.Article);
+                    UserLogin = statRepository.getUserIDByArticle(issuedBook.Article);
+                    this.issuedComboBox.Items.Add(issuedBook.GetToStringStatus(Title, UserLogin));
                 }
             }
             else
@@ -47,10 +46,53 @@ namespace libraryMeneger
                 this.issuedComboBox.Items.Add("The library has no issued books!");
             }
             this.issuedComboBox.SelectedIndex = 0;
+        }
 
-            //DateTime currentDate = DateTime.Now.Date;
-            //this.cStartDatelabel.Text = "Start date empty";
-            //this.cEndDatelabel.Text = "End date empty";
+        private void filterButton_Click(object sender, EventArgs e)
+        {
+            string Title;
+            string UserLogin = this.filterTextBox.Text;
+            this.issuedComboBox.Items.Clear(); // очистка поточного комбача
+            if (UserLogin.Length != 0) // Якщо логін не пустий то перейте до видобування орендованих за юзером
+            {
+                List<BookStatManager> issuBooksForUser = statRepository.getStatManagersByUser(UserLogin);
+                if (issuBooksForUser != null)
+                {
+                    this.issuedComboBox.Items.Add("Select the reserve:");
+                    foreach (BookStatManager issuUserBook in issuBooksForUser)
+                    {
+                        if (issuUserBook.IssueStatus == true)
+                        {
+                            Title = repository.getBookTitle(issuUserBook.Article);
+                            UserLogin = statRepository.getUserIDByArticle(issuUserBook.Article);
+                            this.issuedComboBox.Items.Add(issuUserBook.GetToStringStatus(Title, UserLogin));
+                        }
+                    }
+                }
+                else
+                {
+                    this.issuedComboBox.Items.Add("The library has no reserved books!");
+                }
+            }
+            else
+            {
+                List<BookStatManager> issuedBooks = statRepository.getIssuedBookInfo();
+                if (issuedBooks != null)
+                {
+                    this.issuedComboBox.Items.Add("Select the issued:");
+                    foreach (BookStatManager issuedBook in issuedBooks)
+                    {
+                        Title = repository.getBookTitle(issuedBook.Article);
+                        UserLogin = statRepository.getUserIDByArticle(issuedBook.Article);
+                        this.issuedComboBox.Items.Add(issuedBook.GetToStringStatus(Title, UserLogin));
+                    }
+                }
+                else
+                {
+                    this.issuedComboBox.Items.Add("The library has no issued books!");
+                }
+            }
+            this.issuedComboBox.SelectedIndex = 0;
         }
 
         private void issuedComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -58,10 +100,9 @@ namespace libraryMeneger
             if (this.issuedComboBox.SelectedIndex != 0)
             {
                 int article = int.Parse(new string(this.issuedComboBox.SelectedItem.ToString().TakeWhile(char.IsDigit).ToArray()));
-                BookStatManager currentIssuedBook = new BookStatManager(); // затичка!!!!!!!!!!!!!!
+                BookStatManager currentIssuedBook = statRepository.GetBookStatManager(article);
                 DateTime startDate = currentIssuedBook.StartDate;
                 DateTime endDate = currentIssuedBook.EndDate;
-
                 this.cStartDatelabel.Text = startDate.ToString("dd.MM.yyyy");
                 this.cEndDatelabel.Text = endDate.ToString("dd.MM.yyyy");
                 
@@ -89,7 +130,7 @@ namespace libraryMeneger
             if (this.issuedComboBox.SelectedIndex != 0)
             {
                 int article = int.Parse(new string(this.issuedComboBox.SelectedItem.ToString().TakeWhile(char.IsDigit).ToArray()));
-                BookStatManager currentIssuedBook = new BookStatManager(); // затичка!!!!!!!!!!!!!!
+                BookStatManager currentIssuedBook = statRepository.GetBookStatManager(article);
                 string Login = statRepository.getUserIDByArticle(article);
                 DateTime startDate = currentIssuedBook.StartDate;
                 DateTime endDate = currentIssuedBook.EndDate;
@@ -97,17 +138,15 @@ namespace libraryMeneger
                 {
                     if (statRepository.removeBookWithItsStatus(article))
                     {
-                        // Привітання
+                        this.issuedComboBox.Items.RemoveAt(this.issuedComboBox.SelectedIndex);
+                        this.issuedComboBox.SelectedIndex = 0;
+                        MessageBox.Show("Book successfully returned to the library!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                }
-                else
-                {
-                    // деякі трабли
                 }
             }
             else
             {
-                // виберіть книгу!!!
+                MessageBox.Show("Choose book!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

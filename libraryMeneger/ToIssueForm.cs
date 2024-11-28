@@ -34,7 +34,7 @@ namespace libraryMeneger
                 this.reserveComboBox.Items.Add("Select the reserve:");
                 foreach (BookStatManager reservedBook in reservedBooks)
                 {
-                    Title = repository.getBook(reservedBook.Article).Title;
+                    Title = repository.getBookTitle(reservedBook.Article);
                     UserLogin = statRepository.getUserIDByArticle(reservedBook.Article);
                     this.reserveComboBox.Items.Add(reservedBook.GetToStringStatus(Title, UserLogin));
                 }
@@ -72,7 +72,7 @@ namespace libraryMeneger
                     {
                         if (resUserBook.ReserveStatus == true)
                         {
-                            Title = repository.getBook(resUserBook.Article).Title; // ПЕРЕРОБИТИ ПІД НОВИЙ МЕТОД ДЛЯ КНИГИ(ПОВЕРТАТИ НЕ КНИГУ, А САМЕ ТАЙТЛ)
+                            Title = repository.getBookTitle(resUserBook.Article);
                             UserLogin = statRepository.getUserIDByArticle(resUserBook.Article);
                             this.reserveComboBox.Items.Add(resUserBook.GetToStringStatus(Title, UserLogin));
                         }
@@ -92,7 +92,7 @@ namespace libraryMeneger
                     this.reserveComboBox.Items.Add("Select the reserve:");
                     foreach (BookStatManager reservedBook in reservedBooks)
                     {
-                        Title = repository.getBook(reservedBook.Article).Title; ///////////////////////////////////////////////////////////
+                        Title = repository.getBookTitle(reservedBook.Article);
                         UserLogin = statRepository.getUserIDByArticle(reservedBook.Article);
                         this.reserveComboBox.Items.Add(reservedBook.GetToStringStatus(Title, UserLogin));
                     }
