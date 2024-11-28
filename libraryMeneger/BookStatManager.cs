@@ -64,5 +64,11 @@ namespace libraryMeneger.book
             string item = this.article.ToString() + " | Title: " + title + "; User login: " + login + "; End date: " + this.endDate.ToString("dd.MM.yyyy");
             return item;
         }
+
+        public string GetToStringForHistory(string title)
+        {
+            string item = this.article.ToString() + " | Title: " + title + "; End date: " + this.endDate.ToString("dd.MM.yyyy");
+            return item;
+        }
     }
 }
