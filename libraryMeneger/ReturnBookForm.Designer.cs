@@ -43,7 +43,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 143);
+            this.label2.Location = new System.Drawing.Point(33, 143);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 16);
             this.label2.TabIndex = 17;
@@ -52,7 +52,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 185);
+            this.label1.Location = new System.Drawing.Point(34, 185);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 16);
             this.label1.TabIndex = 16;
@@ -60,7 +60,7 @@
             // 
             // returnMenuButton
             // 
-            this.returnMenuButton.Location = new System.Drawing.Point(365, 168);
+            this.returnMenuButton.Location = new System.Drawing.Point(367, 168);
             this.returnMenuButton.Name = "returnMenuButton";
             this.returnMenuButton.Size = new System.Drawing.Size(111, 36);
             this.returnMenuButton.TabIndex = 15;
@@ -73,7 +73,7 @@
             this.cStartDatelabel.AutoSize = true;
             this.cStartDatelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cStartDatelabel.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.cStartDatelabel.Location = new System.Drawing.Point(103, 136);
+            this.cStartDatelabel.Location = new System.Drawing.Point(105, 136);
             this.cStartDatelabel.Name = "cStartDatelabel";
             this.cStartDatelabel.Size = new System.Drawing.Size(161, 24);
             this.cStartDatelabel.TabIndex = 13;
@@ -81,25 +81,26 @@
             // 
             // filterButton
             // 
-            this.filterButton.Location = new System.Drawing.Point(477, 72);
+            this.filterButton.Location = new System.Drawing.Point(479, 72);
             this.filterButton.Name = "filterButton";
             this.filterButton.Size = new System.Drawing.Size(111, 34);
             this.filterButton.TabIndex = 12;
             this.filterButton.Text = "Filter";
             this.filterButton.UseVisualStyleBackColor = true;
+            this.filterButton.Click += new System.EventHandler(this.filterButton_Click);
             // 
             // filtParemetrLabel
             // 
             this.filtParemetrLabel.AutoSize = true;
-            this.filtParemetrLabel.Location = new System.Drawing.Point(32, 81);
+            this.filtParemetrLabel.Location = new System.Drawing.Point(34, 81);
             this.filtParemetrLabel.Name = "filtParemetrLabel";
-            this.filtParemetrLabel.Size = new System.Drawing.Size(48, 16);
+            this.filtParemetrLabel.Size = new System.Drawing.Size(71, 16);
             this.filtParemetrLabel.TabIndex = 11;
-            this.filtParemetrLabel.Text = "Author:";
+            this.filtParemetrLabel.Text = "User login:";
             // 
             // filterTextBox
             // 
-            this.filterTextBox.Location = new System.Drawing.Point(86, 78);
+            this.filterTextBox.Location = new System.Drawing.Point(111, 78);
             this.filterTextBox.Name = "filterTextBox";
             this.filterTextBox.Size = new System.Drawing.Size(333, 22);
             this.filterTextBox.TabIndex = 10;
@@ -107,7 +108,7 @@
             // issuedComboBox
             // 
             this.issuedComboBox.FormattingEnabled = true;
-            this.issuedComboBox.Location = new System.Drawing.Point(35, 30);
+            this.issuedComboBox.Location = new System.Drawing.Point(37, 30);
             this.issuedComboBox.Name = "issuedComboBox";
             this.issuedComboBox.Size = new System.Drawing.Size(553, 24);
             this.issuedComboBox.TabIndex = 9;
@@ -118,7 +119,7 @@
             this.cEndDatelabel.AutoSize = true;
             this.cEndDatelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cEndDatelabel.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.cEndDatelabel.Location = new System.Drawing.Point(103, 179);
+            this.cEndDatelabel.Location = new System.Drawing.Point(105, 179);
             this.cEndDatelabel.Name = "cEndDatelabel";
             this.cEndDatelabel.Size = new System.Drawing.Size(160, 24);
             this.cEndDatelabel.TabIndex = 18;
@@ -126,7 +127,7 @@
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(477, 168);
+            this.exitButton.Location = new System.Drawing.Point(479, 168);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(111, 36);
             this.exitButton.TabIndex = 19;
@@ -138,7 +139,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(623, 238);
+            this.ClientSize = new System.Drawing.Size(627, 232);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.cEndDatelabel);
             this.Controls.Add(this.label2);

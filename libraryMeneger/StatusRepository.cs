@@ -305,13 +305,15 @@ namespace libraryMeneger.Data.StatusRepository
             {
                 connection.Open();
 
-                string query = "SELECT BookID, StartDate, EndDate, ReserveStatus, IssueStatus FROM  Book_status_table WHERE BookID = @Value";
+                string query = "SELECT BookID, StartDate, EndDate, ReserveStatus, IssueStatus FROM Book_status_table WHERE BookID = @Value";
 
                 using (var command = new SQLiteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Value", article);
                     using (var reader = command.ExecuteReader())
-                    {                        
+                    {
+                        if (reader.Read()) 
+                        {
                             BookStatManager manager = new BookStatManager
                             {
                                 Article = Convert.ToInt32(reader["BookID"]),
@@ -319,14 +321,9 @@ namespace libraryMeneger.Data.StatusRepository
                                 EndDate = Convert.ToDateTime(reader["EndDate"]),
                                 ReserveStatus = Convert.ToBoolean(reader["ReserveStatus"]),
                                 IssueStatus = Convert.ToBoolean(reader["IssueStatus"])
-
-                            };                 
-
-                        
-                        if (manager!=null)
-                        {
+                            };
                             return manager;
-                        }
+                        }                                      
                         else
                         {
                             Console.WriteLine("Error during retriving data");
