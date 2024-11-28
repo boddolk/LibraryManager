@@ -42,6 +42,7 @@
             this.BookListBox = new System.Windows.Forms.ListBox();
             this.ReservedButton = new System.Windows.Forms.Button();
             this.EditProfilButton = new System.Windows.Forms.Button();
+            this.HistoryButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // PersonalInfoLabel
@@ -162,7 +163,7 @@
             // 
             this.ReservedButton.Location = new System.Drawing.Point(24, 381);
             this.ReservedButton.Name = "ReservedButton";
-            this.ReservedButton.Size = new System.Drawing.Size(287, 45);
+            this.ReservedButton.Size = new System.Drawing.Size(225, 45);
             this.ReservedButton.TabIndex = 12;
             this.ReservedButton.Text = "Reserved a book";
             this.ReservedButton.UseVisualStyleBackColor = true;
@@ -178,11 +179,22 @@
             this.EditProfilButton.UseVisualStyleBackColor = true;
             this.EditProfilButton.Click += new System.EventHandler(this.EditProfilButton_Click);
             // 
+            // HistoryButton
+            // 
+            this.HistoryButton.Location = new System.Drawing.Point(255, 381);
+            this.HistoryButton.Name = "HistoryButton";
+            this.HistoryButton.Size = new System.Drawing.Size(62, 45);
+            this.HistoryButton.TabIndex = 14;
+            this.HistoryButton.Text = "History";
+            this.HistoryButton.UseVisualStyleBackColor = true;
+            this.HistoryButton.Click += new System.EventHandler(this.HistoryButton_Click);
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(392, 447);
+            this.Controls.Add(this.HistoryButton);
             this.Controls.Add(this.EditProfilButton);
             this.Controls.Add(this.ReservedButton);
             this.Controls.Add(this.BookListBox);
@@ -223,5 +235,6 @@
         private System.Windows.Forms.ListBox BookListBox;
         private System.Windows.Forms.Button ReservedButton;
         private System.Windows.Forms.Button EditProfilButton;
+        private System.Windows.Forms.Button HistoryButton;
     }
 }
