@@ -280,7 +280,7 @@ namespace libraryMeneger.Data.StatusRepository
             {
                 connection.Open();
 
-                string query = "UPDATE Book_status_table SET StartDate =@StartDateV, EndDate=@EndDateV, ReserveStatus = 0, IssueStatus = 1 WHERE UserID = @ArticleV";
+                string query = "UPDATE Book_status_table SET StartDate =@StartDateV, EndDate=@EndDateV, ReserveStatus = 0, IssueStatus = 1 WHERE BookID = @ArticleV";
 
                 using (var command = new SQLiteCommand(query, connection))
                 {

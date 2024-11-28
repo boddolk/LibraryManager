@@ -50,7 +50,7 @@
             // 
             // filterTextBox
             // 
-            this.filterTextBox.Location = new System.Drawing.Point(89, 78);
+            this.filterTextBox.Location = new System.Drawing.Point(111, 78);
             this.filterTextBox.Name = "filterTextBox";
             this.filterTextBox.Size = new System.Drawing.Size(333, 22);
             this.filterTextBox.TabIndex = 1;
@@ -60,9 +60,9 @@
             this.filtParemetrLabel.AutoSize = true;
             this.filtParemetrLabel.Location = new System.Drawing.Point(35, 81);
             this.filtParemetrLabel.Name = "filtParemetrLabel";
-            this.filtParemetrLabel.Size = new System.Drawing.Size(48, 16);
+            this.filtParemetrLabel.Size = new System.Drawing.Size(71, 16);
             this.filtParemetrLabel.TabIndex = 2;
-            this.filtParemetrLabel.Text = "Author:";
+            this.filtParemetrLabel.Text = "User login:";
             // 
             // filterButton
             // 
@@ -72,16 +72,18 @@
             this.filterButton.TabIndex = 3;
             this.filterButton.Text = "Filter";
             this.filterButton.UseVisualStyleBackColor = true;
+            this.filterButton.Click += new System.EventHandler(this.filterButton_Click);
             // 
             // currentDateLabel
             // 
             this.currentDateLabel.AutoSize = true;
             this.currentDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.currentDateLabel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.currentDateLabel.Location = new System.Drawing.Point(106, 136);
             this.currentDateLabel.Name = "currentDateLabel";
-            this.currentDateLabel.Size = new System.Drawing.Size(113, 24);
+            this.currentDateLabel.Size = new System.Drawing.Size(142, 24);
             this.currentDateLabel.TabIndex = 4;
-            this.currentDateLabel.Text = "Current date";
+            this.currentDateLabel.Text = "Empty start date";
             // 
             // endDateTimePicker
             // 
