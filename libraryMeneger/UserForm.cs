@@ -15,6 +15,7 @@ namespace libraryMeneger
     {
         private RegularUser currentUser;
 
+        
         public UserForm(RegularUser user)
         {
             InitializeComponent(); 
@@ -31,6 +32,9 @@ namespace libraryMeneger
             PhoneLabel.ForeColor = Color.Black;
             MailLabel.Text = user.Email;
             MailLabel.ForeColor = Color.Black;
+
+
+
                        
         }
 
@@ -54,6 +58,13 @@ namespace libraryMeneger
         private void ReservedButton_Click(object sender, EventArgs e)
         {
             ReservePlus form = new ReservePlus(currentUser);
+            form.Show();
+            this.Close();
+        }
+
+        private void HistoryButton_Click(object sender, EventArgs e)
+        {
+            HistoryForm form = new HistoryForm(currentUser);
             form.Show();
             this.Close();
         }

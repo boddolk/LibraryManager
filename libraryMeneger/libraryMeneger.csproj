@@ -122,6 +122,12 @@
     <Compile Include="EditUserInfo.Designer.cs">
       <DependentUpon>EditUserInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="HistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoryForm.Designer.cs">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="IBooksRepository.cs" />
     <Compile Include="IBorrowHistoryRepository.cs" />
     <Compile Include="IStatusRepository.cs" />
@@ -140,7 +146,7 @@
     </Compile>
     <Compile Include="ReservePlus.Designer.cs">
       <DependentUpon>ReservePlus.cs</DependentUpon>
-	</Compile>
+    </Compile>
     <Compile Include="ReturnBookForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     <EmbeddedResource Include="EditUserInfo.resx">
       <DependentUpon>EditUserInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HistoryForm.resx">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LogInForm.resx">
       <DependentUpon>LogInForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,7 +203,7 @@
     <None Include="packages.config" />
     <EmbeddedResource Include="ReservePlus.resx">
       <DependentUpon>ReservePlus.cs</DependentUpon>
-	</EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReturnBookForm.resx">
       <DependentUpon>ReturnBookForm.cs</DependentUpon>
     </EmbeddedResource>
