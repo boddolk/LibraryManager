@@ -228,5 +228,34 @@ namespace libraryMeneger.Data.BookRepository
                 connection.Close();
             }
         }
+        public override string getBookTitle(int article)
+        {
+            try
+            {
+                connection.Open();
+
+                string query = "SELECT Title FROM Books WHERE Article = @Value";
+
+                using (var command = new SQLiteCommand(query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@Value", article);
+
+                    var result = command.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return Convert.ToString(result);
+                    }
+                    else
+                    {
+                        return "";
+                    }
+                }
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
 }

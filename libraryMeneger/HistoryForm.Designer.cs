@@ -52,6 +52,7 @@
             this.Name = "HistoryForm";
             this.Text = "HistoryForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HistoryForm_FormClosing);
+            this.Load += new System.EventHandler(this.HistoryForm_Load);
             this.ResumeLayout(false);
 
         }

@@ -1,4 +1,7 @@
-﻿using libraryMeneger.user;
+﻿using libraryMeneger.book;
+using libraryMeneger.Data.BookRepository;
+using libraryMeneger.Data.StatusRepository;
+using libraryMeneger.user;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +17,8 @@ namespace libraryMeneger
     public partial class UserForm : Form
     {
         private RegularUser currentUser;
+        BooksRepository booksRepository = new BooksRepository();
+        StatusRepository repository = new StatusRepository();
 
         
         public UserForm(RegularUser user)
@@ -33,9 +38,14 @@ namespace libraryMeneger
             MailLabel.Text = user.Email;
             MailLabel.ForeColor = Color.Black;
 
+            string Title;
+            List<BookStatManager> managers = repository.getStatManagersByUser(currentUser.Login);
 
-
-                       
+            foreach (BookStatManager manager in managers)
+            {
+                Title = booksRepository.getBookTitle(manager.Article);
+                BookListBox.Items.Add(manager.GetToStringForHistory(Title));
+            }
         }
 
         private void UserForm_Load(object sender, EventArgs e)
