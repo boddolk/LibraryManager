@@ -18,7 +18,7 @@ namespace libraryMeneger
 {
     public partial class AdminForm : Form
     {
-        AdminUser currentUser;
+        private AdminUser currentUser;
         BooksRepository repository = new BooksRepository();
         StatusRepository statRepository = new StatusRepository();
 
@@ -32,16 +32,15 @@ namespace libraryMeneger
 
             if (allBooks.Count > 0)
             {
-                this.BookComboBox.Items.Insert(0, "Select the book:");
-                for (int i = 0; i < allBooks.Count; i++)
+                this.BookComboBox.Items.Add("Select the book:");
+                foreach (GenBook book in allBooks)
                 {
-                    this.BookComboBox.Items.Insert(i + 1, allBooks[i].BookToString());
+                    this.BookComboBox.Items.Add(book.BookToString());
                 }
             }
             else
             {
                 this.BookComboBox.Items.Add("The library has no books!");
-                // Підкорегувати видимість полів
             }
             this.BookComboBox.SelectedIndex = 0;
         }
@@ -69,7 +68,6 @@ namespace libraryMeneger
             BookEditForm form = new BookEditForm(repository.getBook(arcticle), currentUser);
             form.Show();
             this.Close();
-
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
@@ -87,7 +85,7 @@ namespace libraryMeneger
                         {
                             this.BookComboBox.Items.RemoveAt(this.BookComboBox.SelectedIndex);
                             this.BookComboBox.SelectedIndex = 0;
-                            MessageBox.Show("Book successfully added!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Book successfully deleted!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 }
@@ -112,16 +110,39 @@ namespace libraryMeneger
                 this.currentTitleLabel.Text = currentBook.Title.ToString();
                 this.currentAuthorLabel.Text = currentBook.Author.ToString();
                 this.currentYearLabel.Text = currentBook.Year.ToString();
-                this.currentStatusLabel.Text = "ZATICHKA _ UVAGA";
+
+                if (statRepository.IsReserved(article)) // ОБДУМАТИ НАСКІЛЬКИ ТУТ КОРЕКТНО
+                {
+                    this.currentStatusLabel.Text = "RESERVED";
+                }
+                else if (statRepository.IsIssued(article))
+                {
+                    this.currentStatusLabel.Text = "ISSUED";
+                }
+                else
+                {
+                    this.currentStatusLabel.Text = "AVAILABLE";
+                }
+
+                this.currentArticleLabel.ForeColor =
+                    currentTitleLabel.ForeColor =
+                    currentAuthorLabel.ForeColor =
+                    currentYearLabel.ForeColor =
+                    currentStatusLabel.ForeColor = Color.Black;
             }
             else 
             {
-                // Колір та видимість
                 this.currentArticleLabel.Text = "Empty article";
                 this.currentTitleLabel.Text = "Empty title";
                 this.currentAuthorLabel.Text = "Empty author";
                 this.currentYearLabel.Text = "Empty year";
                 this.currentStatusLabel.Text = "Empty status";
+
+                this.currentArticleLabel.ForeColor = 
+                    currentTitleLabel.ForeColor = 
+                    currentAuthorLabel.ForeColor = 
+                    currentYearLabel.ForeColor = 
+                    currentStatusLabel.ForeColor = Color.LightGray;
             }
         }
 

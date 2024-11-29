@@ -30,42 +30,34 @@ namespace libraryMeneger
         private void SubmitButton_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-        "Are you sure to submit?",
-        "Confirmation",
-        MessageBoxButtons.YesNo,
-        MessageBoxIcon.Question);
+            "Are you sure to submit?",
+            "Confirmation",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
-                if (NameTextBox.Text.Length > 0 && 
-                    SurnameTextBox.Text.Length > 0 &&
-                    PhoneTextBox.Text.Length >0 &&
-                    MailTextBox.Text.Length > 0)
+                if (NameTextBox.Text.Length > 0 && SurnameTextBox.Text.Length > 0 &&
+                    PhoneTextBox.Text.Length > 0 && MailTextBox.Text.Length > 0)        // ЧИ КОРЕКТНИЙ ПОРЯДОК ПЕРЕВІРКИ
                 {
+                    currentUser.Name = NameTextBox.Text;
+                    currentUser.Surname = SurnameTextBox.Text;
+                    currentUser.PhoneNumber = PhoneTextBox.Text;
+                    currentUser.Email = MailTextBox.Text;
 
-
-                currentUser.Name = NameTextBox.Text;
-                currentUser.Surname = SurnameTextBox.Text;
-                currentUser.PhoneNumber = PhoneTextBox.Text;
-                currentUser.Email = MailTextBox.Text;
-
-
-
-                UserRepository repository = new UserRepository();
-
-                UserForm form = new UserForm(currentUser);
-                bool correct = repository.updateUser(currentUser);
+                    UserRepository repository = new UserRepository();
+                    bool correct = repository.updateUser(currentUser);
 
                     if (correct)
                     {
+                        UserForm form = new UserForm(currentUser);
                         form.Show();
                         this.Close();
-                        Console.WriteLine("Коректно відредагувало");
-
+                        Console.WriteLine("Коректно відредагувало"); // ДОБАВИТИ МЕСЕДЖ БОКСИ
                     }
                     else
                     {
-                        Console.WriteLine("Не відредагувало");
+                        Console.WriteLine("Не відредагувало"); //
                     }
                 }
                 if (result == DialogResult.No)
@@ -73,17 +65,13 @@ namespace libraryMeneger
                     UserForm form = new UserForm(currentUser);
                     form.Show();
                     this.Close();
-
                 }
 
             }
             else
-                {
-                    MessageBox.Show("There are empty fields. Editing is not possible.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                }
-
-
+            {
+                MessageBox.Show("There are empty fields. Editing is not possible.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

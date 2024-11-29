@@ -32,7 +32,7 @@ namespace libraryMeneger
             }
 
             string password = PasswordTextBox.Text;
-            if (string.IsNullOrEmpty(password))
+            if (string.IsNullOrEmpty(password) && password.Length < 8) // ДОБАВИВ ПЕРЕВІРКУ ДОВЖИНИ
             {
                 empty = true;
             }
@@ -73,7 +73,6 @@ namespace libraryMeneger
                 }
               
             }
-
 
         }
     }

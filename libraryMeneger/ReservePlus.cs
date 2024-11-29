@@ -16,14 +16,15 @@ namespace libraryMeneger
 {
     public partial class ReservePlus : Form
     {
-        RegularUser currentUser;
+        private RegularUser currentUser;
         BooksRepository repository = new BooksRepository();
         StatusRepository statusRepository = new StatusRepository();
 
         public ReservePlus(RegularUser user)
         {
-            currentUser = user;
             InitializeComponent();
+            currentUser = user;
+
             CurrentDateTimePicker.Value = DateTime.Today;
             CurrentDateTimePicker.CustomFormat = "dd.MM.yyyy";
             CurrentDateTimePicker.Format = DateTimePickerFormat.Custom;
@@ -33,24 +34,26 @@ namespace libraryMeneger
             EndDateTimePicker.Format = DateTimePickerFormat.Custom;
 
             List<GenBook> allBooks = repository.getAvailableBooksForBooking();
+
             if (allBooks.Count > 0)
             {
-               BookComboBox.Items.Insert(0, "Select the book:");
-                for (int i = 0; i < allBooks.Count; i++) 
+                BookComboBox.Items.Add("Select the book:");
+                foreach (GenBook book in allBooks) 
                 {
-                    BookComboBox.Items.Insert(i+1, allBooks[i].BookToString());
+                    BookComboBox.Items.Add(book.BookToString());
                 }
             }
             else
             {
-                BookComboBox.SelectedIndex = 0;
+                BookComboBox.Items.Add("No books available:(");
             }
-
+            BookComboBox.SelectedIndex = 0;
         }
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
             int article;
+
             //стягувати з комбо бокса книжку
             if (BookComboBox.SelectedIndex != 0)
             {
@@ -61,7 +64,7 @@ namespace libraryMeneger
                 DateTime end = EndDateTimePicker.Value;
             
                     //формувати менеджер
-                BookStatManager manager =new BookStatManager(article, current, end, true, false);
+                BookStatManager manager = new BookStatManager(article, current, end, true, false);
 
                     //піхаєм в базу
                 statusRepository.addBookWithItsStatus(currentUser.Login, manager);
@@ -72,10 +75,6 @@ namespace libraryMeneger
                 this.Close();
 
             }
-
-           
-           
-
         }
     }
 }

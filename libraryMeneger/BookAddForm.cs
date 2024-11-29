@@ -15,13 +15,13 @@ namespace libraryMeneger
 {
     public partial class BookAddForm : Form
     {
-        AdminUser adminUser;
+        private AdminUser adminUser;
         BooksRepository repository = new BooksRepository();
+
         public BookAddForm(AdminUser user)
         {
             InitializeComponent();
             adminUser = user;
-
         }
 
         private void BookAddForm_Load(object sender, EventArgs e)
@@ -31,13 +31,10 @@ namespace libraryMeneger
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            if (ArticleTextBox.Text.Length > 0 &&
-                NameTextBox.Text.Length > 0 &&
-                AuthorTextBox.Text.Length > 0 &&
-                YearNumer.Text.Length > 0)
+            if (ArticleTextBox.Text.Length > 0 && NameTextBox.Text.Length > 0 &&
+                AuthorTextBox.Text.Length > 0 && YearNumer.Text.Length > 0)
             {
-
-                    DialogResult result = MessageBox.Show(
+                DialogResult result = MessageBox.Show(
                 "Are you sure to submit?",
                 "Confirmation",
                 MessageBoxButtons.YesNo,
@@ -52,9 +49,8 @@ namespace libraryMeneger
                     int year = Convert.ToInt32(YearNumer.Text);
 
                     GenBook book = new GenBook(article, title, autor, year);
-
                     repository.insertBook(book);
-                    // дописати перевірку
+
                     AdminForm form = new AdminForm(adminUser);
                     form.Show();
                     this.Close();
@@ -70,7 +66,6 @@ namespace libraryMeneger
             else
             {
                 MessageBox.Show("Go fun yourself", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
             }
         }
     }

@@ -15,8 +15,9 @@ namespace libraryMeneger
 {
     public partial class BookEditForm : Form
     {
+        private AdminUser currentUser;
         GenBook currentBook;
-        AdminUser currentUser;
+        
         public BookEditForm(GenBook book, AdminUser user)
         {
             InitializeComponent();
@@ -27,7 +28,6 @@ namespace libraryMeneger
             NameTextBox.Text = currentBook.Title.ToString();
             AuthorTextBox.Text = currentBook.Author.ToString();
             YearNumer.Value = currentBook.Year;
-
         }
 
         private void EditButton_Click(object sender, EventArgs e)
@@ -49,24 +49,22 @@ namespace libraryMeneger
                     currentBook.Year = Convert.ToInt32(YearNumer.Value);
 
                     BooksRepository booksRepository = new BooksRepository();
-
                     bool correct = booksRepository.updateBook(currentBook);
+
                     if (correct)
                     {
                         AdminForm form = new AdminForm(currentUser);
                         form.Show();
                         this.Close();
-                        Console.WriteLine("Коректно відредагувало");
+                        Console.WriteLine("Коректно відредагувало"); // ДОБАВИТИ МЕСЕДЖ БОКСИ
                     }
 
                     else 
                     {
-                        Console.WriteLine("Не відредагувало");
-
+                        Console.WriteLine("Не відредагувало"); // 
                     }
 
                 }
-
 
             }
             if (result == DialogResult.No)
@@ -75,7 +73,6 @@ namespace libraryMeneger
                 form.Show();
                 this.Close();
             }
-
         }
     }
 }

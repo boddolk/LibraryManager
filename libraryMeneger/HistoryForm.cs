@@ -18,7 +18,7 @@ namespace libraryMeneger
 {
     public partial class HistoryForm : Form
     {
-        RegularUser CurrentUser;
+        private RegularUser CurrentUser;
         BooksRepository BooksRepository = new BooksRepository();
         BorrowHistoryRepository historyRepository = new BorrowHistoryRepository();
 

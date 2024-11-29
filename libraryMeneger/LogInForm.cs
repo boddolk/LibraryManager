@@ -13,98 +13,69 @@ using libraryMeneger.Data.UserRepository;
 
 namespace libraryMeneger
 {
-   
-
     public partial class LogInForm : Form
     {
-        
-
         public LogInForm()
         {
             InitializeComponent();
 
-            this.LogInTextBox.Text = "user3";
-            this.PasswordTextBox.Text = "34567890";
+            // ADMIN USER
+            //this.LogInTextBox.Text = "user1_admin";
+            //this.PasswordTextBox.Text = "12345678";
+
+            // REGULAR USER
+            //this.LogInTextBox.Text = "user3";
+            //this.PasswordTextBox.Text = "34567890";
         }
 
-
-                
         private void LogInButton_Click(object sender, EventArgs e)
         {
-
-
-
             UserRepository repository = new UserRepository();
 
             bool correct = false;
             // ЗАМІСТЬ ЗНАЧЕНЬ ТРУ — РЗУЛЬТАТ МЕТОДІВ //сМонохромка
             if (repository.DoesSuchUserExist(LogInTextBox.Text))
             {
-                if(repository.IsPasswordCorrect(LogInTextBox.Text, PasswordTextBox.Text))
+                if (repository.IsPasswordCorrect(LogInTextBox.Text, PasswordTextBox.Text))
                 {
                     correct = true;
                 }
                 else
                 {
                     MessageBox.Show("Incorrect password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                 }
-
-
             }
             else
             {
                 MessageBox.Show("Incorrect login", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
             }
 
-
-
-            bool isAdmin = repository.IsGivenUserAdmin(LogInTextBox.Text);
-
-
-
-
-
-            if(isAdmin) 
+            // ПЕРЕВІРКА НАЯВНОСТІ ЮЗЕРА, ЯКЩО КОРЕКТНИЙ ТО СТВОРЮЄМО ВІДПОВІДНО КОНКРЕТНОГО
+            if (correct)
             {
-                if (correct)
+                string myLogin = LogInTextBox.Text;
+                string myName = repository.getName(LogInTextBox.Text);
+                string mySurname = repository.getSurname(LogInTextBox.Text);
+                string myPassword = repository.getPassword(LogInTextBox.Text);
+                string myEmail = repository.getEmail(LogInTextBox.Text);
+                string myPhoneNumber = repository.getPhoneNumber(LogInTextBox.Text);
+
+                bool isAdmin = repository.IsGivenUserAdmin(LogInTextBox.Text);
+
+                if (isAdmin)
                 {
-                    string myLogin = LogInTextBox.Text;
-                    string myName = repository.getName(LogInTextBox.Text);
-                    string mySurname = repository.getSurname(LogInTextBox.Text);
-                    string myPassword = repository.getPassword(LogInTextBox.Text);
-                    string myEmail = repository.getEmail(LogInTextBox.Text);
-                    string myPhoneNumber = repository.getPhoneNumber(LogInTextBox.Text);
-
                     AdminUser user = new AdminUser(myLogin, myName, mySurname, myPassword, myEmail, myPhoneNumber);
-
                     AdminForm adminForm = new AdminForm(user);
                     adminForm.Show();
-                    this.Visible = false;
                 }
-            }
-            else
-            {
-                if (correct)
+                else
                 {
-                    string myLogin = LogInTextBox.Text;
-                    string myName = repository.getName(LogInTextBox.Text);
-                    string mySurname = repository.getSurname(LogInTextBox.Text);
-                    string myPassword = repository.getPassword(LogInTextBox.Text);
-                    string myEmail = repository.getEmail(LogInTextBox.Text);
-                    string myPhoneNumber = repository.getPhoneNumber(LogInTextBox.Text);
-
                     RegularUser user = new RegularUser(myLogin, myName, mySurname, myPassword, myEmail, myPhoneNumber);
                     UserForm userForm = new UserForm(user);
                     userForm.Show();
-                    this.Visible = false;
                 }
-
+                this.Visible = false;
             }
-
-            
-
         }
 
         private void SingUpButton_Click(object sender, EventArgs e)
@@ -112,7 +83,6 @@ namespace libraryMeneger
             SingUp form = new SingUp();
             form.Show();
             this.Hide();
-
         }
     }
 }

@@ -17,7 +17,7 @@ namespace libraryMeneger
 {
     public partial class ReturnBookForm : Form
     {
-        AdminUser adminUser;
+        private AdminUser adminUser;
         BooksRepository repository = new BooksRepository();
         StatusRepository statRepository = new StatusRepository();
         BorrowHistoryRepository borrowRepository = new BorrowHistoryRepository();

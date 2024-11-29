@@ -19,7 +19,6 @@ namespace libraryMeneger
         private RegularUser currentUser;
         BooksRepository booksRepository = new BooksRepository();
         StatusRepository repository = new StatusRepository();
-
         
         public UserForm(RegularUser user)
         {

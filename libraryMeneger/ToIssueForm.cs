@@ -16,7 +16,7 @@ namespace libraryMeneger
 {
     public partial class ToIssueForm : Form
     {
-        AdminUser adminUser;
+        private AdminUser adminUser;
         BooksRepository repository = new BooksRepository();
         StatusRepository statRepository = new StatusRepository();
 
