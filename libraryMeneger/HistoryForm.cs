@@ -54,7 +54,6 @@ namespace libraryMeneger
         {
             UserForm form = new UserForm(CurrentUser);
             form.Show();
-            this.Close();
         }
     }
 }
