@@ -16,6 +16,7 @@ namespace libraryMeneger
 {
     public partial class SingUp : Form
     {
+        public RegularUser NewUser { get; private set; }
         public SingUp()
         {
             InitializeComponent();
@@ -61,19 +62,17 @@ namespace libraryMeneger
             }
             else
             {
-                UserRepository repository = new UserRepository(); ;
+                UserRepository repository = new UserRepository();
                 RegularUser newUser = new RegularUser(login, name, surname, password, mail, "noNumber");
 
                 bool coorect = repository.insertNewUser(newUser);
                 if (coorect) 
                 {
-                    UserForm form = new UserForm(newUser);
-                    form.Show();
+                    NewUser = new RegularUser(login, name, surname, password, mail, "noNumber");
+                    this.DialogResult = DialogResult.OK;
                     this.Close();
-                }
-              
+                }           
             }
-
         }
     }
 }
