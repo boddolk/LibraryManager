@@ -33,6 +33,7 @@ namespace libraryMeneger
             currentUser = user;
             this.Text = "Admin - " + currentUser.Login;
 
+            this.BookComboBox.Items.Clear();
             List<GenBook> allBooks = repository.getAllBooks();
 
             if (allBooks.Count > 0)
@@ -100,9 +101,14 @@ namespace libraryMeneger
         {
             this.Visible = false;
             BookAddForm bookAddForm = new BookAddForm(currentUser);
-            if (bookAddForm.ShowDialog() == DialogResult.OK)
+            DialogResult result = bookAddForm.ShowDialog();
+            if (result == DialogResult.OK)
             {
                 initializeForm(bookAddForm.adminUser);
+                this.Visible = true;
+            }
+            else if (result == DialogResult.Cancel)
+            {
                 this.Visible = true;
             }
         }
@@ -114,9 +120,14 @@ namespace libraryMeneger
                 int arcticle = Convert.ToInt32(currentArticleLabel.Text);
                 this.Visible = false;
                 BookEditForm bookEditForm = new BookEditForm(repository.getBook(arcticle), currentUser);
-                if (bookEditForm.ShowDialog() == DialogResult.OK)
+                DialogResult result = bookEditForm.ShowDialog();
+                if (result == DialogResult.OK)
                 {
                     initializeForm(bookEditForm.adminUser);
+                    this.Visible = true;
+                }
+                else if (result == DialogResult.Cancel)
+                {
                     this.Visible = true;
                 }
             }
@@ -160,9 +171,14 @@ namespace libraryMeneger
         {
             this.Visible = false;
             ToIssueForm toIssueBookForm = new ToIssueForm(currentUser);
-            if (toIssueBookForm.ShowDialog() == DialogResult.OK)
+            DialogResult result = toIssueBookForm.ShowDialog();
+            if (result == DialogResult.OK)
             {
                 initializeForm(toIssueBookForm.adminUser);
+                this.Visible = true;
+            }
+            else if (result == DialogResult.Cancel)
+            {
                 this.Visible = true;
             }
         }
@@ -171,9 +187,14 @@ namespace libraryMeneger
         {
             this.Visible = false;
             ReturnBookForm returnBookForm = new ReturnBookForm(currentUser);
-            if (returnBookForm.ShowDialog() == DialogResult.OK)
+            DialogResult result = returnBookForm.ShowDialog();
+            if (result == DialogResult.OK)
             {
                 initializeForm(returnBookForm.adminUser);
+                this.Visible = true;
+            }
+            else if (result == DialogResult.Cancel)
+            {
                 this.Visible = true;
             }
         }

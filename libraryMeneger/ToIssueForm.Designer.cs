@@ -152,7 +152,6 @@
             this.Controls.Add(this.reserveComboBox);
             this.Name = "ToIssueForm";
             this.Text = "ToIssueForm";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ToIssueForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

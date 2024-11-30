@@ -107,7 +107,6 @@
             this.Controls.Add(this.BookComboBox);
             this.Name = "ReservePlus";
             this.Text = "ReservePlus";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReservePlus_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

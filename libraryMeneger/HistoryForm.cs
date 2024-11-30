@@ -27,6 +27,7 @@ namespace libraryMeneger
         {
             InitializeComponent();
             regularUser = user;
+            this.DialogResult = DialogResult.Cancel;
 
             int Article;
             List<Tuple<int, DateTime, DateTime>> History = historyRepository.getUserHistory(regularUser.Login);
@@ -49,11 +50,6 @@ namespace libraryMeneger
                 HistoryBox.Items.Add("Your books history is empty:(");
                 HistoryBox.Items.Add("Reserve books and hurry up to read!!!");
             }
-        }
-
-        private void HistoryForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.DialogResult = DialogResult.OK;
         }
     }
 }

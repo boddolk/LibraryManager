@@ -24,6 +24,7 @@ namespace libraryMeneger
         {
             InitializeComponent();
             regularUser = user;
+            this.DialogResult = DialogResult.Cancel;
 
             CurrentDateTimePicker.Value = DateTime.Today;
             CurrentDateTimePicker.CustomFormat = "dd.MM.yyyy";
@@ -61,6 +62,7 @@ namespace libraryMeneger
 
                 if (statusRepository.addBookWithItsStatus(regularUser.Login, manager))
                 {
+                    this.DialogResult = DialogResult.OK;
                     MessageBox.Show("Book successfully reserved!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
@@ -69,11 +71,6 @@ namespace libraryMeneger
             {
                 MessageBox.Show("The book is not selected!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void ReservePlus_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.DialogResult = DialogResult.OK;
         }
     }
 }

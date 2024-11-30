@@ -137,7 +137,6 @@
             this.Controls.Add(this.NameLabel);
             this.Name = "BookEditForm";
             this.Text = "BookEditForm";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BookEditForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.YearNumer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

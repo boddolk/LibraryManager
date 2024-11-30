@@ -20,6 +20,7 @@ namespace libraryMeneger
         {
             InitializeComponent();
             regularUser = user;
+            this.DialogResult = DialogResult.Cancel;
 
             NameTextBox.Text = user.Name;
             SurnameTextBox.Text = user.Surname;
@@ -47,6 +48,7 @@ namespace libraryMeneger
 
                     if (correct)
                     {
+                        this.DialogResult = DialogResult.OK;
                         MessageBox.Show("User successfully edited!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
@@ -60,11 +62,6 @@ namespace libraryMeneger
             {
                 MessageBox.Show("There are empty fields. Editing is not possible.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
-
-        private void EditUserInfo_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.DialogResult = DialogResult.OK;
         }
     }
 }

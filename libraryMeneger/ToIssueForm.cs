@@ -24,6 +24,7 @@ namespace libraryMeneger
         {
             InitializeComponent();
             adminUser = user;
+            this.DialogResult = DialogResult.Cancel;
 
             string Title;
             string UserLogin;
@@ -117,6 +118,7 @@ namespace libraryMeneger
                 {
                     if (statRepository.changeToIssued(article, startRentDate, endRentTime))
                     {
+                        this.DialogResult = DialogResult.OK;
                         this.reserveComboBox.Items.RemoveAt(this.reserveComboBox.SelectedIndex);
                         this.reserveComboBox.SelectedIndex = 0;
                         MessageBox.Show("Book successfully issued for user: < " + statRepository.getUserIDByArticle(article) + " >!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -132,11 +134,6 @@ namespace libraryMeneger
         private void exitButton_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void ToIssueForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.DialogResult = DialogResult.OK;
         }
     }
 }

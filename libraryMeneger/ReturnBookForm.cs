@@ -27,6 +27,8 @@ namespace libraryMeneger
         {
             InitializeComponent();
             adminUser = user;
+            this.DialogResult = DialogResult.Cancel;
+
             this.userEmailLabel.Visible = false;
             this.currEmailLabel.Visible = false;
             this.currEmailLabel.ForeColor = Color.Red;
@@ -150,6 +152,7 @@ namespace libraryMeneger
                 {
                     if (statRepository.removeBookWithItsStatus(article))
                     {
+                        this.DialogResult = DialogResult.OK;
                         this.issuedComboBox.Items.RemoveAt(this.issuedComboBox.SelectedIndex);
                         this.issuedComboBox.SelectedIndex = 0;
                         MessageBox.Show("Book successfully returned to the library!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -165,11 +168,6 @@ namespace libraryMeneger
         private void exitButton_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void ReturnBookForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.DialogResult = DialogResult.OK;
         }
     }
 }

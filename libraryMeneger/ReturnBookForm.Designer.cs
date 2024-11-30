@@ -153,9 +153,9 @@
             this.currEmailLabel.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.currEmailLabel.Location = new System.Drawing.Point(363, 126);
             this.currEmailLabel.Name = "currEmailLabel";
-            this.currEmailLabel.Size = new System.Drawing.Size(161, 24);
+            this.currEmailLabel.Size = new System.Drawing.Size(164, 24);
             this.currEmailLabel.TabIndex = 20;
-            this.currEmailLabel.Text = "Start date is empty";
+            this.currEmailLabel.Text = "Current user email";
             // 
             // ReturnBookForm
             // 
@@ -176,7 +176,6 @@
             this.Controls.Add(this.issuedComboBox);
             this.Name = "ReturnBookForm";
             this.Text = "ReturnBookForm";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReturnBookForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

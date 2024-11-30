@@ -130,7 +130,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "EditUserInfo";
             this.Text = "EditUserInfo";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditUserInfo_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

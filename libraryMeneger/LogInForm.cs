@@ -24,6 +24,7 @@ namespace libraryMeneger
         {
             InitializeComponent();
             booksRepository.removeOverdueReservedBooks();
+            this.DialogResult = DialogResult.Cancel;
 
             // ADMIN USER
             this.LogInTextBox.Text = "user1_admin";
@@ -78,7 +79,7 @@ namespace libraryMeneger
                     regUser = new RegularUser(myLogin, myName, mySurname, myPassword, myEmail, myPhoneNumber);
                     admUser = null;
                 }
-                this.DialogResult = DialogResult.OK; // Повідомити, що вхід виконано
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
         }

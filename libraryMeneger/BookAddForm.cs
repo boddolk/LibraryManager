@@ -22,6 +22,7 @@ namespace libraryMeneger
         {
             InitializeComponent();
             adminUser = user;
+            this.DialogResult = DialogResult.Cancel;
         }
 
         private void AddButton_Click(object sender, EventArgs e)
@@ -47,6 +48,7 @@ namespace libraryMeneger
 
                         if (repository.insertBook(book))
                         {
+                            this.DialogResult = DialogResult.OK;
                             MessageBox.Show("Book successfully aded!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
                         }
@@ -61,11 +63,6 @@ namespace libraryMeneger
             {
                 MessageBox.Show("Go fun yourself", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
-
-        private void BookAddForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.DialogResult = DialogResult.OK;
         }
     }
 }

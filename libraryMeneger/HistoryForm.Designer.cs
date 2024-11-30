@@ -51,7 +51,6 @@
             this.Controls.Add(this.HistoryBox);
             this.Name = "HistoryForm";
             this.Text = "HistoryForm";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HistoryForm_FormClosing);
             this.ResumeLayout(false);
 
         }

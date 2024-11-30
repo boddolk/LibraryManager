@@ -20,6 +20,7 @@ namespace libraryMeneger
         public SingUp()
         {
             InitializeComponent();
+            this.DialogResult = DialogResult.Cancel;
         }
 
         private void SubmitButton_Click(object sender, EventArgs e)
@@ -33,7 +34,7 @@ namespace libraryMeneger
             }
 
             string password = PasswordTextBox.Text;
-            if (string.IsNullOrEmpty(password) && password.Length < 8) // ДОБАВИВ ПЕРЕВІРКУ ДОВЖИНИ
+            if (string.IsNullOrEmpty(password) && password.Length < 8)
             {
                 empty = true;
             }

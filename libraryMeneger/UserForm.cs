@@ -29,6 +29,7 @@ namespace libraryMeneger
         private void initializeForm(RegularUser user)
         {
             this.currentUser = user;
+            this.BookListBox.Items.Clear();
 
             UsernameLabel.Text = user.Login;
             UsernameLabel.ForeColor = Color.Black;
@@ -64,9 +65,14 @@ namespace libraryMeneger
         {
             this.Visible = false;
             EditUserInfo editUserForm = new EditUserInfo(currentUser);
-            if (editUserForm.ShowDialog() == DialogResult.OK)
+            DialogResult result = editUserForm.ShowDialog();
+            if (result == DialogResult.OK)
             { 
                 initializeForm(editUserForm.regularUser);
+                this.Visible = true;
+            }
+            else if (result == DialogResult.Cancel)
+            {
                 this.Visible = true;
             }
         }
@@ -75,9 +81,14 @@ namespace libraryMeneger
         {
             this.Visible = false;
             ReservePlus reserveBookForm = new ReservePlus(currentUser);
-            if (reserveBookForm.ShowDialog() == DialogResult.OK)
+            DialogResult result = reserveBookForm.ShowDialog();
+            if (result == DialogResult.OK)
             {
                 initializeForm(reserveBookForm.regularUser);
+                this.Visible = true;
+            }
+            else if (result == DialogResult.Cancel)
+            {
                 this.Visible = true;
             }
         }
@@ -86,7 +97,7 @@ namespace libraryMeneger
         {
             this.Visible = false;
             HistoryForm historyForm = new HistoryForm(currentUser);
-            if (historyForm.ShowDialog() == DialogResult.OK)
+            if (historyForm.ShowDialog() == DialogResult.Cancel)
             {
                 this.Visible = true;
             }

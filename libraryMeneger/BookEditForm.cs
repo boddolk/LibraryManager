@@ -23,6 +23,7 @@ namespace libraryMeneger
             InitializeComponent();
             adminUser = user;
             currentBook = book;
+            this.DialogResult = DialogResult.Cancel;
 
             currentArticle.Text = currentBook.Article.ToString();
             NameTextBox.Text = currentBook.Title.ToString();
@@ -52,6 +53,7 @@ namespace libraryMeneger
                     if (correct)
                     {
                         MessageBox.Show("Book successfully edited!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
                     else 
@@ -60,11 +62,6 @@ namespace libraryMeneger
                     }
                 }
             }
-        }
-
-        private void BookEditForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.DialogResult= DialogResult.OK;
         }
     }
 }
