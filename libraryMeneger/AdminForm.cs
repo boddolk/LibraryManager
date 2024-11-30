@@ -109,13 +109,20 @@ namespace libraryMeneger
 
         private void EditButton_Click(object sender, EventArgs e)
         {
-            int arcticle = Convert.ToInt32(currentArticleLabel.Text);
-            this.Visible = false;
-            BookEditForm bookEditForm = new BookEditForm(repository.getBook(arcticle), currentUser);
-            if (bookEditForm.ShowDialog() == DialogResult.OK)
+            if (this.BookComboBox.SelectedIndex != 0)
             {
-                initializeForm(bookEditForm.adminUser);
-                this.Visible = true;
+                int arcticle = Convert.ToInt32(currentArticleLabel.Text);
+                this.Visible = false;
+                BookEditForm bookEditForm = new BookEditForm(repository.getBook(arcticle), currentUser);
+                if (bookEditForm.ShowDialog() == DialogResult.OK)
+                {
+                    initializeForm(bookEditForm.adminUser);
+                    this.Visible = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("The book is not chosen!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
