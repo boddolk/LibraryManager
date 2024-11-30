@@ -24,15 +24,8 @@ namespace libraryMeneger
         {
             InitializeComponent();
             booksRepository.removeOverdueReservedBooks();
-            this.DialogResult = DialogResult.Cancel;
+            this.DialogResult = DialogResult.Cancel;          
 
-            // ADMIN USER
-            this.LogInTextBox.Text = "user1_admin";
-            this.PasswordTextBox.Text = "12345678";
-
-            // REGULAR USER
-            //this.LogInTextBox.Text = "user3";
-            //this.PasswordTextBox.Text = "34567890";
         }
 
         private void LogInButton_Click(object sender, EventArgs e)
