@@ -18,17 +18,18 @@ namespace libraryMeneger
 {
     public partial class HistoryForm : Form
     {
-        private RegularUser CurrentUser;
+
+        private RegularUser regularUser;
         BooksRepository BooksRepository = new BooksRepository();
         BorrowHistoryRepository historyRepository = new BorrowHistoryRepository();
 
         public HistoryForm(RegularUser user)
         {
             InitializeComponent();
-            CurrentUser = user;
+            regularUser = user;
 
             int Article;
-            List<Tuple<int, DateTime, DateTime>> History = historyRepository.getUserHistory(CurrentUser.Login);
+            List<Tuple<int, DateTime, DateTime>> History = historyRepository.getUserHistory(regularUser.Login);
 
             if (History != null)
             {
@@ -52,9 +53,7 @@ namespace libraryMeneger
 
         private void HistoryForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            UserForm form = new UserForm(CurrentUser);
-            form.Show();
-            this.Close();
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

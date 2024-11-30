@@ -212,7 +212,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "UserForm";
             this.Text = "UserForm";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

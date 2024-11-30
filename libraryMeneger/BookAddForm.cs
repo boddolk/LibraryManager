@@ -15,7 +15,7 @@ namespace libraryMeneger
 {
     public partial class BookAddForm : Form
     {
-        private AdminUser adminUser;
+        public AdminUser adminUser { get; private set; }
         BooksRepository repository = new BooksRepository();
 
         public BookAddForm(AdminUser user)
@@ -24,49 +24,48 @@ namespace libraryMeneger
             adminUser = user;
         }
 
-        private void BookAddForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void AddButton_Click(object sender, EventArgs e)
         {
             if (ArticleTextBox.Text.Length > 0 && NameTextBox.Text.Length > 0 &&
                 AuthorTextBox.Text.Length > 0 && YearNumer.Text.Length > 0)
             {
-                DialogResult result = MessageBox.Show(
-                "Are you sure to submit?",
-                "Confirmation",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
-
-                if (result == DialogResult.Yes)
+                int article = Convert.ToInt32(ArticleTextBox.Text);
+                if (repository.getBook(article) == null)
                 {
+                    DialogResult result = MessageBox.Show(
+                        "Are you sure to submit?",
+                        "Confirmation",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
 
-                    int article = Convert.ToInt32(ArticleTextBox.Text);
-                    string title = NameTextBox.Text;
-                    string autor = AuthorTextBox.Text;
-                    int year = Convert.ToInt32(YearNumer.Text);
+                    if (result == DialogResult.Yes)
+                    {
+                        string title = NameTextBox.Text;
+                        string autor = AuthorTextBox.Text;
+                        int year = Convert.ToInt32(YearNumer.Text);
+                        GenBook book = new GenBook(article, title, autor, year);
 
-                    GenBook book = new GenBook(article, title, autor, year);
-                    repository.insertBook(book);
-
-                    AdminForm form = new AdminForm(adminUser);
-                    form.Show();
-                    this.Close();
+                        if (repository.insertBook(book))
+                        {
+                            MessageBox.Show("Book successfully aded!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                    }
                 }
-
-                if (result == DialogResult.No)
+                else
                 {
-                    AdminForm form = new AdminForm(adminUser);
-                    form.Show();
-                    this.Close();
+                    MessageBox.Show("A book with this article already exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Go fun yourself", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Go fun yourself", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void BookAddForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

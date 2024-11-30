@@ -384,6 +384,21 @@ namespace libraryMeneger.Data.StatusRepository
                 connection.Close();
             }
         }
+        public override void removeOverdueReservedBooks()
+        {
+            DateTime currentDate = DateTime.Now.Date;
+           List<BookStatManager> listOfReserved =  getReservedBookInfo();
+            
+            foreach (BookStatManager manager in listOfReserved) {
+                if (manager.EndDate < currentDate)
+                {
+                    removeBookWithItsStatus(manager.Article);
+                }
+                else
+                {
+                }
+            }
+        }
     }
     
     }

@@ -10,18 +10,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using libraryMeneger.Data.UserRepository;
+using libraryMeneger.Data.StatusRepository;
 
 namespace libraryMeneger
 {
     public partial class LogInForm : Form
     {
+        public RegularUser regUser { get; private set; }
+        public AdminUser admUser { get; private set; }
+
+        StatusRepository booksRepository = new StatusRepository();
         public LogInForm()
         {
             InitializeComponent();
+            booksRepository.removeOverdueReservedBooks();
 
             // ADMIN USER
-            //this.LogInTextBox.Text = "user1_admin";
-            //this.PasswordTextBox.Text = "12345678";
+            this.LogInTextBox.Text = "user1_admin";
+            this.PasswordTextBox.Text = "12345678";
 
             // REGULAR USER
             //this.LogInTextBox.Text = "user3";
@@ -64,25 +70,29 @@ namespace libraryMeneger
 
                 if (isAdmin)
                 {
-                    AdminUser user = new AdminUser(myLogin, myName, mySurname, myPassword, myEmail, myPhoneNumber);
-                    AdminForm adminForm = new AdminForm(user);
-                    adminForm.Show();
+                    admUser = new AdminUser(myLogin, myName, mySurname, myPassword, myEmail, myPhoneNumber);
+                    regUser = null;
                 }
                 else
                 {
-                    RegularUser user = new RegularUser(myLogin, myName, mySurname, myPassword, myEmail, myPhoneNumber);
-                    UserForm userForm = new UserForm(user);
-                    userForm.Show();
+                    regUser = new RegularUser(myLogin, myName, mySurname, myPassword, myEmail, myPhoneNumber);
+                    admUser = null;
                 }
-                this.Visible = false;
+                this.DialogResult = DialogResult.OK; // Повідомити, що вхід виконано
+                this.Close();
             }
         }
 
         private void SingUpButton_Click(object sender, EventArgs e)
         {
-            SingUp form = new SingUp();
-            form.Show();
-            this.Hide();
+            admUser = null;
+            SingUp signUpForm = new SingUp();
+            if (signUpForm.ShowDialog() == DialogResult.OK)
+            {
+                regUser = signUpForm.NewUser;
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
     }
 }

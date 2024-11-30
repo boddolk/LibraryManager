@@ -16,7 +16,7 @@ namespace libraryMeneger
 {
     public partial class ToIssueForm : Form
     {
-        private AdminUser adminUser;
+        public AdminUser adminUser { get; private set; }
         BooksRepository repository = new BooksRepository();
         StatusRepository statRepository = new StatusRepository();
 
@@ -46,7 +46,6 @@ namespace libraryMeneger
             this.reserveComboBox.SelectedIndex = 0;
 
             DateTime currentDate = DateTime.Now.Date;
-
             this.currentDateLabel.Text = currentDate.ToString("dd.MM.yyyy");
 
             this.endDateTimePicker.MinDate = currentDate.AddDays(1);
@@ -104,6 +103,7 @@ namespace libraryMeneger
             }
             this.reserveComboBox.SelectedIndex = 0;
         }
+
         private void confirmButton_Click(object sender, EventArgs e)
         {
             if (this.reserveComboBox.SelectedIndex != 0)
@@ -131,9 +131,12 @@ namespace libraryMeneger
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            AdminForm form = new AdminForm(adminUser);
-            form.Show();
             this.Close();
+        }
+
+        private void ToIssueForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
         }
     }
 }
