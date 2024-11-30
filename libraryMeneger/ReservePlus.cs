@@ -16,14 +16,14 @@ namespace libraryMeneger
 {
     public partial class ReservePlus : Form
     {
-        private RegularUser currentUser;
+        public RegularUser regularUser { get; private set; }
         BooksRepository repository = new BooksRepository();
         StatusRepository statusRepository = new StatusRepository();
 
         public ReservePlus(RegularUser user)
         {
             InitializeComponent();
-            currentUser = user;
+            regularUser = user;
 
             CurrentDateTimePicker.Value = DateTime.Today;
             CurrentDateTimePicker.CustomFormat = "dd.MM.yyyy";
@@ -52,29 +52,28 @@ namespace libraryMeneger
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            int article;
-
-            //стягувати з комбо бокса книжку
             if (BookComboBox.SelectedIndex != 0)
             {
-                article = int.Parse(new string(this.BookComboBox.SelectedItem.ToString().TakeWhile(char.IsDigit).ToArray()));
-                    
-                    //стягувати дати
+                int article = int.Parse(new string(this.BookComboBox.SelectedItem.ToString().TakeWhile(char.IsDigit).ToArray()));
                 DateTime current = CurrentDateTimePicker.Value;
                 DateTime end = EndDateTimePicker.Value;
-            
-                    //формувати менеджер
                 BookStatManager manager = new BookStatManager(article, current, end, true, false);
 
-                    //піхаєм в базу
-                statusRepository.addBookWithItsStatus(currentUser.Login, manager);
-
-                    //вихід
-                UserForm form = new UserForm(currentUser);
-                form.Show();
-                this.Close();
-
+                if (statusRepository.addBookWithItsStatus(regularUser.Login, manager))
+                {
+                    MessageBox.Show("Book successfully reserved!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
             }
+            else 
+            {
+                MessageBox.Show("The book is not selected!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ReservePlus_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

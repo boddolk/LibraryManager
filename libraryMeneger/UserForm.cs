@@ -22,7 +22,12 @@ namespace libraryMeneger
         
         public UserForm(RegularUser user)
         {
-            InitializeComponent(); 
+            InitializeComponent();
+            initializeForm(user);
+        }
+
+        private void initializeForm(RegularUser user)
+        {
             this.currentUser = user;
 
             UsernameLabel.Text = user.Login;
@@ -57,28 +62,34 @@ namespace libraryMeneger
 
         private void EditProfilButton_Click(object sender, EventArgs e)
         {
-            EditUserInfo editUserInfo = new EditUserInfo(currentUser);
-            editUserInfo.Show();
-            this.Close();
+            this.Visible = false;
+            EditUserInfo editUserForm = new EditUserInfo(currentUser);
+            if (editUserForm.ShowDialog() == DialogResult.OK)
+            { 
+                initializeForm(editUserForm.regularUser);
+                this.Visible = true;
+            }
         }
 
         private void ReservedButton_Click(object sender, EventArgs e)
         {
-            ReservePlus form = new ReservePlus(currentUser);
-            form.Show();
-            this.Close();
+            this.Visible = false;
+            ReservePlus reserveBookForm = new ReservePlus(currentUser);
+            if (reserveBookForm.ShowDialog() == DialogResult.OK)
+            {
+                initializeForm(reserveBookForm.regularUser);
+                this.Visible = true;
+            }
         }
 
         private void HistoryButton_Click(object sender, EventArgs e)
         {
-            HistoryForm form = new HistoryForm(currentUser);
-            form.Show();
-            this.Close();
-        }
-
-        private void UserForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //Application.Exit();
+            this.Visible = false;
+            HistoryForm historyForm = new HistoryForm(currentUser);
+            if (historyForm.ShowDialog() == DialogResult.OK)
+            {
+                this.Visible = true;
+            }
         }
     }
 }

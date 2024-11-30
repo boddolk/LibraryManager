@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using libraryMeneger.Data.UserRepository;
+using libraryMeneger.Data.StatusRepository;
 
 namespace libraryMeneger
 {
@@ -17,9 +18,12 @@ namespace libraryMeneger
     {
         public RegularUser regUser { get; private set; }
         public AdminUser admUser { get; private set; }
+
+        StatusRepository booksRepository = new StatusRepository();
         public LogInForm()
         {
             InitializeComponent();
+            booksRepository.removeOverdueReservedBooks();
 
             // ADMIN USER
             this.LogInTextBox.Text = "user1_admin";

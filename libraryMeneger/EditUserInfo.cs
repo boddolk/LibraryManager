@@ -14,12 +14,12 @@ namespace libraryMeneger
 {
     public partial class EditUserInfo : Form
     {
-        private RegularUser currentUser;
+        public RegularUser regularUser { get; private set; }
 
         public EditUserInfo(RegularUser user)
         {
             InitializeComponent();
-            currentUser = user;
+            regularUser = user;
 
             NameTextBox.Text = user.Name;
             SurnameTextBox.Text = user.Surname;
@@ -29,49 +29,42 @@ namespace libraryMeneger
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(
-            "Are you sure to submit?",
-            "Confirmation",
-            MessageBoxButtons.YesNo,
-            MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
+            if (NameTextBox.Text.Length > 0 && SurnameTextBox.Text.Length > 0 &&
+                    PhoneTextBox.Text.Length > 0 && MailTextBox.Text.Length > 0)
             {
-                if (NameTextBox.Text.Length > 0 && SurnameTextBox.Text.Length > 0 &&
-                    PhoneTextBox.Text.Length > 0 && MailTextBox.Text.Length > 0)        // ЧИ КОРЕКТНИЙ ПОРЯДОК ПЕРЕВІРКИ
+                DialogResult result = MessageBox.Show("Are you sure to submit?", "Confirmation",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
                 {
-                    currentUser.Name = NameTextBox.Text;
-                    currentUser.Surname = SurnameTextBox.Text;
-                    currentUser.PhoneNumber = PhoneTextBox.Text;
-                    currentUser.Email = MailTextBox.Text;
+                    regularUser.Name = NameTextBox.Text;
+                    regularUser.Surname = SurnameTextBox.Text;
+                    regularUser.PhoneNumber = PhoneTextBox.Text;
+                    regularUser.Email = MailTextBox.Text;
 
                     UserRepository repository = new UserRepository();
-                    bool correct = repository.updateUser(currentUser);
+                    bool correct = repository.updateUser(regularUser);
 
                     if (correct)
                     {
-                        UserForm form = new UserForm(currentUser);
-                        form.Show();
+                        MessageBox.Show("User successfully edited!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
-                        Console.WriteLine("Коректно відредагувало"); // ДОБАВИТИ МЕСЕДЖ БОКСИ
                     }
                     else
                     {
-                        Console.WriteLine("Не відредагувало"); //
+                        MessageBox.Show("User do not edited.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
-                if (result == DialogResult.No)
-                {
-                    UserForm form = new UserForm(currentUser);
-                    form.Show();
-                    this.Close();
-                }
-
             }
             else
             {
-                MessageBox.Show("There are empty fields. Editing is not possible.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("There are empty fields. Editing is not possible.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void EditUserInfo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
         }
     }
 }
