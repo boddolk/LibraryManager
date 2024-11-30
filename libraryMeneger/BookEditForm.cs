@@ -15,14 +15,14 @@ namespace libraryMeneger
 {
     public partial class BookEditForm : Form
     {
-        private AdminUser currentUser;
+        public AdminUser adminUser { get; private set; }
         GenBook currentBook;
         
         public BookEditForm(GenBook book, AdminUser user)
         {
             InitializeComponent();
+            adminUser = user;
             currentBook = book;
-            currentUser = user;
 
             currentArticle.Text = currentBook.Article.ToString();
             NameTextBox.Text = currentBook.Title.ToString();
@@ -40,9 +40,7 @@ namespace libraryMeneger
 
             if (result == DialogResult.Yes)
             {
-                if (NameTextBox.Text.Length > 0 &&
-                 AuthorTextBox.Text.Length > 0 &&
-                 YearNumer.Value > 0)
+                if (NameTextBox.Text.Length > 0 && AuthorTextBox.Text.Length > 0 && YearNumer.Value > 0)
                 {
                     currentBook.Title = NameTextBox.Text;
                     currentBook.Author = AuthorTextBox.Text;   
@@ -53,26 +51,20 @@ namespace libraryMeneger
 
                     if (correct)
                     {
-                        AdminForm form = new AdminForm(currentUser);
-                        form.Show();
+                        MessageBox.Show("Book successfully edited!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
-                        Console.WriteLine("Коректно відредагувало"); // ДОБАВИТИ МЕСЕДЖ БОКСИ
                     }
-
                     else 
                     {
-                        Console.WriteLine("Не відредагувало"); // 
+                        MessageBox.Show("The book is not edited!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
                 }
+            }
+        }
 
-            }
-            if (result == DialogResult.No)
-            {
-                AdminForm form = new AdminForm(currentUser);
-                form.Show();
-                this.Close();
-            }
+        private void BookEditForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.DialogResult= DialogResult.OK;
         }
     }
 }

@@ -25,6 +25,11 @@ namespace libraryMeneger
         public AdminForm(AdminUser user)
         {
             InitializeComponent();
+            initializeForm(user);
+        }
+
+        private void initializeForm(AdminUser user)
+        {
             currentUser = user;
             this.Text = "Admin - " + currentUser.Login;
 
@@ -43,61 +48,6 @@ namespace libraryMeneger
                 this.BookComboBox.Items.Add("The library has no books!");
             }
             this.BookComboBox.SelectedIndex = 0;
-        }
-
-        private void AddButton_Click(object sender, EventArgs e)
-        {
-           BookAddForm bookAddForm = new BookAddForm(currentUser);
-            bookAddForm.Show();
-            this.Close();
-
-        }
-
-        private void AdminForm_Load(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void AdminForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-        }
-
-        private void EditButton_Click(object sender, EventArgs e)
-        {
-            int arcticle = Convert.ToInt32(currentArticleLabel.Text);
-            BookEditForm form = new BookEditForm(repository.getBook(arcticle), currentUser);
-            form.Show();
-            this.Close();
-        }
-
-        private void DeleteButton_Click(object sender, EventArgs e)
-        {
-            if (this.BookComboBox.SelectedIndex != 0)
-            {
-                int article = int.Parse(this.currentArticleLabel.Text);
-                if (!statRepository.IsPresentInTable(article))
-                {
-                    DialogResult result = MessageBox.Show("Are you sure that you want to delete book with this article: " + article.ToString() + "?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                    if (result == DialogResult.Yes)
-                    {
-                        if (repository.deleteBook(article))
-                        {
-                            this.BookComboBox.Items.RemoveAt(this.BookComboBox.SelectedIndex);
-                            this.BookComboBox.SelectedIndex = 0;
-                            MessageBox.Show("Book successfully deleted!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("The book is booked or issued!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else 
-            {
-                MessageBox.Show("Choose book!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void BookComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -130,7 +80,7 @@ namespace libraryMeneger
                     currentYearLabel.ForeColor =
                     currentStatusLabel.ForeColor = Color.Black;
             }
-            else 
+            else
             {
                 this.currentArticleLabel.Text = "Empty article";
                 this.currentTitleLabel.Text = "Empty title";
@@ -138,26 +88,87 @@ namespace libraryMeneger
                 this.currentYearLabel.Text = "Empty year";
                 this.currentStatusLabel.Text = "Empty status";
 
-                this.currentArticleLabel.ForeColor = 
-                    currentTitleLabel.ForeColor = 
-                    currentAuthorLabel.ForeColor = 
-                    currentYearLabel.ForeColor = 
+                this.currentArticleLabel.ForeColor =
+                    currentTitleLabel.ForeColor =
+                    currentAuthorLabel.ForeColor =
+                    currentYearLabel.ForeColor =
                     currentStatusLabel.ForeColor = Color.LightGray;
+            }
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            BookAddForm bookAddForm = new BookAddForm(currentUser);
+            if (bookAddForm.ShowDialog() == DialogResult.OK)
+            {
+                initializeForm(bookAddForm.adminUser);
+                this.Visible = true;
+            }
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            int arcticle = Convert.ToInt32(currentArticleLabel.Text);
+            this.Visible = false;
+            BookEditForm bookEditForm = new BookEditForm(repository.getBook(arcticle), currentUser);
+            if (bookEditForm.ShowDialog() == DialogResult.OK)
+            {
+                initializeForm(bookEditForm.adminUser);
+                this.Visible = true;
+            }
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            if (this.BookComboBox.SelectedIndex != 0)
+            {
+                int article = int.Parse(this.currentArticleLabel.Text);
+                if (!statRepository.IsPresentInTable(article))
+                {
+                    DialogResult result = MessageBox.Show("Are you sure that you want to delete book with this article: " + article.ToString() + "?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        if (repository.deleteBook(article))
+                        {
+                            this.BookComboBox.Items.RemoveAt(this.BookComboBox.SelectedIndex);
+                            this.BookComboBox.SelectedIndex = 0;
+                            MessageBox.Show("Book successfully deleted!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("The book is booked or issued!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else 
+            {
+                MessageBox.Show("Choose book!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void GiveOutButton_Click(object sender, EventArgs e)
         {
-            ToIssueForm form = new ToIssueForm(currentUser);
-            form.Show();
-            this.Close();
+            this.Visible = false;
+            ToIssueForm toIssueBookForm = new ToIssueForm(currentUser);
+            if (toIssueBookForm.ShowDialog() == DialogResult.OK)
+            {
+                initializeForm(toIssueBookForm.adminUser);
+                this.Visible = true;
+            }
         }
 
         private void returnButton_Click(object sender, EventArgs e)
         {
-            ReturnBookForm form = new ReturnBookForm(currentUser);
-            form.Show();
-            this.Close();
+            this.Visible = false;
+            ReturnBookForm returnBookForm = new ReturnBookForm(currentUser);
+            if (returnBookForm.ShowDialog() == DialogResult.OK)
+            {
+                initializeForm(returnBookForm.adminUser);
+                this.Visible = true;
+            }
         }
     }
 }

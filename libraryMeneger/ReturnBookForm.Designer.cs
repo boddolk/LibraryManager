@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.startLabel = new System.Windows.Forms.Label();
+            this.endLabel = new System.Windows.Forms.Label();
             this.returnMenuButton = new System.Windows.Forms.Button();
             this.cStartDatelabel = new System.Windows.Forms.Label();
             this.filterButton = new System.Windows.Forms.Button();
@@ -38,25 +38,27 @@
             this.issuedComboBox = new System.Windows.Forms.ComboBox();
             this.cEndDatelabel = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
+            this.userEmailLabel = new System.Windows.Forms.Label();
+            this.currEmailLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label2
+            // startLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 143);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 16);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Start date:";
+            this.startLabel.AutoSize = true;
+            this.startLabel.Location = new System.Drawing.Point(33, 132);
+            this.startLabel.Name = "startLabel";
+            this.startLabel.Size = new System.Drawing.Size(67, 16);
+            this.startLabel.TabIndex = 17;
+            this.startLabel.Text = "Start date:";
             // 
-            // label1
+            // endLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 185);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 16);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "End date:";
+            this.endLabel.AutoSize = true;
+            this.endLabel.Location = new System.Drawing.Point(34, 174);
+            this.endLabel.Name = "endLabel";
+            this.endLabel.Size = new System.Drawing.Size(64, 16);
+            this.endLabel.TabIndex = 16;
+            this.endLabel.Text = "End date:";
             // 
             // returnMenuButton
             // 
@@ -73,7 +75,7 @@
             this.cStartDatelabel.AutoSize = true;
             this.cStartDatelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cStartDatelabel.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.cStartDatelabel.Location = new System.Drawing.Point(105, 136);
+            this.cStartDatelabel.Location = new System.Drawing.Point(105, 125);
             this.cStartDatelabel.Name = "cStartDatelabel";
             this.cStartDatelabel.Size = new System.Drawing.Size(161, 24);
             this.cStartDatelabel.TabIndex = 13;
@@ -119,7 +121,7 @@
             this.cEndDatelabel.AutoSize = true;
             this.cEndDatelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cEndDatelabel.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.cEndDatelabel.Location = new System.Drawing.Point(105, 179);
+            this.cEndDatelabel.Location = new System.Drawing.Point(105, 168);
             this.cEndDatelabel.Name = "cEndDatelabel";
             this.cEndDatelabel.Size = new System.Drawing.Size(160, 24);
             this.cEndDatelabel.TabIndex = 18;
@@ -135,15 +137,37 @@
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
+            // userEmailLabel
+            // 
+            this.userEmailLabel.AutoSize = true;
+            this.userEmailLabel.Location = new System.Drawing.Point(284, 133);
+            this.userEmailLabel.Name = "userEmailLabel";
+            this.userEmailLabel.Size = new System.Drawing.Size(75, 16);
+            this.userEmailLabel.TabIndex = 21;
+            this.userEmailLabel.Text = "User email:";
+            // 
+            // currEmailLabel
+            // 
+            this.currEmailLabel.AutoSize = true;
+            this.currEmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.currEmailLabel.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.currEmailLabel.Location = new System.Drawing.Point(363, 126);
+            this.currEmailLabel.Name = "currEmailLabel";
+            this.currEmailLabel.Size = new System.Drawing.Size(161, 24);
+            this.currEmailLabel.TabIndex = 20;
+            this.currEmailLabel.Text = "Start date is empty";
+            // 
             // ReturnBookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(627, 232);
+            this.Controls.Add(this.userEmailLabel);
+            this.Controls.Add(this.currEmailLabel);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.cEndDatelabel);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.startLabel);
+            this.Controls.Add(this.endLabel);
             this.Controls.Add(this.returnMenuButton);
             this.Controls.Add(this.cStartDatelabel);
             this.Controls.Add(this.filterButton);
@@ -152,6 +176,7 @@
             this.Controls.Add(this.issuedComboBox);
             this.Name = "ReturnBookForm";
             this.Text = "ReturnBookForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReturnBookForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,8 +184,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label startLabel;
+        private System.Windows.Forms.Label endLabel;
         private System.Windows.Forms.Button returnMenuButton;
         private System.Windows.Forms.Label cStartDatelabel;
         private System.Windows.Forms.Button filterButton;
@@ -169,5 +194,7 @@
         private System.Windows.Forms.ComboBox issuedComboBox;
         private System.Windows.Forms.Label cEndDatelabel;
         private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Label userEmailLabel;
+        private System.Windows.Forms.Label currEmailLabel;
     }
 }

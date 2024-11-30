@@ -2,6 +2,7 @@
 using libraryMeneger.Data.BookRepository;
 using libraryMeneger.Data.BorrowHistory;
 using libraryMeneger.Data.StatusRepository;
+using libraryMeneger.Data.UserRepository;
 using libraryMeneger.user;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace libraryMeneger
 {
     public partial class ReturnBookForm : Form
     {
-        private AdminUser adminUser;
+        public AdminUser adminUser { get; private set; }
         BooksRepository repository = new BooksRepository();
         StatusRepository statRepository = new StatusRepository();
         BorrowHistoryRepository borrowRepository = new BorrowHistoryRepository();
@@ -26,6 +27,9 @@ namespace libraryMeneger
         {
             InitializeComponent();
             adminUser = user;
+            this.userEmailLabel.Visible = false;
+            this.currEmailLabel.Visible = false;
+            this.currEmailLabel.ForeColor = Color.Red;
 
             string Title;
             string UserLogin;
@@ -99,6 +103,7 @@ namespace libraryMeneger
         {
             if (this.issuedComboBox.SelectedIndex != 0)
             {
+                UserRepository userRepository = new UserRepository();
                 int article = int.Parse(new string(this.issuedComboBox.SelectedItem.ToString().TakeWhile(char.IsDigit).ToArray()));
                 BookStatManager currentIssuedBook = statRepository.GetBookStatManager(article);
                 DateTime startDate = currentIssuedBook.StartDate;
@@ -110,10 +115,15 @@ namespace libraryMeneger
                 if (currentIssuedBook.EndDate > DateTime.Now.Date)
                 {
                     this.cEndDatelabel.ForeColor = Color.Green;
+                    this.userEmailLabel.Visible = false;
+                    this.currEmailLabel.Visible = false;
                 }
                 else
                 {
                     this.cEndDatelabel.ForeColor = Color.Red;
+                    this.userEmailLabel.Visible = true;
+                    this.currEmailLabel.Visible = true;
+                    this.currEmailLabel.Text = userRepository.getEmail(statRepository.getUserIDByArticle(article));
                 }
             }
             else
@@ -122,6 +132,8 @@ namespace libraryMeneger
                 this.cEndDatelabel.Text = "End date is empty";
                 this.cStartDatelabel.ForeColor = Color.LightGray;
                 this.cEndDatelabel.ForeColor = Color.LightGray;
+                this.userEmailLabel.Visible = false;
+                this.currEmailLabel.Visible = false;
             }
         }
 
@@ -152,9 +164,12 @@ namespace libraryMeneger
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            AdminForm form = new AdminForm(adminUser);
-            form.Show();
             this.Close();
+        }
+
+        private void ReturnBookForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
         }
     }
 }
