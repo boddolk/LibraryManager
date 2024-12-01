@@ -59,12 +59,13 @@ namespace libraryMeneger
         private void filterButton_Click(object sender, EventArgs e)
         {
             string Title;
+            this.reserveComboBox.Items.Clear();
             string UserLogin = this.filterTextBox.Text;
             if (UserLogin.Length != 0) // Якщо логін не пустий то перейте до видобування резервованих за юзером
             {
                 List<BookStatManager> resBooksForUser = statRepository.getStatManagersByUser(UserLogin);
                 
-                this.reserveComboBox.Items.Clear();
+                
                 if (resBooksForUser != null)
                 {
                     this.reserveComboBox.Items.Add("Select the reserve:");

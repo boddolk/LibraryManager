@@ -33,21 +33,21 @@
             this.SingUpButton = new System.Windows.Forms.Button();
             this.LogInTextBox = new System.Windows.Forms.TextBox();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
-            this.PasswordLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // LoginLabel
             // 
             this.LoginLabel.AutoEllipsis = true;
-            this.LoginLabel.Location = new System.Drawing.Point(94, 285);
+            this.LoginLabel.Location = new System.Drawing.Point(106, 282);
             this.LoginLabel.Name = "LoginLabel";
             this.LoginLabel.Size = new System.Drawing.Size(59, 30);
             this.LoginLabel.TabIndex = 0;
@@ -83,30 +83,20 @@
             // 
             // LogInTextBox
             // 
-            this.LogInTextBox.Location = new System.Drawing.Point(162, 285);
+            this.LogInTextBox.Location = new System.Drawing.Point(171, 282);
             this.LogInTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LogInTextBox.Name = "LogInTextBox";
-            this.LogInTextBox.Size = new System.Drawing.Size(243, 30);
+            this.LogInTextBox.Size = new System.Drawing.Size(234, 30);
             this.LogInTextBox.TabIndex = 6;
             // 
             // PasswordTextBox
             // 
-            this.PasswordTextBox.Location = new System.Drawing.Point(162, 344);
+            this.PasswordTextBox.Location = new System.Drawing.Point(171, 348);
             this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '*';
-            this.PasswordTextBox.Size = new System.Drawing.Size(243, 30);
+            this.PasswordTextBox.Size = new System.Drawing.Size(234, 30);
             this.PasswordTextBox.TabIndex = 7;
-            // 
-            // PasswordLabel
-            // 
-            this.PasswordLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.PasswordLabel.Location = new System.Drawing.Point(76, 348);
-            this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(80, 26);
-            this.PasswordLabel.TabIndex = 1;
-            this.PasswordLabel.Text = "Password";
-            this.PasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel1
             // 
@@ -120,37 +110,42 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Snow;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Image = global::libraryMeneger.Properties.Resources.images__2_;
-            this.pictureBox3.Location = new System.Drawing.Point(39, 285);
+            this.pictureBox3.Image = global::libraryMeneger.Properties.Resources._10982_200;
+            this.pictureBox3.Location = new System.Drawing.Point(49, 348);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(28, 30);
+            this.pictureBox3.Size = new System.Drawing.Size(40, 30);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 11;
+            this.pictureBox3.TabIndex = 12;
             this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::libraryMeneger.Properties.Resources._11447601;
+            this.pictureBox2.Location = new System.Drawing.Point(49, 282);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(40, 30);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::libraryMeneger.Properties.Resources._8832880;
-            this.pictureBox1.Location = new System.Drawing.Point(152, 50);
+            this.pictureBox1.Location = new System.Drawing.Point(149, 62);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 134);
+            this.pictureBox1.Size = new System.Drawing.Size(144, 123);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
+            // label1
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Snow;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Image = global::libraryMeneger.Properties.Resources._10982_200;
-            this.pictureBox2.Location = new System.Drawing.Point(39, 344);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(31, 30);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
+            this.label1.AutoEllipsis = true;
+            this.label1.Location = new System.Drawing.Point(95, 351);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 30);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Password";
             // 
             // LogInForm
             // 
@@ -158,14 +153,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(451, 596);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.PasswordTextBox);
             this.Controls.Add(this.LogInTextBox);
             this.Controls.Add(this.SingUpButton);
             this.Controls.Add(this.LogInButton);
-            this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.LoginLabel);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -175,8 +170,8 @@
             this.Text = "Login";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,14 +180,14 @@
         #endregion
 
         private System.Windows.Forms.Label LoginLabel;
-        private System.Windows.Forms.Label PasswordLabel;
         private System.Windows.Forms.Button LogInButton;
         private System.Windows.Forms.Button SingUpButton;
         private System.Windows.Forms.TextBox LogInTextBox;
         private System.Windows.Forms.TextBox PasswordTextBox;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label1;
     }
 }

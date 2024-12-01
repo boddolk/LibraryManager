@@ -47,10 +47,10 @@
             this.bookInfoLable = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // GiveOutButton
@@ -59,12 +59,12 @@
             this.GiveOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GiveOutButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.GiveOutButton.ForeColor = System.Drawing.Color.Snow;
-            this.GiveOutButton.Location = new System.Drawing.Point(550, 526);
+            this.GiveOutButton.Location = new System.Drawing.Point(464, 359);
             this.GiveOutButton.Margin = new System.Windows.Forms.Padding(4);
             this.GiveOutButton.Name = "GiveOutButton";
-            this.GiveOutButton.Size = new System.Drawing.Size(303, 56);
+            this.GiveOutButton.Size = new System.Drawing.Size(226, 50);
             this.GiveOutButton.TabIndex = 0;
-            this.GiveOutButton.Text = "To issue";
+            this.GiveOutButton.Text = "Issue Book";
             this.GiveOutButton.UseVisualStyleBackColor = false;
             this.GiveOutButton.Click += new System.EventHandler(this.GiveOutButton_Click);
             // 
@@ -76,10 +76,10 @@
             this.BookComboBox.ForeColor = System.Drawing.Color.RoyalBlue;
             this.BookComboBox.FormattingEnabled = true;
             this.BookComboBox.IntegralHeight = false;
-            this.BookComboBox.Location = new System.Drawing.Point(201, 103);
+            this.BookComboBox.Location = new System.Drawing.Point(200, 117);
             this.BookComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.BookComboBox.Name = "BookComboBox";
-            this.BookComboBox.Size = new System.Drawing.Size(680, 32);
+            this.BookComboBox.Size = new System.Drawing.Size(753, 32);
             this.BookComboBox.TabIndex = 1;
             this.BookComboBox.SelectedIndexChanged += new System.EventHandler(this.BookComboBox_SelectedIndexChanged);
             // 
@@ -89,10 +89,10 @@
             this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AddButton.ForeColor = System.Drawing.Color.Snow;
-            this.AddButton.Location = new System.Drawing.Point(202, 529);
+            this.AddButton.Location = new System.Drawing.Point(200, 447);
             this.AddButton.Margin = new System.Windows.Forms.Padding(4);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(301, 53);
+            this.AddButton.Size = new System.Drawing.Size(226, 50);
             this.AddButton.TabIndex = 2;
             this.AddButton.Text = "Add Book";
             this.AddButton.UseVisualStyleBackColor = false;
@@ -104,10 +104,10 @@
             this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.EditButton.ForeColor = System.Drawing.Color.Snow;
-            this.EditButton.Location = new System.Drawing.Point(201, 444);
+            this.EditButton.Location = new System.Drawing.Point(464, 447);
             this.EditButton.Margin = new System.Windows.Forms.Padding(4);
             this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(302, 56);
+            this.EditButton.Size = new System.Drawing.Size(226, 50);
             this.EditButton.TabIndex = 3;
             this.EditButton.Text = "Edit Book";
             this.EditButton.UseVisualStyleBackColor = false;
@@ -115,13 +115,17 @@
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(474, 713);
+            this.DeleteButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DeleteButton.ForeColor = System.Drawing.Color.Snow;
+            this.DeleteButton.Location = new System.Drawing.Point(727, 447);
             this.DeleteButton.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(200, 42);
+            this.DeleteButton.Size = new System.Drawing.Size(226, 50);
             this.DeleteButton.TabIndex = 4;
             this.DeleteButton.Text = "Delete Book";
-            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.UseVisualStyleBackColor = false;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // NameLabel
@@ -130,12 +134,12 @@
             this.NameLabel.BackColor = System.Drawing.Color.SandyBrown;
             this.NameLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameLabel.ForeColor = System.Drawing.Color.Snow;
-            this.NameLabel.Location = new System.Drawing.Point(112, 125);
+            this.NameLabel.Location = new System.Drawing.Point(102, 128);
             this.NameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(68, 31);
+            this.NameLabel.Size = new System.Drawing.Size(62, 31);
             this.NameLabel.TabIndex = 5;
-            this.NameLabel.Text = "Title:";
+            this.NameLabel.Text = "Title";
             // 
             // AuthorLabel
             // 
@@ -143,12 +147,12 @@
             this.AuthorLabel.BackColor = System.Drawing.Color.SandyBrown;
             this.AuthorLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AuthorLabel.ForeColor = System.Drawing.Color.Snow;
-            this.AuthorLabel.Location = new System.Drawing.Point(85, 178);
+            this.AuthorLabel.Location = new System.Drawing.Point(74, 182);
             this.AuthorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AuthorLabel.Name = "AuthorLabel";
-            this.AuthorLabel.Size = new System.Drawing.Size(97, 31);
+            this.AuthorLabel.Size = new System.Drawing.Size(90, 31);
             this.AuthorLabel.TabIndex = 6;
-            this.AuthorLabel.Text = "Author:";
+            this.AuthorLabel.Text = "Author";
             // 
             // ArticleLabel
             // 
@@ -156,24 +160,24 @@
             this.ArticleLabel.BackColor = System.Drawing.Color.SandyBrown;
             this.ArticleLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ArticleLabel.ForeColor = System.Drawing.Color.Snow;
-            this.ArticleLabel.Location = new System.Drawing.Point(90, 80);
+            this.ArticleLabel.Location = new System.Drawing.Point(78, 81);
             this.ArticleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ArticleLabel.Name = "ArticleLabel";
-            this.ArticleLabel.Size = new System.Drawing.Size(92, 31);
+            this.ArticleLabel.Size = new System.Drawing.Size(86, 31);
             this.ArticleLabel.TabIndex = 7;
-            this.ArticleLabel.Text = "Article:";
+            this.ArticleLabel.Text = "Article";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.Snow;
-            this.label1.Location = new System.Drawing.Point(112, 232);
+            this.label1.Location = new System.Drawing.Point(105, 236);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 31);
+            this.label1.Size = new System.Drawing.Size(59, 31);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Year:";
+            this.label1.Text = "Year";
             // 
             // returnButton
             // 
@@ -181,12 +185,12 @@
             this.returnButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.returnButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.returnButton.ForeColor = System.Drawing.Color.Snow;
-            this.returnButton.Location = new System.Drawing.Point(550, 444);
+            this.returnButton.Location = new System.Drawing.Point(727, 359);
             this.returnButton.Margin = new System.Windows.Forms.Padding(4);
             this.returnButton.Name = "returnButton";
-            this.returnButton.Size = new System.Drawing.Size(303, 56);
+            this.returnButton.Size = new System.Drawing.Size(226, 47);
             this.returnButton.TabIndex = 16;
-            this.returnButton.Text = "Return book";
+            this.returnButton.Text = "Return Book";
             this.returnButton.UseVisualStyleBackColor = false;
             this.returnButton.Click += new System.EventHandler(this.returnButton_Click);
             // 
@@ -231,7 +235,7 @@
             this.currentYearLabel.AutoSize = true;
             this.currentYearLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.currentYearLabel.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.currentYearLabel.Location = new System.Drawing.Point(196, 331);
+            this.currentYearLabel.Location = new System.Drawing.Point(195, 334);
             this.currentYearLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.currentYearLabel.Name = "currentYearLabel";
             this.currentYearLabel.Size = new System.Drawing.Size(113, 28);
@@ -244,7 +248,7 @@
             this.currentStatusLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.currentStatusLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.currentStatusLabel.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.currentStatusLabel.Location = new System.Drawing.Point(196, 381);
+            this.currentStatusLabel.Location = new System.Drawing.Point(195, 384);
             this.currentStatusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.currentStatusLabel.Name = "currentStatusLabel";
             this.currentStatusLabel.Size = new System.Drawing.Size(129, 28);
@@ -256,66 +260,66 @@
             this.StatusLabel.AutoSize = true;
             this.StatusLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.StatusLabel.ForeColor = System.Drawing.Color.Snow;
-            this.StatusLabel.Location = new System.Drawing.Point(100, 283);
+            this.StatusLabel.Location = new System.Drawing.Point(84, 286);
             this.StatusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(86, 31);
+            this.StatusLabel.Size = new System.Drawing.Size(80, 31);
             this.StatusLabel.TabIndex = 8;
-            this.StatusLabel.Text = "Status:";
+            this.StatusLabel.Text = "Status";
             // 
             // bookInfoLable
             // 
             this.bookInfoLable.AutoSize = true;
             this.bookInfoLable.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.bookInfoLable.ForeColor = System.Drawing.Color.Snow;
-            this.bookInfoLable.Location = new System.Drawing.Point(32, 29);
+            this.bookInfoLable.Location = new System.Drawing.Point(13, 22);
             this.bookInfoLable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bookInfoLable.Name = "bookInfoLable";
-            this.bookInfoLable.Size = new System.Drawing.Size(126, 31);
+            this.bookInfoLable.Size = new System.Drawing.Size(120, 31);
             this.bookInfoLable.TabIndex = 22;
-            this.bookInfoLable.Text = "Book info:";
+            this.bookInfoLable.Text = "Book info";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SandyBrown;
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(894, 96);
+            this.panel1.Size = new System.Drawing.Size(993, 95);
             this.panel1.TabIndex = 23;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SandyBrown;
             this.panel2.Controls.Add(this.ArticleLabel);
+            this.panel2.Controls.Add(this.bookInfoLable);
             this.panel2.Controls.Add(this.NameLabel);
             this.panel2.Controls.Add(this.AuthorLabel);
-            this.panel2.Controls.Add(this.bookInfoLable);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.StatusLabel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 96);
+            this.panel2.Location = new System.Drawing.Point(0, 95);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(189, 499);
+            this.panel2.Size = new System.Drawing.Size(164, 442);
             this.panel2.TabIndex = 24;
             // 
-            // pictureBox1
+            // pictureBox2
             // 
-            this.pictureBox1.Image = global::libraryMeneger.Properties.Resources.free_opened_book_icon_3163_thumb;
-            this.pictureBox1.Location = new System.Drawing.Point(21, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(165, 96);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox2.Image = global::libraryMeneger.Properties.Resources.book;
+            this.pictureBox2.Location = new System.Drawing.Point(-9, -4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(173, 99);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 25;
+            this.pictureBox2.TabStop = false;
             // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
-            this.ClientSize = new System.Drawing.Size(894, 595);
+            this.ClientSize = new System.Drawing.Size(993, 537);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.currentStatusLabel);
@@ -332,12 +336,13 @@
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "AdminForm";
             this.Text = "AdminForm";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -364,6 +369,6 @@
         private System.Windows.Forms.Label bookInfoLable;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

@@ -118,73 +118,28 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="book-icon-book-icon-simple-sign-book-icon-isolated-on-with-background-illustration-of-cover-book-icon-free-free-vector" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\book-icon-book-icon-simple-sign-book-icon-isolated-on-with-background-illustration-of-cover-book-icon-free-free-vector.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="png-clipart-user-profile-computer-icons-login-user-avatars-monochrome-black-thumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\png-clipart-user-profile-computer-icons-login-user-avatars-monochrome-black-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="images2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="10982-200" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\10982-200.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1144760" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1144760.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="11447601" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\11447601.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pngtree-black-iron-lock-icon-image_1145477" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngtree-black-iron-lock-icon-image_1145477.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="images1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pngtree-book-icon-vector-image-png-image_6552370" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngtree-book-icon-vector-image-png-image_6552370.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pngtree-book-icon-vector-image-png-image_6552370 (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngtree-book-icon-vector-image-png-image_6552370 (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="images (1)2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images (1)2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user-profile-icon-free-vector1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user-profile-icon-free-vector1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pngtree-book-icon-vector-image-png-image_6552370 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngtree-book-icon-vector-image-png-image_6552370 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pngtree-book-icon-vector-image-png-image_65523701" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngtree-book-icon-vector-image-png-image_65523701.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Smoky-orange-illustration-soot-cartoon-powder_492561_wh860" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Smoky-orange-illustration-soot-cartoon-powder_492561_wh860.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="images3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="free-opened-book-icon-3163-thumb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-opened-book-icon-3163-thumb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="8832880" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8832880.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user-profile-icon-free-vector" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user-profile-icon-free-vector.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="prof" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\prof.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="images (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="images (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="images (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1144760" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1144760.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user-profile-icon-free-vector2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user-profile-icon-free-vector2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="images (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="free-opened-book-icon-3163-thumb" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\free-opened-book-icon-3163-thumb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="book" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\book.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

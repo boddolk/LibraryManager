@@ -66,128 +66,139 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label1.Location = new System.Drawing.Point(18, 173);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 23);
+            this.label1.Size = new System.Drawing.Size(104, 28);
             this.label1.TabIndex = 1;
             this.label1.Text = "Username";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label2.Location = new System.Drawing.Point(18, 220);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 23);
+            this.label2.Size = new System.Drawing.Size(71, 28);
             this.label2.TabIndex = 2;
             this.label2.Text = "Name:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label3.Location = new System.Drawing.Point(18, 260);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 23);
+            this.label3.Size = new System.Drawing.Size(98, 28);
             this.label3.TabIndex = 3;
             this.label3.Text = "Surname:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label4.Location = new System.Drawing.Point(18, 311);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(129, 23);
+            this.label4.Size = new System.Drawing.Size(155, 28);
             this.label4.TabIndex = 4;
             this.label4.Text = "Phone number:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label5.Location = new System.Drawing.Point(18, 358);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 23);
+            this.label5.Size = new System.Drawing.Size(55, 28);
             this.label5.TabIndex = 5;
             this.label5.Text = "Mail:";
             // 
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
+            this.NameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameLabel.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.NameLabel.Location = new System.Drawing.Point(155, 220);
+            this.NameLabel.Location = new System.Drawing.Point(181, 220);
             this.NameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(65, 23);
+            this.NameLabel.Size = new System.Drawing.Size(78, 28);
             this.NameLabel.TabIndex = 6;
             this.NameLabel.Text = "no info";
             // 
             // SurnameLabel
             // 
             this.SurnameLabel.AutoSize = true;
+            this.SurnameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SurnameLabel.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.SurnameLabel.Location = new System.Drawing.Point(155, 260);
+            this.SurnameLabel.Location = new System.Drawing.Point(181, 260);
             this.SurnameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SurnameLabel.Name = "SurnameLabel";
-            this.SurnameLabel.Size = new System.Drawing.Size(65, 23);
+            this.SurnameLabel.Size = new System.Drawing.Size(78, 28);
             this.SurnameLabel.TabIndex = 7;
             this.SurnameLabel.Text = "no info";
             // 
             // PhoneLabel
             // 
             this.PhoneLabel.AutoSize = true;
+            this.PhoneLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PhoneLabel.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.PhoneLabel.Location = new System.Drawing.Point(155, 311);
+            this.PhoneLabel.Location = new System.Drawing.Point(181, 311);
             this.PhoneLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PhoneLabel.Name = "PhoneLabel";
-            this.PhoneLabel.Size = new System.Drawing.Size(65, 23);
+            this.PhoneLabel.Size = new System.Drawing.Size(78, 28);
             this.PhoneLabel.TabIndex = 8;
             this.PhoneLabel.Text = "no info";
             // 
             // MailLabel
             // 
             this.MailLabel.AutoSize = true;
+            this.MailLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MailLabel.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.MailLabel.Location = new System.Drawing.Point(155, 358);
+            this.MailLabel.Location = new System.Drawing.Point(181, 358);
             this.MailLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MailLabel.Name = "MailLabel";
-            this.MailLabel.Size = new System.Drawing.Size(65, 23);
+            this.MailLabel.Size = new System.Drawing.Size(78, 28);
             this.MailLabel.TabIndex = 9;
             this.MailLabel.Text = "no info";
             // 
             // UsernameLabel
             // 
             this.UsernameLabel.AutoSize = true;
+            this.UsernameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.UsernameLabel.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.UsernameLabel.Location = new System.Drawing.Point(155, 173);
+            this.UsernameLabel.Location = new System.Drawing.Point(181, 173);
             this.UsernameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(65, 23);
+            this.UsernameLabel.Size = new System.Drawing.Size(78, 28);
             this.UsernameLabel.TabIndex = 10;
             this.UsernameLabel.Text = "no info";
             // 
             // BookListBox
             // 
-            this.BookListBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BookListBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BookListBox.FormattingEnabled = true;
-            this.BookListBox.ItemHeight = 23;
+            this.BookListBox.ItemHeight = 28;
             this.BookListBox.Location = new System.Drawing.Point(370, 108);
             this.BookListBox.Margin = new System.Windows.Forms.Padding(4);
             this.BookListBox.Name = "BookListBox";
-            this.BookListBox.Size = new System.Drawing.Size(476, 257);
+            this.BookListBox.Size = new System.Drawing.Size(476, 256);
             this.BookListBox.TabIndex = 11;
             // 
             // ReservedButton
             // 
             this.ReservedButton.BackColor = System.Drawing.Color.RoyalBlue;
             this.ReservedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ReservedButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ReservedButton.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.ReservedButton.Location = new System.Drawing.Point(370, 393);
             this.ReservedButton.Margin = new System.Windows.Forms.Padding(4);
@@ -202,11 +213,12 @@
             // 
             this.EditProfilButton.BackColor = System.Drawing.Color.RoyalBlue;
             this.EditProfilButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditProfilButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.EditProfilButton.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.EditProfilButton.Location = new System.Drawing.Point(22, 434);
+            this.EditProfilButton.Location = new System.Drawing.Point(23, 434);
             this.EditProfilButton.Margin = new System.Windows.Forms.Padding(4);
             this.EditProfilButton.Name = "EditProfilButton";
-            this.EditProfilButton.Size = new System.Drawing.Size(260, 57);
+            this.EditProfilButton.Size = new System.Drawing.Size(246, 57);
             this.EditProfilButton.TabIndex = 13;
             this.EditProfilButton.Text = "Edit profile";
             this.EditProfilButton.UseVisualStyleBackColor = false;
@@ -216,7 +228,7 @@
             // 
             this.HistoryButton.BackColor = System.Drawing.Color.RoyalBlue;
             this.HistoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HistoryButton.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.HistoryButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.HistoryButton.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.HistoryButton.Location = new System.Drawing.Point(370, 489);
             this.HistoryButton.Margin = new System.Windows.Forms.Padding(4);
@@ -240,8 +252,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SandyBrown;
-            this.panel2.Controls.Add(this.PersonalInfoLabel);
             this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.PersonalInfoLabel);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.UsernameLabel);
             this.panel2.Controls.Add(this.label2);
@@ -261,12 +273,12 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::libraryMeneger.Properties.Resources._1144760;
-            this.pictureBox1.Location = new System.Drawing.Point(93, 42);
+            this.pictureBox1.Image = global::libraryMeneger.Properties.Resources.prof;
+            this.pictureBox1.Location = new System.Drawing.Point(93, 53);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(115, 102);
+            this.pictureBox1.Size = new System.Drawing.Size(127, 104);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // label6
@@ -324,7 +336,7 @@
         private System.Windows.Forms.Button HistoryButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

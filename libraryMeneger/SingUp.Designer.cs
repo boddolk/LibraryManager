@@ -59,10 +59,10 @@
             // 
             // LogInTextBox
             // 
-            this.LogInTextBox.Location = new System.Drawing.Point(173, 161);
+            this.LogInTextBox.Location = new System.Drawing.Point(143, 161);
             this.LogInTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.LogInTextBox.Name = "LogInTextBox";
-            this.LogInTextBox.Size = new System.Drawing.Size(251, 34);
+            this.LogInTextBox.Size = new System.Drawing.Size(281, 34);
             this.LogInTextBox.TabIndex = 1;
             // 
             // label2
@@ -80,11 +80,11 @@
             // 
             // PasswordTextBox
             // 
-            this.PasswordTextBox.Location = new System.Drawing.Point(173, 290);
+            this.PasswordTextBox.Location = new System.Drawing.Point(143, 290);
             this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '*';
-            this.PasswordTextBox.Size = new System.Drawing.Size(251, 34);
+            this.PasswordTextBox.Size = new System.Drawing.Size(281, 34);
             this.PasswordTextBox.TabIndex = 3;
             // 
             // label3
@@ -102,10 +102,10 @@
             // 
             // NameTextBox
             // 
-            this.NameTextBox.Location = new System.Drawing.Point(173, 224);
+            this.NameTextBox.Location = new System.Drawing.Point(143, 224);
             this.NameTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(251, 34);
+            this.NameTextBox.Size = new System.Drawing.Size(281, 34);
             this.NameTextBox.TabIndex = 5;
             // 
             // label4
@@ -123,18 +123,18 @@
             // 
             // SurnameTextBox
             // 
-            this.SurnameTextBox.Location = new System.Drawing.Point(173, 415);
+            this.SurnameTextBox.Location = new System.Drawing.Point(143, 415);
             this.SurnameTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SurnameTextBox.Name = "SurnameTextBox";
-            this.SurnameTextBox.Size = new System.Drawing.Size(251, 34);
+            this.SurnameTextBox.Size = new System.Drawing.Size(281, 34);
             this.SurnameTextBox.TabIndex = 7;
             // 
             // MailTextBox
             // 
-            this.MailTextBox.Location = new System.Drawing.Point(173, 355);
+            this.MailTextBox.Location = new System.Drawing.Point(143, 355);
             this.MailTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MailTextBox.Name = "MailTextBox";
-            this.MailTextBox.Size = new System.Drawing.Size(251, 34);
+            this.MailTextBox.Size = new System.Drawing.Size(281, 34);
             this.MailTextBox.TabIndex = 9;
             // 
             // label5
@@ -169,9 +169,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.Color.Snow;
-            this.label6.Location = new System.Drawing.Point(165, 44);
+            this.label6.Location = new System.Drawing.Point(153, 50);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(142, 46);
+            this.label6.Size = new System.Drawing.Size(137, 45);
             this.label6.TabIndex = 11;
             this.label6.Text = "Sign up";
             // 
@@ -204,7 +204,9 @@
             this.Controls.Add(this.LogInTextBox);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
             this.Name = "SingUp";
             this.Text = "SingUp";
             this.panel1.ResumeLayout(false);

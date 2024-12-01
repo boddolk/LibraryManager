@@ -83,6 +83,16 @@ namespace libraryMeneger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _11447601 {
+            get {
+                object obj = ResourceManager.GetObject("11447601", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _8832880 {
             get {
                 object obj = ResourceManager.GetObject("8832880", resourceCulture);
@@ -93,10 +103,9 @@ namespace libraryMeneger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap book_icon_book_icon_simple_sign_book_icon_isolated_on_with_background_illustration_of_cover_book_icon_free_free_vector {
+        internal static System.Drawing.Bitmap book {
             get {
-                object obj = ResourceManager.GetObject("book-icon-book-icon-simple-sign-book-icon-isolated-on-with-background-illustratio" +
-                        "n-of-cover-book-icon-free-free-vector", resourceCulture);
+                object obj = ResourceManager.GetObject("book", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -114,9 +123,9 @@ namespace libraryMeneger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap images {
+        internal static System.Drawing.Bitmap images__3_ {
             get {
-                object obj = ResourceManager.GetObject("images", resourceCulture);
+                object obj = ResourceManager.GetObject("images (3)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -124,170 +133,9 @@ namespace libraryMeneger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap images__1_ {
+        internal static System.Drawing.Bitmap prof {
             get {
-                object obj = ResourceManager.GetObject("images (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap images__1_1 {
-            get {
-                object obj = ResourceManager.GetObject("images (1)1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap images__1_2 {
-            get {
-                object obj = ResourceManager.GetObject("images (1)2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap images__2_ {
-            get {
-                object obj = ResourceManager.GetObject("images (2)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap images1 {
-            get {
-                object obj = ResourceManager.GetObject("images1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap images2 {
-            get {
-                object obj = ResourceManager.GetObject("images2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap images3 {
-            get {
-                object obj = ResourceManager.GetObject("images3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap png_clipart_user_profile_computer_icons_login_user_avatars_monochrome_black_thumbnail {
-            get {
-                object obj = ResourceManager.GetObject("png-clipart-user-profile-computer-icons-login-user-avatars-monochrome-black-thumb" +
-                        "nail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pngtree_black_iron_lock_icon_image_1145477 {
-            get {
-                object obj = ResourceManager.GetObject("pngtree-black-iron-lock-icon-image_1145477", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pngtree_book_icon_vector_image_png_image_6552370 {
-            get {
-                object obj = ResourceManager.GetObject("pngtree-book-icon-vector-image-png-image_6552370", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pngtree_book_icon_vector_image_png_image_6552370__1_ {
-            get {
-                object obj = ResourceManager.GetObject("pngtree-book-icon-vector-image-png-image_6552370 (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pngtree_book_icon_vector_image_png_image_6552370__1_1 {
-            get {
-                object obj = ResourceManager.GetObject("pngtree-book-icon-vector-image-png-image_6552370 (1)1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pngtree_book_icon_vector_image_png_image_65523701 {
-            get {
-                object obj = ResourceManager.GetObject("pngtree-book-icon-vector-image-png-image_65523701", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Smoky_orange_illustration_soot_cartoon_powder_492561_wh860 {
-            get {
-                object obj = ResourceManager.GetObject("Smoky-orange-illustration-soot-cartoon-powder_492561_wh860", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap user_profile_icon_free_vector {
-            get {
-                object obj = ResourceManager.GetObject("user-profile-icon-free-vector", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap user_profile_icon_free_vector1 {
-            get {
-                object obj = ResourceManager.GetObject("user-profile-icon-free-vector1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap user_profile_icon_free_vector2 {
-            get {
-                object obj = ResourceManager.GetObject("user-profile-icon-free-vector2", resourceCulture);
+                object obj = ResourceManager.GetObject("prof", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
