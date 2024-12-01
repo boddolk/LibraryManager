@@ -149,6 +149,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ReservePlus";
             this.Text = "ReservePlus";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReservePlus_FormClosing);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

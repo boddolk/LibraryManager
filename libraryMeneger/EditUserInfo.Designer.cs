@@ -174,6 +174,7 @@
             this.MinimizeBox = false;
             this.Name = "EditUserInfo";
             this.Text = "EditUserInfo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditUserInfo_FormClosing);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

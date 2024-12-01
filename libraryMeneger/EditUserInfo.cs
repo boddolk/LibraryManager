@@ -15,12 +15,13 @@ namespace libraryMeneger
     public partial class EditUserInfo : Form
     {
         public RegularUser regularUser { get; private set; }
+        public bool IsChanged { get; private set; }
 
         public EditUserInfo(RegularUser user)
         {
             InitializeComponent();
             regularUser = user;
-            this.DialogResult = DialogResult.Cancel;
+            IsChanged = false;
 
             NameTextBox.Text = user.Name;
             SurnameTextBox.Text = user.Surname;
@@ -48,7 +49,7 @@ namespace libraryMeneger
 
                     if (correct)
                     {
-                        this.DialogResult = DialogResult.OK;
+                        IsChanged = true;
                         MessageBox.Show("User successfully edited!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
@@ -61,6 +62,18 @@ namespace libraryMeneger
             else
             {
                 MessageBox.Show("There are empty fields. Editing is not possible.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void EditUserInfo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (IsChanged)
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                this.DialogResult = DialogResult.Cancel;
             }
         }
     }

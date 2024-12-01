@@ -46,11 +46,11 @@
             this.StatusLabel = new System.Windows.Forms.Label();
             this.bookInfoLable = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // GiveOutButton
@@ -289,6 +289,16 @@
             this.panel1.Size = new System.Drawing.Size(993, 95);
             this.panel1.TabIndex = 23;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::libraryMeneger.Properties.Resources.book;
+            this.pictureBox2.Location = new System.Drawing.Point(-9, -4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(173, 99);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 25;
+            this.pictureBox2.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SandyBrown;
@@ -303,16 +313,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(164, 442);
             this.panel2.TabIndex = 24;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::libraryMeneger.Properties.Resources.book;
-            this.pictureBox2.Location = new System.Drawing.Point(-9, -4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(173, 99);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 25;
-            this.pictureBox2.TabStop = false;
             // 
             // AdminForm
             // 
@@ -340,9 +340,9 @@
             this.Name = "AdminForm";
             this.Text = "AdminForm";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

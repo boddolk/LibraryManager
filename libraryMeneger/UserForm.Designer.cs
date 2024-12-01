@@ -40,7 +40,6 @@
             this.PhoneLabel = new System.Windows.Forms.Label();
             this.MailLabel = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
-            this.BookListBox = new System.Windows.Forms.ListBox();
             this.ReservedButton = new System.Windows.Forms.Button();
             this.EditProfilButton = new System.Windows.Forms.Button();
             this.HistoryButton = new System.Windows.Forms.Button();
@@ -48,6 +47,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.BookListView = new System.Windows.Forms.ListView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -185,17 +185,6 @@
             this.UsernameLabel.TabIndex = 10;
             this.UsernameLabel.Text = "no info";
             // 
-            // BookListBox
-            // 
-            this.BookListBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BookListBox.FormattingEnabled = true;
-            this.BookListBox.ItemHeight = 28;
-            this.BookListBox.Location = new System.Drawing.Point(416, 108);
-            this.BookListBox.Margin = new System.Windows.Forms.Padding(4);
-            this.BookListBox.Name = "BookListBox";
-            this.BookListBox.Size = new System.Drawing.Size(612, 256);
-            this.BookListBox.TabIndex = 11;
-            // 
             // ReservedButton
             // 
             this.ReservedButton.BackColor = System.Drawing.Color.RoyalBlue;
@@ -249,7 +238,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1041, 55);
+            this.panel1.Size = new System.Drawing.Size(1049, 55);
             this.panel1.TabIndex = 15;
             // 
             // panel2
@@ -292,20 +281,31 @@
             this.label6.Size = new System.Drawing.Size(117, 31);
             this.label6.TabIndex = 17;
             this.label6.Text = "My books";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // BookListView
+            // 
+            this.BookListView.FullRowSelect = true;
+            this.BookListView.HideSelection = false;
+            this.BookListView.Location = new System.Drawing.Point(417, 110);
+            this.BookListView.Name = "BookListView";
+            this.BookListView.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.BookListView.Size = new System.Drawing.Size(612, 256);
+            this.BookListView.TabIndex = 18;
+            this.BookListView.UseCompatibleStateImageBehavior = false;
+            this.BookListView.View = System.Windows.Forms.View.List;
             // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
-            this.ClientSize = new System.Drawing.Size(1041, 616);
+            this.ClientSize = new System.Drawing.Size(1049, 616);
+            this.Controls.Add(this.BookListView);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.HistoryButton);
             this.Controls.Add(this.ReservedButton);
-            this.Controls.Add(this.BookListBox);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -335,7 +335,6 @@
         private System.Windows.Forms.Label PhoneLabel;
         private System.Windows.Forms.Label MailLabel;
         private System.Windows.Forms.Label UsernameLabel;
-        private System.Windows.Forms.ListBox BookListBox;
         private System.Windows.Forms.Button ReservedButton;
         private System.Windows.Forms.Button EditProfilButton;
         private System.Windows.Forms.Button HistoryButton;
@@ -343,5 +342,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ListView BookListView;
     }
 }

@@ -182,6 +182,7 @@
             this.MinimizeBox = false;
             this.Name = "BookAddForm";
             this.Text = "BookAddForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BookAddForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.YearNumer)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

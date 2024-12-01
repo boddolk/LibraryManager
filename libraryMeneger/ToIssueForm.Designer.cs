@@ -39,11 +39,11 @@
             this.startLabel = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // reserveComboBox
@@ -178,6 +178,16 @@
             this.panel1.Size = new System.Drawing.Size(989, 90);
             this.panel1.TabIndex = 10;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::libraryMeneger.Properties.Resources.book;
+            this.pictureBox2.Location = new System.Drawing.Point(0, -7);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(164, 97);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SandyBrown;
@@ -189,16 +199,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(164, 356);
             this.panel2.TabIndex = 11;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::libraryMeneger.Properties.Resources.book;
-            this.pictureBox2.Location = new System.Drawing.Point(0, -7);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(164, 97);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
             // 
             // ToIssueForm
             // 
@@ -223,10 +223,11 @@
             this.MinimizeBox = false;
             this.Name = "ToIssueForm";
             this.Text = "ToIssueForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ToIssueForm_FormClosing);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

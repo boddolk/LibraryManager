@@ -16,6 +16,7 @@ namespace libraryMeneger
     public partial class BookEditForm : Form
     {
         public AdminUser adminUser { get; private set; }
+        public bool IsChanged { get; private set; }
         GenBook currentBook;
         
         public BookEditForm(GenBook book, AdminUser user)
@@ -23,8 +24,7 @@ namespace libraryMeneger
             InitializeComponent();
             adminUser = user;
             currentBook = book;
-            this.DialogResult = DialogResult.Cancel;
-
+            IsChanged = false;
             currentArticle.Text = currentBook.Article.ToString();
             NameTextBox.Text = currentBook.Title.ToString();
             AuthorTextBox.Text = currentBook.Author.ToString();
@@ -52,8 +52,8 @@ namespace libraryMeneger
 
                     if (correct)
                     {
+                        IsChanged = true;
                         MessageBox.Show("Book successfully edited!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
                     else 
@@ -61,6 +61,18 @@ namespace libraryMeneger
                         MessageBox.Show("The book is not edited!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+            }
+        }
+
+        private void BookEditForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (IsChanged)
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                this.DialogResult = DialogResult.Cancel;
             }
         }
     }

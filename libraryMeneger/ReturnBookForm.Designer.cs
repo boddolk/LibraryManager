@@ -41,8 +41,8 @@
             this.userEmailLabel = new System.Windows.Forms.Label();
             this.currEmailLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -81,7 +81,7 @@
             this.returnMenuButton.Name = "returnMenuButton";
             this.returnMenuButton.Size = new System.Drawing.Size(226, 50);
             this.returnMenuButton.TabIndex = 15;
-            this.returnMenuButton.Text = "   ";
+            this.returnMenuButton.Text = "Return";
             this.returnMenuButton.UseVisualStyleBackColor = false;
             this.returnMenuButton.Click += new System.EventHandler(this.returnMenuButton_Click);
             // 
@@ -206,16 +206,6 @@
             this.panel2.Size = new System.Drawing.Size(164, 510);
             this.panel2.TabIndex = 26;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.SandyBrown;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(164, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(829, 95);
-            this.panel1.TabIndex = 25;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::libraryMeneger.Properties.Resources.book;
@@ -225,6 +215,16 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.SandyBrown;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(164, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(829, 95);
+            this.panel1.TabIndex = 25;
             // 
             // ReturnBookForm
             // 
@@ -249,6 +249,7 @@
             this.MaximizeBox = false;
             this.Name = "ReturnBookForm";
             this.Text = "ReturnBookForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReturnBookForm_FormClosing);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

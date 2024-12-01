@@ -19,6 +19,7 @@ namespace libraryMeneger
     public partial class ReturnBookForm : Form
     {
         public AdminUser adminUser { get; private set; }
+        public bool IsChanged { get; private set; }
         BooksRepository repository = new BooksRepository();
         StatusRepository statRepository = new StatusRepository();
         BorrowHistoryRepository borrowRepository = new BorrowHistoryRepository();
@@ -27,7 +28,7 @@ namespace libraryMeneger
         {
             InitializeComponent();
             adminUser = user;
-            this.DialogResult = DialogResult.Cancel;
+            IsChanged = false;
 
             this.userEmailLabel.Visible = false;
             this.currEmailLabel.Visible = false;
@@ -152,7 +153,7 @@ namespace libraryMeneger
                 {
                     if (statRepository.removeBookWithItsStatus(article))
                     {
-                        this.DialogResult = DialogResult.OK;
+                        IsChanged = true;
                         this.issuedComboBox.Items.RemoveAt(this.issuedComboBox.SelectedIndex);
                         this.issuedComboBox.SelectedIndex = 0;
                         MessageBox.Show("Book successfully returned to the library!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -168,6 +169,18 @@ namespace libraryMeneger
         private void exitButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ReturnBookForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (IsChanged)
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                this.DialogResult = DialogResult.Cancel;
+            }
         }
     }
 }

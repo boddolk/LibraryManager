@@ -55,7 +55,7 @@ namespace libraryMeneger.Data.BorrowHistory
         }
         public override List<Tuple<int, DateTime, DateTime>> getUserHistory(string login)
         {
-            List<Tuple<int, DateTime, DateTime>> history = null;
+            List<Tuple<int, DateTime, DateTime>> history = new List<Tuple<int, DateTime, DateTime>>();
             try
             {
                 connection.Open();
@@ -75,7 +75,7 @@ namespace libraryMeneger.Data.BorrowHistory
                                 Convert.ToDateTime(reader["ReturnDate"]));
                             history.Add(item);
                         }
-                        if (history != null) // АГРИЛОСЯ НА ПЕРЕВІРКУ, ЗАМІНИВ НА NULL!!!
+                        if (history != null)
                         {
                             return history;
                         }
