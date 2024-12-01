@@ -71,7 +71,7 @@
             this.label2.BackColor = System.Drawing.Color.Snow;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label2.Location = new System.Drawing.Point(22, 418);
+            this.label2.Location = new System.Drawing.Point(22, 222);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 31);
@@ -80,7 +80,7 @@
             // 
             // PasswordTextBox
             // 
-            this.PasswordTextBox.Location = new System.Drawing.Point(143, 290);
+            this.PasswordTextBox.Location = new System.Drawing.Point(143, 222);
             this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '*';
@@ -93,7 +93,7 @@
             this.label3.BackColor = System.Drawing.Color.Snow;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label3.Location = new System.Drawing.Point(48, 227);
+            this.label3.Location = new System.Drawing.Point(48, 291);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 31);
@@ -102,7 +102,7 @@
             // 
             // NameTextBox
             // 
-            this.NameTextBox.Location = new System.Drawing.Point(143, 224);
+            this.NameTextBox.Location = new System.Drawing.Point(143, 288);
             this.NameTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(281, 34);
@@ -114,7 +114,7 @@
             this.label4.BackColor = System.Drawing.Color.Snow;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label4.Location = new System.Drawing.Point(28, 293);
+            this.label4.Location = new System.Drawing.Point(28, 357);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 31);
@@ -123,7 +123,7 @@
             // 
             // SurnameTextBox
             // 
-            this.SurnameTextBox.Location = new System.Drawing.Point(143, 415);
+            this.SurnameTextBox.Location = new System.Drawing.Point(143, 354);
             this.SurnameTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SurnameTextBox.Name = "SurnameTextBox";
             this.SurnameTextBox.Size = new System.Drawing.Size(281, 34);
@@ -131,7 +131,7 @@
             // 
             // MailTextBox
             // 
-            this.MailTextBox.Location = new System.Drawing.Point(143, 355);
+            this.MailTextBox.Location = new System.Drawing.Point(143, 419);
             this.MailTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MailTextBox.Name = "MailTextBox";
             this.MailTextBox.Size = new System.Drawing.Size(281, 34);
@@ -143,7 +143,7 @@
             this.label5.BackColor = System.Drawing.Color.Snow;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label5.Location = new System.Drawing.Point(65, 358);
+            this.label5.Location = new System.Drawing.Point(65, 422);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 31);

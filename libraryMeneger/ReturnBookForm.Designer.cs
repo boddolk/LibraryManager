@@ -81,7 +81,7 @@
             this.returnMenuButton.Name = "returnMenuButton";
             this.returnMenuButton.Size = new System.Drawing.Size(226, 50);
             this.returnMenuButton.TabIndex = 15;
-            this.returnMenuButton.Text = "Return";
+            this.returnMenuButton.Text = "   ";
             this.returnMenuButton.UseVisualStyleBackColor = false;
             this.returnMenuButton.Click += new System.EventHandler(this.returnMenuButton_Click);
             // 

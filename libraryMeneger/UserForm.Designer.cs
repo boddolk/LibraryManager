@@ -193,7 +193,7 @@
             this.BookListBox.Location = new System.Drawing.Point(416, 108);
             this.BookListBox.Margin = new System.Windows.Forms.Padding(4);
             this.BookListBox.Name = "BookListBox";
-            this.BookListBox.Size = new System.Drawing.Size(465, 256);
+            this.BookListBox.Size = new System.Drawing.Size(612, 256);
             this.BookListBox.TabIndex = 11;
             // 
             // ReservedButton
@@ -202,7 +202,7 @@
             this.ReservedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ReservedButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ReservedButton.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.ReservedButton.Location = new System.Drawing.Point(416, 380);
+            this.ReservedButton.Location = new System.Drawing.Point(494, 380);
             this.ReservedButton.Margin = new System.Windows.Forms.Padding(4);
             this.ReservedButton.Name = "ReservedButton";
             this.ReservedButton.Size = new System.Drawing.Size(465, 61);
@@ -232,7 +232,7 @@
             this.HistoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HistoryButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.HistoryButton.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.HistoryButton.Location = new System.Drawing.Point(416, 471);
+            this.HistoryButton.Location = new System.Drawing.Point(494, 471);
             this.HistoryButton.Margin = new System.Windows.Forms.Padding(4);
             this.HistoryButton.Name = "HistoryButton";
             this.HistoryButton.Size = new System.Drawing.Size(465, 58);
@@ -249,7 +249,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(894, 55);
+            this.panel1.Size = new System.Drawing.Size(1041, 55);
             this.panel1.TabIndex = 15;
             // 
             // panel2
@@ -286,19 +286,20 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(573, 69);
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(672, 69);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(171, 25);
+            this.label6.Size = new System.Drawing.Size(117, 31);
             this.label6.TabIndex = 17;
-            this.label6.Text = "My reserved books";
+            this.label6.Text = "My books";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
-            this.ClientSize = new System.Drawing.Size(894, 616);
+            this.ClientSize = new System.Drawing.Size(1041, 616);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

@@ -102,6 +102,11 @@ namespace libraryMeneger
                 this.Visible = true;
             }
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
