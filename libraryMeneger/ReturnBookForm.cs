@@ -113,7 +113,7 @@ namespace libraryMeneger
                 this.cStartDatelabel.Text = startDate.ToString("dd.MM.yyyy");
                 this.cEndDatelabel.Text = endDate.ToString("dd.MM.yyyy");
                 
-                this.cStartDatelabel.ForeColor = Color.Black;
+                this.cStartDatelabel.ForeColor = Color.RoyalBlue;
                 if (currentIssuedBook.EndDate > DateTime.Now.Date)
                 {
                     this.cEndDatelabel.ForeColor = Color.Green;
@@ -132,8 +132,8 @@ namespace libraryMeneger
             {
                 this.cStartDatelabel.Text = "Start date is empty";
                 this.cEndDatelabel.Text = "End date is empty";
-                this.cStartDatelabel.ForeColor = Color.LightGray;
-                this.cEndDatelabel.ForeColor = Color.LightGray;
+                this.cStartDatelabel.ForeColor = Color.LightBlue;
+                this.cEndDatelabel.ForeColor = Color.LightBlue;
                 this.userEmailLabel.Visible = false;
                 this.currEmailLabel.Visible = false;
             }

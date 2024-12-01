@@ -61,7 +61,7 @@
             this.filterTextBox.Location = new System.Drawing.Point(188, 188);
             this.filterTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.filterTextBox.Name = "filterTextBox";
-            this.filterTextBox.Size = new System.Drawing.Size(180, 34);
+            this.filterTextBox.Size = new System.Drawing.Size(231, 34);
             this.filterTextBox.TabIndex = 1;
             // 
             // filtParemetrLabel
@@ -81,7 +81,7 @@
             this.filterButton.BackColor = System.Drawing.Color.RoyalBlue;
             this.filterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.filterButton.ForeColor = System.Drawing.Color.Snow;
-            this.filterButton.Location = new System.Drawing.Point(412, 184);
+            this.filterButton.Location = new System.Drawing.Point(427, 179);
             this.filterButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.filterButton.Name = "filterButton";
             this.filterButton.Size = new System.Drawing.Size(175, 43);
@@ -93,7 +93,7 @@
             // currentDateLabel
             // 
             this.currentDateLabel.AutoSize = true;
-            this.currentDateLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.currentDateLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.currentDateLabel.ForeColor = System.Drawing.Color.Black;
             this.currentDateLabel.Location = new System.Drawing.Point(183, 290);
             this.currentDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -112,7 +112,7 @@
             this.endDateTimePicker.MaxDate = new System.DateTime(2025, 12, 27, 0, 0, 0, 0);
             this.endDateTimePicker.MinDate = new System.DateTime(2024, 12, 27, 0, 0, 0, 0);
             this.endDateTimePicker.Name = "endDateTimePicker";
-            this.endDateTimePicker.Size = new System.Drawing.Size(180, 34);
+            this.endDateTimePicker.Size = new System.Drawing.Size(231, 34);
             this.endDateTimePicker.TabIndex = 5;
             this.endDateTimePicker.Value = new System.DateTime(2024, 12, 27, 0, 0, 0, 0);
             // 

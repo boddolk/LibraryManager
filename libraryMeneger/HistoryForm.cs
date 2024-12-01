@@ -47,7 +47,7 @@ namespace libraryMeneger
             }
             else
             {
-                HistoryBox.Items.Add("Your books history is empty:(");
+                HistoryBox.Items.Add("Your books history is empty:(\n");
                 HistoryBox.Items.Add("Reserve books and hurry up to read!!!");
             }
         }

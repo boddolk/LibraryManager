@@ -79,7 +79,7 @@ namespace libraryMeneger
                     currentTitleLabel.ForeColor =
                     currentAuthorLabel.ForeColor =
                     currentYearLabel.ForeColor =
-                    currentStatusLabel.ForeColor = Color.Black;
+                    currentStatusLabel.ForeColor = Color.RoyalBlue;
             }
             else
             {
@@ -93,7 +93,7 @@ namespace libraryMeneger
                     currentTitleLabel.ForeColor =
                     currentAuthorLabel.ForeColor =
                     currentYearLabel.ForeColor =
-                    currentStatusLabel.ForeColor = Color.LightGray;
+                    currentStatusLabel.ForeColor = Color.LightBlue;
             }
         }
 

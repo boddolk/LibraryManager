@@ -47,14 +47,14 @@
             // YearNumer
             // 
             this.YearNumer.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.YearNumer.Location = new System.Drawing.Point(129, 413);
+            this.YearNumer.Location = new System.Drawing.Point(129, 412);
             this.YearNumer.Maximum = new decimal(new int[] {
             2025,
             0,
             0,
             0});
             this.YearNumer.Name = "YearNumer";
-            this.YearNumer.Size = new System.Drawing.Size(281, 34);
+            this.YearNumer.Size = new System.Drawing.Size(341, 34);
             this.YearNumer.TabIndex = 22;
             // 
             // ArticleTextBox
@@ -62,7 +62,7 @@
             this.ArticleTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ArticleTextBox.Location = new System.Drawing.Point(129, 218);
             this.ArticleTextBox.Name = "ArticleTextBox";
-            this.ArticleTextBox.Size = new System.Drawing.Size(281, 34);
+            this.ArticleTextBox.Size = new System.Drawing.Size(341, 34);
             this.ArticleTextBox.TabIndex = 21;
             // 
             // NameTextBox
@@ -70,7 +70,7 @@
             this.NameTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameTextBox.Location = new System.Drawing.Point(127, 281);
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(283, 34);
+            this.NameTextBox.Size = new System.Drawing.Size(343, 34);
             this.NameTextBox.TabIndex = 20;
             // 
             // AuthorTextBox
@@ -78,7 +78,7 @@
             this.AuthorTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AuthorTextBox.Location = new System.Drawing.Point(129, 349);
             this.AuthorTextBox.Name = "AuthorTextBox";
-            this.AuthorTextBox.Size = new System.Drawing.Size(281, 34);
+            this.AuthorTextBox.Size = new System.Drawing.Size(341, 34);
             this.AuthorTextBox.TabIndex = 19;
             // 
             // label1
@@ -133,7 +133,7 @@
             this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AddButton.ForeColor = System.Drawing.Color.Snow;
-            this.AddButton.Location = new System.Drawing.Point(36, 488);
+            this.AddButton.Location = new System.Drawing.Point(73, 499);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(374, 63);
             this.AddButton.TabIndex = 23;
@@ -148,13 +148,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(451, 183);
+            this.panel1.Size = new System.Drawing.Size(509, 183);
             this.panel1.TabIndex = 24;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::libraryMeneger.Properties.Resources.book;
-            this.pictureBox1.Location = new System.Drawing.Point(122, 15);
+            this.pictureBox1.Location = new System.Drawing.Point(158, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(206, 153);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -166,7 +166,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
-            this.ClientSize = new System.Drawing.Size(451, 596);
+            this.ClientSize = new System.Drawing.Size(509, 596);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.YearNumer);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookEditForm));
             this.YearNumer = new System.Windows.Forms.NumericUpDown();
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.AuthorTextBox = new System.Windows.Forms.TextBox();
@@ -47,7 +48,7 @@
             // YearNumer
             // 
             this.YearNumer.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.YearNumer.Location = new System.Drawing.Point(117, 393);
+            this.YearNumer.Location = new System.Drawing.Point(167, 393);
             this.YearNumer.Maximum = new decimal(new int[] {
             2025,
             0,
@@ -60,7 +61,7 @@
             // NameTextBox
             // 
             this.NameTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NameTextBox.Location = new System.Drawing.Point(117, 274);
+            this.NameTextBox.Location = new System.Drawing.Point(167, 272);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(302, 34);
             this.NameTextBox.TabIndex = 22;
@@ -68,7 +69,7 @@
             // AuthorTextBox
             // 
             this.AuthorTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AuthorTextBox.Location = new System.Drawing.Point(117, 336);
+            this.AuthorTextBox.Location = new System.Drawing.Point(167, 333);
             this.AuthorTextBox.Name = "AuthorTextBox";
             this.AuthorTextBox.Size = new System.Drawing.Size(302, 34);
             this.AuthorTextBox.TabIndex = 21;
@@ -112,7 +113,7 @@
             this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.EditButton.ForeColor = System.Drawing.Color.Snow;
-            this.EditButton.Location = new System.Drawing.Point(31, 492);
+            this.EditButton.Location = new System.Drawing.Point(63, 492);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(388, 63);
             this.EditButton.TabIndex = 26;
@@ -135,7 +136,7 @@
             // 
             this.currentArticle.AutoSize = true;
             this.currentArticle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.currentArticle.Location = new System.Drawing.Point(113, 222);
+            this.currentArticle.Location = new System.Drawing.Point(162, 222);
             this.currentArticle.Name = "currentArticle";
             this.currentArticle.Size = new System.Drawing.Size(73, 28);
             this.currentArticle.TabIndex = 27;
@@ -148,13 +149,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(451, 179);
+            this.panel1.Size = new System.Drawing.Size(514, 179);
             this.panel1.TabIndex = 28;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::libraryMeneger.Properties.Resources.book;
-            this.pictureBox1.Location = new System.Drawing.Point(127, 12);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(153, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(206, 153);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -166,7 +167,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
-            this.ClientSize = new System.Drawing.Size(451, 596);
+            this.ClientSize = new System.Drawing.Size(514, 596);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.currentArticle);
             this.Controls.Add(this.EditButton);
