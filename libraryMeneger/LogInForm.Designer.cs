@@ -34,20 +34,20 @@
             this.LogInTextBox = new System.Windows.Forms.TextBox();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // LoginLabel
             // 
             this.LoginLabel.AutoEllipsis = true;
-            this.LoginLabel.Location = new System.Drawing.Point(106, 282);
+            this.LoginLabel.Location = new System.Drawing.Point(110, 282);
             this.LoginLabel.Name = "LoginLabel";
             this.LoginLabel.Size = new System.Drawing.Size(59, 30);
             this.LoginLabel.TabIndex = 0;
@@ -108,26 +108,6 @@
             this.panel1.Size = new System.Drawing.Size(451, 243);
             this.panel1.TabIndex = 10;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::libraryMeneger.Properties.Resources._10982_200;
-            this.pictureBox3.Location = new System.Drawing.Point(49, 348);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 30);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 12;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::libraryMeneger.Properties.Resources._11447601;
-            this.pictureBox2.Location = new System.Drawing.Point(49, 282);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 30);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::libraryMeneger.Properties.Resources._8832880;
@@ -138,10 +118,30 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::libraryMeneger.Properties.Resources._10982_200;
+            this.pictureBox3.Location = new System.Drawing.Point(51, 346);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(40, 30);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 12;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::libraryMeneger.Properties.Resources._11447601;
+            this.pictureBox2.Location = new System.Drawing.Point(51, 282);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(40, 30);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoEllipsis = true;
-            this.label1.Location = new System.Drawing.Point(95, 351);
+            this.label1.Location = new System.Drawing.Point(88, 351);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 30);
             this.label1.TabIndex = 13;
@@ -169,9 +169,9 @@
             this.Name = "LogInForm";
             this.Text = "Login";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -50,7 +50,7 @@
             this.YearNumer.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.YearNumer.Location = new System.Drawing.Point(167, 393);
             this.YearNumer.Maximum = new decimal(new int[] {
-            2025,
+            2050,
             0,
             0,
             0});
@@ -62,6 +62,7 @@
             // 
             this.NameTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameTextBox.Location = new System.Drawing.Point(167, 272);
+            this.NameTextBox.MaxLength = 32;
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(302, 34);
             this.NameTextBox.TabIndex = 22;
@@ -70,6 +71,7 @@
             // 
             this.AuthorTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AuthorTextBox.Location = new System.Drawing.Point(167, 333);
+            this.AuthorTextBox.MaxLength = 25;
             this.AuthorTextBox.Name = "AuthorTextBox";
             this.AuthorTextBox.Size = new System.Drawing.Size(302, 34);
             this.AuthorTextBox.TabIndex = 21;

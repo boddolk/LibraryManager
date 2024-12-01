@@ -61,6 +61,7 @@
             // 
             this.LogInTextBox.Location = new System.Drawing.Point(143, 161);
             this.LogInTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.LogInTextBox.MaxLength = 25;
             this.LogInTextBox.Name = "LogInTextBox";
             this.LogInTextBox.Size = new System.Drawing.Size(281, 34);
             this.LogInTextBox.TabIndex = 1;
@@ -104,6 +105,7 @@
             // 
             this.NameTextBox.Location = new System.Drawing.Point(143, 288);
             this.NameTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.NameTextBox.MaxLength = 20;
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(281, 34);
             this.NameTextBox.TabIndex = 5;
@@ -125,6 +127,7 @@
             // 
             this.SurnameTextBox.Location = new System.Drawing.Point(143, 354);
             this.SurnameTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.SurnameTextBox.MaxLength = 20;
             this.SurnameTextBox.Name = "SurnameTextBox";
             this.SurnameTextBox.Size = new System.Drawing.Size(281, 34);
             this.SurnameTextBox.TabIndex = 7;
@@ -133,6 +136,7 @@
             // 
             this.MailTextBox.Location = new System.Drawing.Point(143, 419);
             this.MailTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MailTextBox.MaxLength = 30;
             this.MailTextBox.Name = "MailTextBox";
             this.MailTextBox.Size = new System.Drawing.Size(281, 34);
             this.MailTextBox.TabIndex = 9;
