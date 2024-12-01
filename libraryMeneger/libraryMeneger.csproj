@@ -199,6 +199,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <EmbeddedResource Include="ReservePlus.resx">
@@ -228,6 +229,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-book-icon-vector-image-png-image_6552370 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-profile-icon-free-vector1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8832880.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-black-iron-lock-icon-image_1145477.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10982-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-clipart-user-profile-computer-icons-login-user-avatars-monochrome-black-thumbnail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1144760.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-opened-book-icon-3163-thumb.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
