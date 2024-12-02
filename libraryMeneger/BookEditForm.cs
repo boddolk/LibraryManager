@@ -16,6 +16,7 @@ namespace libraryMeneger
     public partial class BookEditForm : Form
     {
         public AdminUser adminUser { get; private set; }
+        public bool IsChanged { get; private set; }
         GenBook currentBook;
         
         public BookEditForm(GenBook book, AdminUser user)
@@ -23,8 +24,7 @@ namespace libraryMeneger
             InitializeComponent();
             adminUser = user;
             currentBook = book;
-            this.DialogResult = DialogResult.Cancel;
-
+            IsChanged = false;
             currentArticle.Text = currentBook.Article.ToString();
             NameTextBox.Text = currentBook.Title.ToString();
             AuthorTextBox.Text = currentBook.Author.ToString();
@@ -33,34 +33,48 @@ namespace libraryMeneger
 
         private void EditButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(
+            if (NameTextBox.Text.Length > 0 && AuthorTextBox.Text.Length > 0 && YearNumer.Value >= 1574)
+            {
+                DialogResult result = MessageBox.Show(
                  "Are you sure to submit?",
                  "Confirmation",
                  MessageBoxButtons.YesNo,
                  MessageBoxIcon.Question);
 
-            if (result == DialogResult.Yes)
-            {
-                if (NameTextBox.Text.Length > 0 && AuthorTextBox.Text.Length > 0 && YearNumer.Value > 0)
+                if (result == DialogResult.Yes)
                 {
                     currentBook.Title = NameTextBox.Text;
-                    currentBook.Author = AuthorTextBox.Text;   
+                    currentBook.Author = AuthorTextBox.Text;
                     currentBook.Year = Convert.ToInt32(YearNumer.Value);
-
                     BooksRepository booksRepository = new BooksRepository();
-                    bool correct = booksRepository.updateBook(currentBook);
 
-                    if (correct)
+                    if (booksRepository.updateBook(currentBook))
                     {
+                        IsChanged = true;
                         MessageBox.Show("Book successfully edited!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
-                    else 
+                    else
                     {
                         MessageBox.Show("The book is not edited!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Some fields are empty!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BookEditForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (IsChanged)
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                this.DialogResult = DialogResult.Cancel;
             }
         }
     }

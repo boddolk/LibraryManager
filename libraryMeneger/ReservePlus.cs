@@ -17,6 +17,7 @@ namespace libraryMeneger
     public partial class ReservePlus : Form
     {
         public RegularUser regularUser { get; private set; }
+        public bool IsChanged { get; private set; }
         BooksRepository repository = new BooksRepository();
         StatusRepository statusRepository = new StatusRepository();
 
@@ -24,7 +25,7 @@ namespace libraryMeneger
         {
             InitializeComponent();
             regularUser = user;
-            this.DialogResult = DialogResult.Cancel;
+            IsChanged = false;
 
             CurrentDateTimePicker.Value = DateTime.Today;
             CurrentDateTimePicker.CustomFormat = "dd.MM.yyyy";
@@ -62,7 +63,7 @@ namespace libraryMeneger
 
                 if (statusRepository.addBookWithItsStatus(regularUser.Login, manager))
                 {
-                    this.DialogResult = DialogResult.OK;
+                    IsChanged = true;
                     MessageBox.Show("Book successfully reserved!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
@@ -70,6 +71,18 @@ namespace libraryMeneger
             else 
             {
                 MessageBox.Show("The book is not selected!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ReservePlus_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (IsChanged)
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                this.DialogResult = DialogResult.Cancel;
             }
         }
     }

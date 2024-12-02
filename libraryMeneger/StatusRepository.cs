@@ -12,11 +12,11 @@ using libraryMeneger.book;
 
 namespace libraryMeneger.Data.StatusRepository
 {
-    public class StatusRepository: IStatusRepository
+    public class StatusRepository : IStatusRepository
     {
         private string dbPath;
         private SQLiteConnection connection;
-        public StatusRepository() 
+        public StatusRepository()
         {
             string DBFileName = ConfigurationManager.AppSettings["DBFileName"];
 
@@ -77,7 +77,7 @@ namespace libraryMeneger.Data.StatusRepository
                 string query = "SELECT ReserveStatus FROM Book_status_table WHERE BookID=@VALUE ";
                 using (var command = new SQLiteCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@VALUE", article);                 
+                    command.Parameters.AddWithValue("@VALUE", article);
 
                     var result = command.ExecuteScalar();
                     if (result != null && result != DBNull.Value)
@@ -107,12 +107,12 @@ namespace libraryMeneger.Data.StatusRepository
                 using (var command = new SQLiteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@UserIDV", userID);
-                    command.Parameters.AddWithValue("@BookIDV", manager.Article);                   
+                    command.Parameters.AddWithValue("@BookIDV", manager.Article);
                     command.Parameters.AddWithValue("@StartDateV", manager.StartDate);
                     command.Parameters.AddWithValue("@EndDateV", manager.EndDate);
                     command.Parameters.AddWithValue("@ReserveStatusV", manager.ReserveStatus);
                     command.Parameters.AddWithValue("@IssueStatusV", manager.IssueStatus);
-             
+
 
                     int rowsAffected = command.ExecuteNonQuery();
                     return rowsAffected > 0;
@@ -182,8 +182,8 @@ namespace libraryMeneger.Data.StatusRepository
         }
         public override List<BookStatManager> getIssuedBookInfo()
         {
-           List<BookStatManager> bookStatManagers = new List<BookStatManager>();
-          
+            List<BookStatManager> bookStatManagers = new List<BookStatManager>();
+
             try
             {
                 connection.Open();
@@ -200,7 +200,7 @@ namespace libraryMeneger.Data.StatusRepository
                             {
                                 Article = Convert.ToInt32(reader["BookID"]),
                                 StartDate = Convert.ToDateTime(reader["StartDate"]),
-                                EndDate= Convert.ToDateTime(reader["EndDate"]),
+                                EndDate = Convert.ToDateTime(reader["EndDate"]),
                                 ReserveStatus = Convert.ToBoolean(reader["ReserveStatus"]),
                                 IssueStatus = Convert.ToBoolean(reader["IssueStatus"])
 
@@ -312,7 +312,7 @@ namespace libraryMeneger.Data.StatusRepository
                     command.Parameters.AddWithValue("@Value", article);
                     using (var reader = command.ExecuteReader())
                     {
-                        if (reader.Read()) 
+                        if (reader.Read())
                         {
                             BookStatManager manager = new BookStatManager
                             {
@@ -323,7 +323,7 @@ namespace libraryMeneger.Data.StatusRepository
                                 IssueStatus = Convert.ToBoolean(reader["IssueStatus"])
                             };
                             return manager;
-                        }                                      
+                        }
                         else
                         {
                             Console.WriteLine("Error during retriving data");
@@ -387,18 +387,22 @@ namespace libraryMeneger.Data.StatusRepository
         public override void removeOverdueReservedBooks()
         {
             DateTime currentDate = DateTime.Now.Date;
-           List<BookStatManager> listOfReserved =  getReservedBookInfo();
-            
-            foreach (BookStatManager manager in listOfReserved) {
-                if (manager.EndDate < currentDate)
+            List<BookStatManager> listOfReserved = getReservedBookInfo();
+
+            if (listOfReserved != null)
+            {
+                foreach (BookStatManager manager in listOfReserved)
                 {
-                    removeBookWithItsStatus(manager.Article);
-                }
-                else
-                {
+                    if (manager != null && manager.EndDate != null)
+                    {
+                        if (manager.EndDate.Date < currentDate)
+                        {
+                            removeBookWithItsStatus(manager.Article);
+                        }
+                    }
                 }
             }
         }
     }
-    
-    }
+
+}

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditUserInfo));
             this.SubmitButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -37,87 +38,133 @@
             this.PhoneTextBox = new System.Windows.Forms.TextBox();
             this.SurnameTextBox = new System.Windows.Forms.TextBox();
             this.NameTextBox = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // SubmitButton
             // 
-            this.SubmitButton.Location = new System.Drawing.Point(12, 162);
+            this.SubmitButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.SubmitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SubmitButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SubmitButton.ForeColor = System.Drawing.Color.Snow;
+            this.SubmitButton.Location = new System.Drawing.Point(75, 495);
             this.SubmitButton.Name = "SubmitButton";
-            this.SubmitButton.Size = new System.Drawing.Size(365, 57);
+            this.SubmitButton.Size = new System.Drawing.Size(411, 63);
             this.SubmitButton.TabIndex = 0;
             this.SubmitButton.Text = "Submit";
-            this.SubmitButton.UseVisualStyleBackColor = true;
+            this.SubmitButton.UseVisualStyleBackColor = false;
             this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 128);
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label5.Location = new System.Drawing.Point(33, 406);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 16);
+            this.label5.Size = new System.Drawing.Size(59, 31);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Mail:";
+            this.label5.Text = "Mail";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 90);
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label4.Location = new System.Drawing.Point(33, 345);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 16);
+            this.label4.Size = new System.Drawing.Size(166, 31);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Phone number:";
+            this.label4.Text = "Phone number";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 56);
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label3.Location = new System.Drawing.Point(33, 290);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 16);
+            this.label3.Size = new System.Drawing.Size(106, 31);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Surname:";
+            this.label3.Text = "Surname";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 19);
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label2.Location = new System.Drawing.Point(33, 233);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 16);
+            this.label2.Size = new System.Drawing.Size(76, 31);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Name:";
+            this.label2.Text = "Name";
             // 
             // MailTextBox
             // 
-            this.MailTextBox.Location = new System.Drawing.Point(82, 128);
+            this.MailTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            this.MailTextBox.Location = new System.Drawing.Point(234, 408);
+            this.MailTextBox.MaxLength = 30;
             this.MailTextBox.Name = "MailTextBox";
-            this.MailTextBox.Size = new System.Drawing.Size(295, 22);
+            this.MailTextBox.Size = new System.Drawing.Size(292, 31);
             this.MailTextBox.TabIndex = 10;
             // 
             // PhoneTextBox
             // 
-            this.PhoneTextBox.Location = new System.Drawing.Point(115, 90);
+            this.PhoneTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            this.PhoneTextBox.Location = new System.Drawing.Point(234, 347);
+            this.PhoneTextBox.MaxLength = 13;
             this.PhoneTextBox.Name = "PhoneTextBox";
-            this.PhoneTextBox.Size = new System.Drawing.Size(262, 22);
+            this.PhoneTextBox.Size = new System.Drawing.Size(292, 31);
             this.PhoneTextBox.TabIndex = 11;
             // 
             // SurnameTextBox
             // 
-            this.SurnameTextBox.Location = new System.Drawing.Point(82, 53);
+            this.SurnameTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            this.SurnameTextBox.Location = new System.Drawing.Point(234, 292);
+            this.SurnameTextBox.MaxLength = 20;
             this.SurnameTextBox.Name = "SurnameTextBox";
-            this.SurnameTextBox.Size = new System.Drawing.Size(295, 22);
+            this.SurnameTextBox.Size = new System.Drawing.Size(292, 31);
             this.SurnameTextBox.TabIndex = 12;
             // 
             // NameTextBox
             // 
-            this.NameTextBox.Location = new System.Drawing.Point(82, 19);
+            this.NameTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            this.NameTextBox.Location = new System.Drawing.Point(234, 235);
+            this.NameTextBox.MaxLength = 20;
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(295, 22);
+            this.NameTextBox.Size = new System.Drawing.Size(292, 31);
             this.NameTextBox.TabIndex = 13;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.SandyBrown;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(585, 183);
+            this.panel1.TabIndex = 25;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(194, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(206, 153);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // EditUserInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 245);
+            this.BackColor = System.Drawing.Color.Snow;
+            this.ClientSize = new System.Drawing.Size(585, 596);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.SurnameTextBox);
             this.Controls.Add(this.PhoneTextBox);
@@ -127,9 +174,13 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.SubmitButton);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MinimizeBox = false;
             this.Name = "EditUserInfo";
             this.Text = "EditUserInfo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditUserInfo_FormClosing);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,5 +197,7 @@
         private System.Windows.Forms.TextBox PhoneTextBox;
         private System.Windows.Forms.TextBox SurnameTextBox;
         private System.Windows.Forms.TextBox NameTextBox;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

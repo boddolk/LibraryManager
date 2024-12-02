@@ -17,6 +17,7 @@ namespace libraryMeneger
     public partial class ToIssueForm : Form
     {
         public AdminUser adminUser { get; private set; }
+        public bool IsChanged { get; private set; }
         BooksRepository repository = new BooksRepository();
         StatusRepository statRepository = new StatusRepository();
 
@@ -24,7 +25,7 @@ namespace libraryMeneger
         {
             InitializeComponent();
             adminUser = user;
-            this.DialogResult = DialogResult.Cancel;
+            IsChanged = false;
 
             string Title;
             string UserLogin;
@@ -59,12 +60,13 @@ namespace libraryMeneger
         private void filterButton_Click(object sender, EventArgs e)
         {
             string Title;
+            this.reserveComboBox.Items.Clear();
             string UserLogin = this.filterTextBox.Text;
             if (UserLogin.Length != 0) // Якщо логін не пустий то перейте до видобування резервованих за юзером
             {
                 List<BookStatManager> resBooksForUser = statRepository.getStatManagersByUser(UserLogin);
                 
-                this.reserveComboBox.Items.Clear();
+                
                 if (resBooksForUser != null)
                 {
                     this.reserveComboBox.Items.Add("Select the reserve:");
@@ -113,12 +115,12 @@ namespace libraryMeneger
                 DateTime startRentDate = DateTime.Now.Date;
                 DateTime endRentTime = this.endDateTimePicker.Value;
 
-                DialogResult result = MessageBox.Show("Are you sure that you want to issue book with this article: " + article.ToString() + "?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Are you sure that you want to issue book with this article: < " + article.ToString() + " >?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     if (statRepository.changeToIssued(article, startRentDate, endRentTime))
                     {
-                        this.DialogResult = DialogResult.OK;
+                        IsChanged = true;
                         this.reserveComboBox.Items.RemoveAt(this.reserveComboBox.SelectedIndex);
                         this.reserveComboBox.SelectedIndex = 0;
                         MessageBox.Show("Book successfully issued for user: < " + statRepository.getUserIDByArticle(article) + " >!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -134,6 +136,18 @@ namespace libraryMeneger
         private void exitButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ToIssueForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (IsChanged)
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                this.DialogResult = DialogResult.Cancel;
+            }
         }
     }
 }

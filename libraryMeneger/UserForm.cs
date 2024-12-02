@@ -18,7 +18,7 @@ namespace libraryMeneger
     {
         private RegularUser currentUser;
         BooksRepository booksRepository = new BooksRepository();
-        StatusRepository repository = new StatusRepository();
+        StatusRepository statrepository = new StatusRepository();
         
         public UserForm(RegularUser user)
         {
@@ -29,7 +29,7 @@ namespace libraryMeneger
         private void initializeForm(RegularUser user)
         {
             this.currentUser = user;
-            this.BookListBox.Items.Clear();
+            this.BookListView.Items.Clear();
 
             UsernameLabel.Text = user.Login;
             UsernameLabel.ForeColor = Color.Black;
@@ -43,21 +43,38 @@ namespace libraryMeneger
             MailLabel.ForeColor = Color.Black;
 
             string Title;
-            List<BookStatManager> managers = repository.getStatManagersByUser(currentUser.Login);
+            List<BookStatManager> managers = statrepository.getStatManagersByUser(currentUser.Login);
 
             if (managers != null)
             {
                 foreach (BookStatManager manager in managers)
                 {
                     Title = booksRepository.getBookTitle(manager.Article);
-                    BookListBox.Items.Add(manager.GetToStringForHistory(Title));
+                    if (statrepository.IsIssued(manager.Article))
+                    {
+                        ListViewItem newPath = new ListViewItem(manager.GetToStringForHistory("ISSUED", Title));
+                        newPath.ForeColor = Color.Snow;
+                        if (manager.EndDate < DateTime.Now.Date)
+                        {
+                            newPath.BackColor = Color.OrangeRed;
+                        }
+                        else
+                        {
+                            newPath.BackColor = Color.LightGreen;
+                        }
+                        BookListView.Items.Add(newPath);
+                    }
+                    else if (statrepository.IsReserved(manager.Article))
+                    {
+                        BookListView.Items.Add(manager.GetToStringForHistory("RESERVED", Title));
+                    }
                 }
             }
             else
             {
-                BookListBox.Items.Add("You currently have no reserved");
-                BookListBox.Items.Add("or borrowed books:(");
-                BookListBox.Items.Add("Click reserve and choose:(");
+                BookListView.Items.Add("You currently have no reserved");
+                BookListView.Items.Add("or borrowed books:(");
+                BookListView.Items.Add("Click reserve and choose:(");
             }
         }
 

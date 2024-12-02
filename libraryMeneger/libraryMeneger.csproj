@@ -140,6 +140,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="RegularUser.cs" />
     <Compile Include="ReservePlus.cs">
       <SubType>Form</SubType>
@@ -193,13 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="packages.config" />
     <EmbeddedResource Include="ReservePlus.resx">
       <DependentUpon>ReservePlus.cs</DependentUpon>
@@ -228,6 +229,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8832880.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-opened-book-icon-3163-thumb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1144760.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11447601.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10982-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prof.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
