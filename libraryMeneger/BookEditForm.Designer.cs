@@ -184,7 +184,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BookEditForm";
-            this.Text = "BookEditForm";
+            this.Text = " ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BookEditForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.YearNumer)).EndInit();
             this.panel1.ResumeLayout(false);

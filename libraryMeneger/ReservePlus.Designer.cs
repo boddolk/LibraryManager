@@ -43,12 +43,12 @@
             // 
             // BookComboBox
             // 
-            this.BookComboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BookComboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             this.BookComboBox.ForeColor = System.Drawing.Color.RoyalBlue;
             this.BookComboBox.FormattingEnabled = true;
             this.BookComboBox.Location = new System.Drawing.Point(27, 221);
             this.BookComboBox.Name = "BookComboBox";
-            this.BookComboBox.Size = new System.Drawing.Size(748, 36);
+            this.BookComboBox.Size = new System.Drawing.Size(748, 33);
             this.BookComboBox.TabIndex = 0;
             // 
             // SubmitButton
