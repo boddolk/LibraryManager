@@ -1,4 +1,4 @@
-﻿﻿# Library Manager v1.1.0 :orange_book:	
+  # Library Manager v1.1.0 :orange_book:	
    :orange_book:Library Manager is implemented in C#. Created for laboratory work #8. Can be used for library management.:orange_book:<br><br>
    
 
