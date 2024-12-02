@@ -23,6 +23,7 @@ namespace libraryMeneger
         {
             InitializeComponent();
             adminUser = user;
+            this.YearNumer.Value = DateTime.Now.Year;
             IsChanged = false;
         }
 
@@ -49,6 +50,7 @@ namespace libraryMeneger
 
                         if (repository.insertBook(book))
                         {
+                            this.cleaner();
                             IsChanged = true;
                             MessageBox.Show("Book successfully aded!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
@@ -63,6 +65,14 @@ namespace libraryMeneger
             {
                 MessageBox.Show("Go fun yourself", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void cleaner()
+        {
+            this.ArticleTextBox.Clear();
+            this.NameTextBox.Clear();
+            this.AuthorTextBox.Clear();
+            this.YearNumer.Value = DateTime.Now.Year;
         }
 
         private void BookAddForm_FormClosing(object sender, FormClosingEventArgs e)
