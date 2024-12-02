@@ -33,34 +33,36 @@ namespace libraryMeneger
 
         private void EditButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(
+            if (NameTextBox.Text.Length > 0 && AuthorTextBox.Text.Length > 0 && YearNumer.Value >= 1574)
+            {
+                DialogResult result = MessageBox.Show(
                  "Are you sure to submit?",
                  "Confirmation",
                  MessageBoxButtons.YesNo,
                  MessageBoxIcon.Question);
 
-            if (result == DialogResult.Yes)
-            {
-                if (NameTextBox.Text.Length > 0 && AuthorTextBox.Text.Length > 0 && YearNumer.Value > 0)
+                if (result == DialogResult.Yes)
                 {
                     currentBook.Title = NameTextBox.Text;
-                    currentBook.Author = AuthorTextBox.Text;   
+                    currentBook.Author = AuthorTextBox.Text;
                     currentBook.Year = Convert.ToInt32(YearNumer.Value);
-
                     BooksRepository booksRepository = new BooksRepository();
-                    bool correct = booksRepository.updateBook(currentBook);
 
-                    if (correct)
+                    if (booksRepository.updateBook(currentBook))
                     {
                         IsChanged = true;
                         MessageBox.Show("Book successfully edited!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
-                    else 
+                    else
                     {
                         MessageBox.Show("The book is not edited!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Some fields are empty!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
