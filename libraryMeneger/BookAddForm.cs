@@ -60,12 +60,12 @@ namespace libraryMeneger
                     }
                     else
                     {
-                        MessageBox.Show("Article must contain only digits!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("A book with this article already exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("A book with this article already exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Article must contain only digits!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
