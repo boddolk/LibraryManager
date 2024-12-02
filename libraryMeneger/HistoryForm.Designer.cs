@@ -44,13 +44,13 @@
             this.HistoryBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.HistoryBox.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.HistoryBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.HistoryBox.ForeColor = System.Drawing.Color.RoyalBlue;
             this.HistoryBox.FormattingEnabled = true;
-            this.HistoryBox.ItemHeight = 31;
+            this.HistoryBox.ItemHeight = 28;
             this.HistoryBox.Location = new System.Drawing.Point(28, 199);
             this.HistoryBox.Name = "HistoryBox";
-            this.HistoryBox.Size = new System.Drawing.Size(556, 376);
+            this.HistoryBox.Size = new System.Drawing.Size(556, 368);
             this.HistoryBox.TabIndex = 0;
             // 
             // pictureBox1

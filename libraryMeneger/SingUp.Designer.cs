@@ -59,10 +59,12 @@
             // 
             // LogInTextBox
             // 
+            this.LogInTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             this.LogInTextBox.Location = new System.Drawing.Point(143, 161);
             this.LogInTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.LogInTextBox.MaxLength = 25;
             this.LogInTextBox.Name = "LogInTextBox";
-            this.LogInTextBox.Size = new System.Drawing.Size(281, 34);
+            this.LogInTextBox.Size = new System.Drawing.Size(281, 31);
             this.LogInTextBox.TabIndex = 1;
             // 
             // label2
@@ -80,11 +82,12 @@
             // 
             // PasswordTextBox
             // 
+            this.PasswordTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             this.PasswordTextBox.Location = new System.Drawing.Point(143, 222);
             this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '*';
-            this.PasswordTextBox.Size = new System.Drawing.Size(281, 34);
+            this.PasswordTextBox.Size = new System.Drawing.Size(281, 31);
             this.PasswordTextBox.TabIndex = 3;
             // 
             // label3
@@ -102,10 +105,12 @@
             // 
             // NameTextBox
             // 
+            this.NameTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             this.NameTextBox.Location = new System.Drawing.Point(143, 288);
             this.NameTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.NameTextBox.MaxLength = 20;
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(281, 34);
+            this.NameTextBox.Size = new System.Drawing.Size(281, 31);
             this.NameTextBox.TabIndex = 5;
             // 
             // label4
@@ -123,18 +128,22 @@
             // 
             // SurnameTextBox
             // 
+            this.SurnameTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             this.SurnameTextBox.Location = new System.Drawing.Point(143, 354);
             this.SurnameTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.SurnameTextBox.MaxLength = 20;
             this.SurnameTextBox.Name = "SurnameTextBox";
-            this.SurnameTextBox.Size = new System.Drawing.Size(281, 34);
+            this.SurnameTextBox.Size = new System.Drawing.Size(281, 31);
             this.SurnameTextBox.TabIndex = 7;
             // 
             // MailTextBox
             // 
+            this.MailTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             this.MailTextBox.Location = new System.Drawing.Point(143, 419);
             this.MailTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MailTextBox.MaxLength = 30;
             this.MailTextBox.Name = "MailTextBox";
-            this.MailTextBox.Size = new System.Drawing.Size(281, 34);
+            this.MailTextBox.Size = new System.Drawing.Size(281, 31);
             this.MailTextBox.TabIndex = 9;
             // 
             // label5
