@@ -50,7 +50,7 @@
             this.HistoryBox.ItemHeight = 23;
             this.HistoryBox.Location = new System.Drawing.Point(28, 199);
             this.HistoryBox.Name = "HistoryBox";
-            this.HistoryBox.Size = new System.Drawing.Size(671, 349);
+            this.HistoryBox.Size = new System.Drawing.Size(585, 349);
             this.HistoryBox.TabIndex = 0;
             // 
             // pictureBox1
@@ -71,7 +71,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(732, 183);
+            this.panel1.Size = new System.Drawing.Size(642, 183);
             this.panel1.TabIndex = 26;
             // 
             // label1
@@ -79,7 +79,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.Snow;
-            this.label1.Location = new System.Drawing.Point(266, 141);
+            this.label1.Location = new System.Drawing.Point(226, 132);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(212, 31);
             this.label1.TabIndex = 2;
@@ -88,7 +88,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(286, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(245, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(169, 117);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -99,7 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 596);
+            this.ClientSize = new System.Drawing.Size(642, 596);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.HistoryBox);

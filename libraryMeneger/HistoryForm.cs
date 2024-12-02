@@ -37,12 +37,15 @@ namespace libraryMeneger
                 foreach (Tuple<int, DateTime, DateTime> manager in History)
                 {
                     Article = manager.Item1;
-                    string historyPath = Article.ToString()
-                        + " | Title: " + BooksRepository.getBookTitle(Article)
-                        + "; Author: " + BooksRepository.getBook(Article).Author
-                        + "; Start date: " + manager.Item2.ToString("dd.MM.yyyy")
+                    string historyPath1 =
+                        " - Title: " + BooksRepository.getBookTitle(Article) + ";";
+                    string historyPath2 =
+                        "   Author: " + BooksRepository.getBook(Article).Author
                         + "; End date: " + manager.Item3.ToString("dd.MM.yyyy");
-                    HistoryBox.Items.Add(historyPath);
+                    string historyPath3 = " ";
+                    HistoryBox.Items.Add(historyPath1);
+                    HistoryBox.Items.Add(historyPath2);
+                    HistoryBox.Items.Add(historyPath3);
                 }
             }
             else
