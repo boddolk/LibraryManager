@@ -134,7 +134,7 @@
             this.NameLabel.BackColor = System.Drawing.Color.SandyBrown;
             this.NameLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameLabel.ForeColor = System.Drawing.Color.Snow;
-            this.NameLabel.Location = new System.Drawing.Point(102, 128);
+            this.NameLabel.Location = new System.Drawing.Point(97, 125);
             this.NameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(62, 31);
@@ -147,7 +147,7 @@
             this.AuthorLabel.BackColor = System.Drawing.Color.SandyBrown;
             this.AuthorLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AuthorLabel.ForeColor = System.Drawing.Color.Snow;
-            this.AuthorLabel.Location = new System.Drawing.Point(74, 182);
+            this.AuthorLabel.Location = new System.Drawing.Point(73, 179);
             this.AuthorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AuthorLabel.Name = "AuthorLabel";
             this.AuthorLabel.Size = new System.Drawing.Size(90, 31);
@@ -160,7 +160,7 @@
             this.ArticleLabel.BackColor = System.Drawing.Color.SandyBrown;
             this.ArticleLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ArticleLabel.ForeColor = System.Drawing.Color.Snow;
-            this.ArticleLabel.Location = new System.Drawing.Point(78, 81);
+            this.ArticleLabel.Location = new System.Drawing.Point(77, 78);
             this.ArticleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ArticleLabel.Name = "ArticleLabel";
             this.ArticleLabel.Size = new System.Drawing.Size(86, 31);
@@ -172,7 +172,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.Snow;
-            this.label1.Location = new System.Drawing.Point(105, 236);
+            this.label1.Location = new System.Drawing.Point(99, 236);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 31);
@@ -260,7 +260,7 @@
             this.StatusLabel.AutoSize = true;
             this.StatusLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.StatusLabel.ForeColor = System.Drawing.Color.Snow;
-            this.StatusLabel.Location = new System.Drawing.Point(84, 286);
+            this.StatusLabel.Location = new System.Drawing.Point(82, 287);
             this.StatusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StatusLabel.Name = "StatusLabel";
             this.StatusLabel.Size = new System.Drawing.Size(80, 31);
@@ -272,7 +272,7 @@
             this.bookInfoLable.AutoSize = true;
             this.bookInfoLable.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.bookInfoLable.ForeColor = System.Drawing.Color.Snow;
-            this.bookInfoLable.Location = new System.Drawing.Point(13, 22);
+            this.bookInfoLable.Location = new System.Drawing.Point(28, 23);
             this.bookInfoLable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bookInfoLable.Name = "bookInfoLable";
             this.bookInfoLable.Size = new System.Drawing.Size(120, 31);

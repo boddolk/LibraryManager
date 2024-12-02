@@ -30,7 +30,7 @@ namespace libraryMeneger
         private void AddButton_Click(object sender, EventArgs e)
         {
             if (ArticleTextBox.Text.Length > 0 && NameTextBox.Text.Length > 0 &&
-                AuthorTextBox.Text.Length > 0 && YearNumer.Text.Length > 0)
+                AuthorTextBox.Text.Length > 0 && YearNumer.Value >= 1574)
             {
                 if (ArticleTextBox.Text.All(char.IsDigit))
                 {
