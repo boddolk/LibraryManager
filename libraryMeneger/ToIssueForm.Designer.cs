@@ -58,10 +58,11 @@
             // 
             // filterTextBox
             // 
+            this.filterTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             this.filterTextBox.Location = new System.Drawing.Point(188, 188);
             this.filterTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.filterTextBox.Name = "filterTextBox";
-            this.filterTextBox.Size = new System.Drawing.Size(231, 34);
+            this.filterTextBox.Size = new System.Drawing.Size(231, 31);
             this.filterTextBox.TabIndex = 1;
             // 
             // filtParemetrLabel
@@ -105,14 +106,14 @@
             // endDateTimePicker
             // 
             this.endDateTimePicker.CalendarFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.endDateTimePicker.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.endDateTimePicker.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.endDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.endDateTimePicker.Location = new System.Drawing.Point(188, 351);
             this.endDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.endDateTimePicker.MaxDate = new System.DateTime(2025, 12, 27, 0, 0, 0, 0);
             this.endDateTimePicker.MinDate = new System.DateTime(2024, 12, 27, 0, 0, 0, 0);
             this.endDateTimePicker.Name = "endDateTimePicker";
-            this.endDateTimePicker.Size = new System.Drawing.Size(231, 34);
+            this.endDateTimePicker.Size = new System.Drawing.Size(231, 31);
             this.endDateTimePicker.TabIndex = 5;
             this.endDateTimePicker.Value = new System.DateTime(2024, 12, 27, 0, 0, 0, 0);
             // 

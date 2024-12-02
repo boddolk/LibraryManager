@@ -47,7 +47,7 @@
             // 
             // YearNumer
             // 
-            this.YearNumer.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.YearNumer.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             this.YearNumer.Location = new System.Drawing.Point(167, 393);
             this.YearNumer.Maximum = new decimal(new int[] {
             2050,
@@ -55,7 +55,7 @@
             0,
             0});
             this.YearNumer.Name = "YearNumer";
-            this.YearNumer.Size = new System.Drawing.Size(302, 34);
+            this.YearNumer.Size = new System.Drawing.Size(302, 31);
             this.YearNumer.TabIndex = 24;
             // 
             // NameTextBox
@@ -137,10 +137,10 @@
             // currentArticle
             // 
             this.currentArticle.AutoSize = true;
-            this.currentArticle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.currentArticle.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             this.currentArticle.Location = new System.Drawing.Point(162, 222);
             this.currentArticle.Name = "currentArticle";
-            this.currentArticle.Size = new System.Drawing.Size(73, 28);
+            this.currentArticle.Size = new System.Drawing.Size(67, 25);
             this.currentArticle.TabIndex = 27;
             this.currentArticle.Text = "noInfo";
             // 

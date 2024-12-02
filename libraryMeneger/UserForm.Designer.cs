@@ -70,7 +70,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label1.Location = new System.Drawing.Point(18, 173);
+            this.label1.Location = new System.Drawing.Point(7, 173);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 28);
@@ -82,7 +82,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label2.Location = new System.Drawing.Point(18, 220);
+            this.label2.Location = new System.Drawing.Point(7, 220);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 28);
@@ -94,7 +94,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label3.Location = new System.Drawing.Point(18, 260);
+            this.label3.Location = new System.Drawing.Point(7, 260);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 28);
@@ -106,7 +106,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label4.Location = new System.Drawing.Point(18, 311);
+            this.label4.Location = new System.Drawing.Point(7, 311);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(149, 28);
@@ -118,7 +118,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label5.Location = new System.Drawing.Point(18, 358);
+            this.label5.Location = new System.Drawing.Point(7, 358);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 28);
@@ -191,7 +191,7 @@
             this.ReservedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ReservedButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ReservedButton.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.ReservedButton.Location = new System.Drawing.Point(494, 380);
+            this.ReservedButton.Location = new System.Drawing.Point(523, 467);
             this.ReservedButton.Margin = new System.Windows.Forms.Padding(4);
             this.ReservedButton.Name = "ReservedButton";
             this.ReservedButton.Size = new System.Drawing.Size(465, 61);
@@ -206,7 +206,7 @@
             this.EditProfilButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditProfilButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.EditProfilButton.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.EditProfilButton.Location = new System.Drawing.Point(39, 416);
+            this.EditProfilButton.Location = new System.Drawing.Point(35, 490);
             this.EditProfilButton.Margin = new System.Windows.Forms.Padding(4);
             this.EditProfilButton.Name = "EditProfilButton";
             this.EditProfilButton.Size = new System.Drawing.Size(299, 57);
@@ -221,7 +221,7 @@
             this.HistoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HistoryButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.HistoryButton.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.HistoryButton.Location = new System.Drawing.Point(494, 471);
+            this.HistoryButton.Location = new System.Drawing.Point(523, 545);
             this.HistoryButton.Margin = new System.Windows.Forms.Padding(4);
             this.HistoryButton.Name = "HistoryButton";
             this.HistoryButton.Size = new System.Drawing.Size(465, 58);
@@ -238,7 +238,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1049, 55);
+            this.panel1.Size = new System.Drawing.Size(1095, 55);
             this.panel1.TabIndex = 15;
             // 
             // panel2
@@ -259,7 +259,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 55);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(392, 561);
+            this.panel2.Size = new System.Drawing.Size(411, 574);
             this.panel2.TabIndex = 16;
             // 
             // pictureBox1
@@ -286,10 +286,10 @@
             // 
             this.BookListView.FullRowSelect = true;
             this.BookListView.HideSelection = false;
-            this.BookListView.Location = new System.Drawing.Point(417, 110);
+            this.BookListView.Location = new System.Drawing.Point(427, 110);
             this.BookListView.Name = "BookListView";
             this.BookListView.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.BookListView.Size = new System.Drawing.Size(612, 256);
+            this.BookListView.Size = new System.Drawing.Size(656, 331);
             this.BookListView.TabIndex = 18;
             this.BookListView.UseCompatibleStateImageBehavior = false;
             this.BookListView.View = System.Windows.Forms.View.List;
@@ -299,7 +299,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
-            this.ClientSize = new System.Drawing.Size(1049, 616);
+            this.ClientSize = new System.Drawing.Size(1095, 629);
             this.Controls.Add(this.BookListView);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel2);

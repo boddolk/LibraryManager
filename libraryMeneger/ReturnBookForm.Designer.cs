@@ -125,16 +125,16 @@
             // 
             // filterTextBox
             // 
-            this.filterTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.filterTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             this.filterTextBox.Location = new System.Drawing.Point(174, 181);
             this.filterTextBox.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.filterTextBox.Name = "filterTextBox";
-            this.filterTextBox.Size = new System.Drawing.Size(543, 34);
+            this.filterTextBox.Size = new System.Drawing.Size(543, 31);
             this.filterTextBox.TabIndex = 10;
             // 
             // issuedComboBox
             // 
-            this.issuedComboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.issuedComboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.issuedComboBox.FormattingEnabled = true;
             this.issuedComboBox.Location = new System.Drawing.Point(174, 107);
             this.issuedComboBox.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);

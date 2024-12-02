@@ -104,38 +104,38 @@
             // 
             // MailTextBox
             // 
-            this.MailTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.MailTextBox.Location = new System.Drawing.Point(234, 406);
+            this.MailTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            this.MailTextBox.Location = new System.Drawing.Point(234, 408);
             this.MailTextBox.MaxLength = 30;
             this.MailTextBox.Name = "MailTextBox";
-            this.MailTextBox.Size = new System.Drawing.Size(292, 34);
+            this.MailTextBox.Size = new System.Drawing.Size(292, 31);
             this.MailTextBox.TabIndex = 10;
             // 
             // PhoneTextBox
             // 
-            this.PhoneTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PhoneTextBox.Location = new System.Drawing.Point(234, 345);
+            this.PhoneTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            this.PhoneTextBox.Location = new System.Drawing.Point(234, 347);
             this.PhoneTextBox.MaxLength = 13;
             this.PhoneTextBox.Name = "PhoneTextBox";
-            this.PhoneTextBox.Size = new System.Drawing.Size(292, 34);
+            this.PhoneTextBox.Size = new System.Drawing.Size(292, 31);
             this.PhoneTextBox.TabIndex = 11;
             // 
             // SurnameTextBox
             // 
-            this.SurnameTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SurnameTextBox.Location = new System.Drawing.Point(234, 290);
+            this.SurnameTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            this.SurnameTextBox.Location = new System.Drawing.Point(234, 292);
             this.SurnameTextBox.MaxLength = 20;
             this.SurnameTextBox.Name = "SurnameTextBox";
-            this.SurnameTextBox.Size = new System.Drawing.Size(292, 34);
+            this.SurnameTextBox.Size = new System.Drawing.Size(292, 31);
             this.SurnameTextBox.TabIndex = 12;
             // 
             // NameTextBox
             // 
-            this.NameTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NameTextBox.Location = new System.Drawing.Point(234, 233);
+            this.NameTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            this.NameTextBox.Location = new System.Drawing.Point(234, 235);
             this.NameTextBox.MaxLength = 20;
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(292, 34);
+            this.NameTextBox.Size = new System.Drawing.Size(292, 31);
             this.NameTextBox.TabIndex = 13;
             // 
             // panel1
